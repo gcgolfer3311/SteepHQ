@@ -1,0 +1,502 @@
+[
+  {
+    "slug": "darjeeling",
+    "n": "Darjeeling",
+    "c": "India",
+    "x": 739.6,
+    "y": 207.8,
+    "alt": "600–2,000m",
+    "harvest": "Mar–Nov (4 flushes)",
+    "note": "Muscatel-noted black tea, orthodox processed, called the 'Champagne of teas.'"
+  },
+  {
+    "slug": "assam",
+    "n": "Assam",
+    "c": "India",
+    "x": 755.1,
+    "y": 208.9,
+    "alt": "45–200m",
+    "harvest": "Mar–Nov",
+    "note": "Malty, full-bodied black tea from the Brahmaputra valley; largest tea-growing region on earth."
+  },
+  {
+    "slug": "nilgiri",
+    "n": "Nilgiri",
+    "c": "India",
+    "x": 714.3,
+    "y": 258.9,
+    "alt": "1,000–2,500m",
+    "harvest": "Year-round",
+    "note": "Brisk, fragrant black tea from South India's 'Blue Mountains.'"
+  },
+  {
+    "slug": "uva",
+    "n": "Uva",
+    "c": "Sri Lanka",
+    "x": 727.5,
+    "y": 273.5,
+    "alt": "1,000–1,700m",
+    "harvest": "Jul–Sep (quality season)",
+    "note": "Ceylon black tea known for a distinctive winey, menthol-like edge."
+  },
+  {
+    "slug": "nuwara-eliya",
+    "n": "Nuwara Eliya",
+    "c": "Sri Lanka",
+    "x": 726.6,
+    "y": 273.3,
+    "alt": "1,800–2,200m",
+    "harvest": "Jan–Mar",
+    "note": "Sri Lanka's highest-grown tea; light, delicate, called 'Champagne of Ceylon.'"
+  },
+  {
+    "slug": "wuyi-mountains",
+    "n": "Wuyi Mountains",
+    "c": "China (Fujian)",
+    "x": 819.5,
+    "y": 205.6,
+    "alt": "200–700m",
+    "harvest": "Apr–May",
+    "note": "Rock oolongs (yancha) grown in mineral-rich cliffs; home of Da Hong Pao."
+  },
+  {
+    "slug": "anxi",
+    "n": "Anxi",
+    "c": "China (Fujian)",
+    "x": 821.8,
+    "y": 214.2,
+    "alt": "300–1,000m",
+    "harvest": "Spring & Autumn",
+    "note": "Birthplace of Tie Guan Yin, a floral, lightly oxidized oolong."
+  },
+  {
+    "slug": "west-lake-hangzhou",
+    "n": "West Lake (Hangzhou)",
+    "c": "China (Zhejiang)",
+    "x": 823.1,
+    "y": 197.3,
+    "alt": "30–300m",
+    "harvest": "Late Mar–Apr",
+    "note": "Home of Longjing (Dragon Well), China's most famous pan-fired green tea."
+  },
+  {
+    "slug": "yunnan",
+    "n": "Yunnan",
+    "c": "China",
+    "x": 776.1,
+    "y": 219.7,
+    "alt": "1,200–2,200m",
+    "harvest": "Spring & Autumn",
+    "note": "Ancient tea-tree region; birthplace of pu-erh and large-leaf black tea (dianhong)."
+  },
+  {
+    "slug": "huangshan",
+    "n": "Huangshan",
+    "c": "China (Anhui)",
+    "x": 817.9,
+    "y": 197.6,
+    "alt": "300–1,200m",
+    "harvest": "Apr",
+    "note": "Home of Huangshan Maofeng green tea and Keemun black tea's smoky-sweet profile."
+  },
+  {
+    "slug": "uji",
+    "n": "Uji",
+    "c": "Japan",
+    "x": 859.5,
+    "y": 182,
+    "alt": "150–300m",
+    "harvest": "May (first flush)",
+    "note": "Japan's most prestigious tea district; shade-grown matcha and gyokuro."
+  },
+  {
+    "slug": "shizuoka",
+    "n": "Shizuoka",
+    "c": "Japan",
+    "x": 866.3,
+    "y": 181.8,
+    "alt": "Sea level–1,000m",
+    "harvest": "May",
+    "note": "Japan's largest producing region; sencha heartland."
+  },
+  {
+    "slug": "kagoshima",
+    "n": "Kagoshima",
+    "c": "Japan",
+    "x": 849.7,
+    "y": 192.8,
+    "alt": "Sea level–500m",
+    "harvest": "Apr (earliest in Japan)",
+    "note": "Volcanic soil, warm climate — Japan's earliest and fastest-growing sencha region."
+  },
+  {
+    "slug": "alishan",
+    "n": "Alishan",
+    "c": "Taiwan",
+    "x": 830.8,
+    "y": 219.4,
+    "alt": "1,000–1,600m",
+    "harvest": "Spring & Winter",
+    "note": "High-mountain (gaoshan) oolong prized for a creamy, floral cup."
+  },
+  {
+    "slug": "boseong",
+    "n": "Boseong",
+    "c": "South Korea",
+    "x": 836.9,
+    "y": 182.4,
+    "alt": "50–400m",
+    "harvest": "Apr–May",
+    "note": "Korea's largest green tea region, terraced hillsides along the coast."
+  },
+  {
+    "slug": "mount-kenya-region",
+    "n": "Mount Kenya region",
+    "c": "Kenya",
+    "x": 604.9,
+    "y": 297.3,
+    "alt": "1,500–2,700m",
+    "harvest": "Year-round",
+    "note": "Africa's largest producer; bright, brisk CTC black teas built for blending."
+  },
+  {
+    "slug": "rize",
+    "n": "Rize",
+    "c": "Turkey",
+    "x": 604.6,
+    "y": 162.1,
+    "alt": "Sea level–500m",
+    "harvest": "May–Oct",
+    "note": "Black Sea coast; nearly all Turkish tea (world's 5th-largest producer) grows here."
+  },
+  {
+    "slug": "guria",
+    "n": "Guria",
+    "c": "Georgia",
+    "x": 608,
+    "y": 159.2,
+    "alt": "Sea level–300m",
+    "harvest": "May–Sep",
+    "note": "Historic Soviet-era tea region seeing a modern artisanal revival."
+  },
+  {
+    "slug": "m-c-ch-u",
+    "n": "Mộc Châu",
+    "c": "Vietnam",
+    "x": 788.3,
+    "y": 228.1,
+    "alt": "900–1,050m",
+    "harvest": "Mar–Nov",
+    "note": "Cool highland plateau producing green and increasingly specialty oolong tea."
+  },
+  {
+    "slug": "cameron-highlands",
+    "n": "Cameron Highlands",
+    "c": "Malaysia",
+    "x": 784.8,
+    "y": 281.4,
+    "alt": "1,300–1,800m",
+    "harvest": "Year-round",
+    "note": "Cool-climate anomaly in the tropics; British colonial-era black tea gardens."
+  },
+  {
+    "slug": "fuding",
+    "n": "Fuding",
+    "c": "China (Fujian)",
+    "x": 826,
+    "y": 206.8,
+    "alt": "600–1,200m",
+    "harvest": "Spring (Mar–Apr)",
+    "note": "White tea's true home — where Bai Hao Yin Zhen and Bai Mu Dan are grown, not just processed."
+  },
+  {
+    "slug": "liu-bao-wuzhou",
+    "n": "Liu Bao (Wuzhou)",
+    "c": "China (Guangxi)",
+    "x": 804.8,
+    "y": 219.4,
+    "alt": "200–600m",
+    "harvest": "Year-round",
+    "note": "Dark tea aged in humid cellars; Liu Bao's earthy, betel-nut character predates pu-erh's fame in export markets."
+  },
+  {
+    "slug": "mengding-mountain",
+    "n": "Mengding Mountain",
+    "c": "China (Sichuan)",
+    "x": 777.2,
+    "y": 197.9,
+    "alt": "800–1,450m",
+    "harvest": "Apr",
+    "note": "Legendary origin of Mengding Ganlu, one of China's oldest recorded green teas, grown on mist-covered peaks."
+  },
+  {
+    "slug": "duyun",
+    "n": "Duyun",
+    "c": "China (Guizhou)",
+    "x": 792.4,
+    "y": 210.3,
+    "alt": "800–1,700m",
+    "harvest": "Mar–Apr",
+    "note": "High-altitude green tea region behind Duyun Maojian, prized for its fine downy tips."
+  },
+  {
+    "slug": "enshi",
+    "n": "Enshi",
+    "c": "China (Hubei)",
+    "x": 794.4,
+    "y": 197.1,
+    "alt": "400–1,800m",
+    "harvest": "Apr–May",
+    "note": "Rare steamed green tea region (Enshi Yulu) — one of the few places still using ancient steam-fixing."
+  },
+  {
+    "slug": "anhua",
+    "n": "Anhua",
+    "c": "China (Hunan)",
+    "x": 800.7,
+    "y": 203.3,
+    "alt": "200–800m",
+    "harvest": "Spring & Autumn",
+    "note": "Dark tea region famous for Fu brick tea and its distinctive 'golden flower' fungus fermentation."
+  },
+  {
+    "slug": "lushan",
+    "n": "Lushan",
+    "c": "China (Jiangxi)",
+    "x": 812.6,
+    "y": 199.5,
+    "alt": "600–1,200m",
+    "harvest": "Apr",
+    "note": "Misty mountain green tea region producing Lushan Yunwu, grown above the cloud line."
+  },
+  {
+    "slug": "fenghuang-phoenix",
+    "n": "Fenghuang (Phoenix)",
+    "c": "China (Guangdong)",
+    "x": 819.4,
+    "y": 218.8,
+    "alt": "600–1,100m",
+    "harvest": "Spring & Autumn",
+    "note": "Home of Phoenix Dancong oolong — ancient single-bush trees prized for naturally fruit- and floral-mimicking aromas."
+  },
+  {
+    "slug": "sun-moon-lake",
+    "n": "Sun Moon Lake",
+    "c": "Taiwan",
+    "x": 830.8,
+    "y": 218.2,
+    "alt": "600–800m",
+    "harvest": "Apr–Oct",
+    "note": "Taiwan's black tea region, built around Assam and Ruby #18 cultivars with a distinct minty-cinnamon note."
+  },
+  {
+    "slug": "ilam",
+    "n": "Ilam",
+    "c": "Nepal",
+    "x": 738.8,
+    "y": 208.2,
+    "alt": "1,000–2,000m",
+    "harvest": "Mar–Nov",
+    "note": "Himalayan foothill region bordering Darjeeling, producing increasingly acclaimed orthodox black and oolong teas."
+  },
+  {
+    "slug": "west-java-puncak",
+    "n": "West Java (Puncak)",
+    "c": "Indonesia",
+    "x": 800.2,
+    "y": 317.8,
+    "alt": "800–1,500m",
+    "harvest": "Year-round",
+    "note": "Colonial-era Dutch tea estates on volcanic soil, mostly producing black tea for export blends."
+  },
+  {
+    "slug": "north-sumatra",
+    "n": "North Sumatra",
+    "c": "Indonesia",
+    "x": 777.3,
+    "y": 284.3,
+    "alt": "900–1,400m",
+    "harvest": "Year-round",
+    "note": "Volcanic highland tea gardens near Lake Toba, largely CTC black tea for domestic and regional markets."
+  },
+  {
+    "slug": "doi-mae-salong",
+    "n": "Doi Mae Salong",
+    "c": "Thailand",
+    "x": 775.1,
+    "y": 230.3,
+    "alt": "1,200–1,600m",
+    "harvest": "Year-round",
+    "note": "Founded by Yunnanese émigrés; produces oolong in the Taiwanese high-mountain style at Thai-Myanmar border altitude."
+  },
+  {
+    "slug": "phongsaly",
+    "n": "Phongsaly",
+    "c": "Laos",
+    "x": 780.7,
+    "y": 225.3,
+    "alt": "1,000–1,800m",
+    "harvest": "Spring & Autumn",
+    "note": "Home to some of the world's oldest wild tea trees, some estimated over 1,000 years old."
+  },
+  {
+    "slug": "shan-state",
+    "n": "Shan State",
+    "c": "Myanmar",
+    "x": 768,
+    "y": 226.5,
+    "alt": "1,000–1,800m",
+    "harvest": "Year-round",
+    "note": "Ancient tea-growing region where leaf is as often fermented into laphet (pickled tea salad) as it is brewed."
+  },
+  {
+    "slug": "nyungwe",
+    "n": "Nyungwe",
+    "c": "Rwanda",
+    "x": 582.1,
+    "y": 304,
+    "alt": "1,800–2,500m",
+    "harvest": "Year-round",
+    "note": "High-altitude rainforest-edge estates producing bright, brisk CTC black tea for the global blending market."
+  },
+  {
+    "slug": "mulanje",
+    "n": "Mulanje",
+    "c": "Malawi",
+    "x": 598.6,
+    "y": 348.1,
+    "alt": "600–1,600m",
+    "harvest": "Year-round",
+    "note": "Africa's oldest commercial tea region (planted 1878), still mostly CTC black tea at the base of Mount Mulanje."
+  },
+  {
+    "slug": "njombe",
+    "n": "Njombe",
+    "c": "Tanzania",
+    "x": 597.4,
+    "y": 326.3,
+    "alt": "1,500–2,100m",
+    "harvest": "Year-round",
+    "note": "Southern highlands region increasingly producing orthodox and purple-leaf specialty teas alongside bulk CTC."
+  },
+  {
+    "slug": "kigezi",
+    "n": "Kigezi",
+    "c": "Uganda",
+    "x": 583.6,
+    "y": 299.6,
+    "alt": "1,500–2,200m",
+    "harvest": "Year-round",
+    "note": "Terraced hillside gardens near the Rwanda border, mostly CTC black tea for export blending."
+  },
+  {
+    "slug": "chipinge",
+    "n": "Chipinge",
+    "c": "Zimbabwe",
+    "x": 590,
+    "y": 361.7,
+    "alt": "1,000–1,700m",
+    "harvest": "Year-round",
+    "note": "Eastern Highlands tea estates, historically one of southern Africa's largest black tea producers."
+  },
+  {
+    "slug": "misiones",
+    "n": "Misiones",
+    "c": "Argentina",
+    "x": 351.9,
+    "y": 385,
+    "alt": "200–400m",
+    "harvest": "Oct–Apr",
+    "note": "South America's main black tea region, mechanically harvested for the international tea-bag blending market."
+  },
+  {
+    "slug": "registro-vale-do-ribeira",
+    "n": "Registro (Vale do Ribeira)",
+    "c": "Brazil",
+    "x": 369.3,
+    "y": 375.8,
+    "alt": "20–100m",
+    "harvest": "Year-round",
+    "note": "Brazil's historic tea district, settled by Japanese immigrants who brought sencha cultivation with them."
+  },
+  {
+    "slug": "lankaran",
+    "n": "Lankaran",
+    "c": "Azerbaijan",
+    "x": 627.4,
+    "y": 169.5,
+    "alt": "Sea level–300m",
+    "harvest": "May–Oct",
+    "note": "Caucasus tea region on the Caspian coast, Azerbaijan's answer to neighboring Georgia's tea gardens."
+  },
+  {
+    "slug": "lahijan-gilan",
+    "n": "Lahijan (Gilan)",
+    "c": "Iran",
+    "x": 631.2,
+    "y": 174.5,
+    "alt": "Sea level–300m",
+    "harvest": "May–Sep",
+    "note": "Iran's tea heartland since the 1900s, when tea was first smuggled out of India by Prince Kashef os-Saltaneh."
+  },
+  {
+    "slug": "s-o-miguel-azores",
+    "n": "São Miguel (Azores)",
+    "c": "Portugal",
+    "x": 433.2,
+    "y": 172.6,
+    "alt": "50–200m",
+    "harvest": "Apr–Sep",
+    "note": "Europe's only tea plantations — Gorreana and Porto Formoso — growing on volcanic Atlantic soil since the 1880s."
+  },
+  {
+    "slug": "tregothnan",
+    "n": "Tregothnan",
+    "c": "England",
+    "x": 487.7,
+    "y": 132.5,
+    "alt": "20–80m",
+    "harvest": "May–Oct",
+    "note": "The first tea ever commercially grown in England, on a Cornish estate using cultivars bred for cooler climates."
+  },
+  {
+    "slug": "big-island",
+    "n": "Big Island",
+    "c": "Hawaii, USA",
+    "x": 70.7,
+    "y": 232.1,
+    "alt": "600–1,200m",
+    "harvest": "Year-round",
+    "note": "Volcanic soil and consistent rainfall make Hawaii the only significant tea-growing region in the continental/insular US."
+  },
+  {
+    "slug": "charleston",
+    "n": "Charleston",
+    "c": "South Carolina, USA",
+    "x": 285.7,
+    "y": 189.5,
+    "alt": "Sea level–20m",
+    "harvest": "May–Oct",
+    "note": "Home of the largest tea garden in North America, descended from 19th-century experimental plantings."
+  },
+  {
+    "slug": "temi",
+    "n": "Temi",
+    "c": "Sikkim, India",
+    "x": 739.8,
+    "y": 206.8,
+    "alt": "1,200–1,800m",
+    "harvest": "Mar–Nov",
+    "note": "India's only tea garden in Sikkim, a single organic estate producing delicate high-altitude orthodox black tea."
+  },
+  {
+    "slug": "kangra",
+    "n": "Kangra",
+    "c": "Himachal Pradesh, India",
+    "x": 703.9,
+    "y": 191.2,
+    "alt": "900–1,400m",
+    "harvest": "Apr–Nov",
+    "note": "Himalayan foothill region with its own muscatel-adjacent character and GI-protected status, often overshadowed by Darjeeling."
+  }
+]
