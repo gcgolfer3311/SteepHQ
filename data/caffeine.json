@@ -1,0 +1,11 @@
+[
+  {"n":"Matcha","low":60,"high":130,"note":"You consume the whole leaf, so it lands higher than steeped greens. Ceremonial grade with more shading tends toward the upper end."},
+  {"n":"Black tea","low":40,"high":70,"note":"Generally the highest of the steeped-and-strained categories, though overlap with oolong and green is substantial."},
+  {"n":"Oolong tea","low":30,"high":60,"note":"Wide range reflecting the category's wide oxidation span and highly variable brewing styles."},
+  {"n":"Green tea","low":25,"high":50,"note":"Lower brewing temperature extracts less caffeine, which is part of why green often feels gentler."},
+  {"n":"White tea","low":25,"high":55,"note":"Commonly called low-caffeine, but bud-heavy white teas like Silver Needle can be surprisingly high — buds concentrate caffeine."},
+  {"n":"Pu-erh","low":30,"high":70,"note":"Fermentation does not meaningfully remove caffeine, despite frequent claims otherwise."},
+  {"n":"Hojicha","low":7,"high":20,"note":"Roasting drives off a substantial share of the caffeine, making it the usual choice for evening drinking."},
+  {"n":"Herbal 'tea' (tisane)","low":0,"high":0,"note":"Not tea at all — no Camellia sinensis, so no caffeine (rooibos, chamomile, peppermint). Yerba mate and guayusa are separate caffeinated plants."},
+  {"n":"Drip coffee (for scale)","low":95,"high":165,"note":"Included for comparison — a typical 8oz cup runs well above any steeped tea."}
+]
