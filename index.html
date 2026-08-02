@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SteepHQ — The Tea Encyclopedia, World Map &amp; Independent Reviews</title>
+<!-- Google Analytics (GA4) — replace G-980V4Z186G with your real Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-980V4Z186G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-980V4Z186G');
+</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="SteepHQ Updates" href="/rss.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How long should I steep green tea?","acceptedAnswer":{"@type":"Answer","text":"1–3 minutes at 70–80°C. Oversteeping past a few minutes at high heat is what causes the bitterness most people associate with bad green tea."}},
+{"@type":"Question","name":"Is pu-erh tea caffeinated?","acceptedAnswer":{"@type":"Answer","text":"Yes — pu-erh comes from the same Camellia sinensis plant as every other tea, so it contains caffeine. Fermentation changes flavor, not caffeine content."}},
+{"@type":"Question","name":"What's the difference between oolong and black tea?","acceptedAnswer":{"@type":"Answer","text":"Oxidation level. Oolong is partially oxidized (10–80%), while black tea is fully oxidized (about 100%)."}},
+{"@type":"Question","name":"Is ceremonial-grade matcha worth the extra price?","acceptedAnswer":{"@type":"Answer","text":"Usually yes for drinking straight, but a lot of matcha labeled ceremonial grade in 2026 is mislabeled due to the ongoing tencha shortage — check authenticity before paying a premium."}},
+{"@type":"Question","name":"What's the best tea for a beginner?","acceptedAnswer":{"@type":"Answer","text":"A mid-oxidation oolong or a straightforward black tea like Assam is the easiest entry point — more forgiving on brew time and temperature than delicate greens or whites."}}
+]}
+</script>
+<meta name="description" content="Learn tea from the ground up: an interactive world map of every tea-growing region, a plain-English encyclopedia of tea types and processing, and independent, unbiased tea reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --jade:#7A9B76;
+  --jade-pale:#E7EEE3;
+  --oolong:#B8763E;
+  --puerh:#4A342A;
+  --porcelain:#FAF7F2;
+  --ink:#242120;
+  --ink-soft:#5C5652;
+  --line:#E3DDD3;
+  --white-tea:#F3EEE2;
+  --black-tea:#2B1D16;
+  --gold:#B08D52;
+  --font-display:'Fraunces', serif;
+  --font-body:'Inter', sans-serif;
+  --font-mono:'JetBrains Mono', monospace;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--porcelain);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+::selection{background:var(--gold); color:#fff;}
+
+/* ---------- NAV ---------- */
+header.site{
+  position:sticky; top:0; z-index:100;
+  background:rgba(250,247,242,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1180px; margin:0 auto;}
+.logo{font-family:var(--font-display); font-weight:600; font-size:1.35rem; letter-spacing:-0.01em; display:flex; align-items:center; gap:8px;}
+.logo .leaf{color:var(--jade); font-style:italic; font-weight:500;}
+nav.links{display:flex; gap:2px; align-items:center;}
+nav.links button{
+  font-family:var(--font-body); font-size:0.92rem; font-weight:500;
+  background:none; border:none; color:var(--ink-soft); cursor:pointer;
+  padding:9px 14px; border-radius:20px; transition:all .15s ease;
+}
+nav.links button:hover{background:var(--jade-pale); color:var(--ink);}
+nav.links button.active{background:var(--ink); color:var(--porcelain);}
+.nav-toggle{display:none; background:none; border:none; font-size:1.5rem; cursor:pointer;}
+@media (max-width:860px){
+  nav.links{display:none; position:absolute; top:100%; left:0; right:0; background:var(--porcelain); flex-direction:column; align-items:stretch; padding:8px 24px 20px; border-bottom:1px solid var(--line);}
+  nav.links.open{display:flex;}
+  nav.links button{text-align:left; border-radius:8px;}
+  .nav-toggle{display:block;}
+}
+
+/* ---------- HERO ---------- */
+.hero{position:relative; overflow:hidden; padding:88px 0 64px; background:
+  radial-gradient(ellipse 900px 500px at 85% -10%, rgba(122,155,118,0.16), transparent 60%),
+  radial-gradient(ellipse 700px 400px at 10% 110%, rgba(184,118,62,0.12), transparent 60%);
+}
+.hero-inner{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+@media (max-width:900px){.hero-inner{grid-template-columns:1fr;}}
+.eyebrow{font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--oolong); font-weight:500; margin-bottom:18px; display:flex; align-items:center; gap:8px;}
+.eyebrow::before{content:''; width:22px; height:1px; background:var(--oolong);}
+h1{font-family:var(--font-display); font-size:clamp(2.4rem,4.6vw,3.6rem); line-height:1.06; font-weight:600; letter-spacing:-0.02em; margin-bottom:22px;}
+h1 em{font-style:italic; font-weight:500; color:var(--jade);}
+.hero p.lede{font-size:1.13rem; color:var(--ink-soft); max-width:46ch; margin-bottom:32px;}
+.hero-cta{display:flex; gap:12px; flex-wrap:wrap;}
+.btn{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:0.95rem; padding:13px 24px; border-radius:30px; border:1px solid transparent; cursor:pointer; transition:all .15s ease;}
+.btn-primary{background:var(--ink); color:var(--porcelain);}
+.btn-primary:hover{background:var(--puerh);}
+.btn-outline{border-color:var(--ink); color:var(--ink); background:transparent;}
+.btn-outline:hover{background:var(--ink); color:var(--porcelain);}
+
+/* liquor gradient signature bar */
+.liquor-bar{display:flex; height:14px; border-radius:8px; overflow:hidden; margin:34px 0 10px; box-shadow:0 1px 3px rgba(0,0,0,0.08) inset;}
+.liquor-bar span{flex:1; position:relative;}
+.liquor-labels{display:flex; font-family:var(--font-mono); font-size:0.68rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.04em;}
+.liquor-labels span{flex:1; text-align:center;}
+
+.hero-visual{position:relative;}
+.hero-photo{border-radius:18px; overflow:hidden; margin-bottom:16px; box-shadow:0 20px 50px -20px rgba(74,52,42,0.35); aspect-ratio:4/3;}
+.hero-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+.cup-card{background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px; box-shadow:0 20px 50px -20px rgba(74,52,42,0.25);}
+.cup-card h3{font-family:var(--font-display); font-size:1.1rem; font-weight:600; margin-bottom:14px;}
+.section-banner{width:100%; aspect-ratio:21/6; border-radius:18px; overflow:hidden; margin-bottom:40px; position:relative;}
+.section-banner img{width:100%; height:100%; object-fit:cover; display:block;}
+.section-banner .caption{position:absolute; bottom:14px; right:18px; font-family:var(--font-mono); font-size:0.68rem; color:#fff; background:rgba(36,33,32,0.55); padding:4px 10px; border-radius:20px; backdrop-filter:blur(4px);}
+.photo-credit{font-family:var(--font-mono); font-size:0.68rem; color:var(--ink-soft); margin-top:6px;}
+.cup-row{display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--line); font-size:0.9rem;}
+.cup-row:last-child{border-bottom:none;}
+.cup-row .dot{width:10px; height:10px; border-radius:50%; display:inline-block; margin-right:8px;}
+.cup-row .val{font-family:var(--font-mono); color:var(--ink-soft); font-size:0.82rem;}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:80px 0;}
+.section-head{max-width:640px; margin-bottom:44px;}
+.section-head .eyebrow{margin-bottom:12px;}
+h2{font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:600; letter-spacing:-0.01em; margin-bottom:14px;}
+h2 em{font-style:italic; color:var(--oolong); font-weight:500;}
+.section-head p{color:var(--ink-soft); font-size:1.02rem;}
+.alt-bg{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+
+/* ---------- MAP ---------- */
+.map-layout{display:grid; grid-template-columns:1.5fr 1fr; gap:36px; align-items:start;}
+@media (max-width:900px){.map-layout{grid-template-columns:1fr;}}
+.map-stage{position:relative; background:
+    radial-gradient(ellipse 800px 500px at 50% 40%, #DCE8E4, #B9D2CC 70%, #9DBDB6);
+  border:1px solid var(--line); border-radius:20px; overflow:hidden; aspect-ratio:1000/600;}
+.map-stage svg{width:100%; height:100%; display:block;}
+.graticule{fill:none; stroke:#ffffff; stroke-width:0.5; opacity:0.35;}
+.land{fill:#D7CDB0; stroke:#B8A97F; stroke-width:0.6; stroke-linejoin:round;}
+.region-dot{cursor:pointer; transition:r .15s ease;}
+.region-dot circle.pulse{fill:none; stroke:var(--oolong); stroke-width:1.4; opacity:0.55;}
+.region-dot .core{fill:var(--oolong); stroke:#fff; stroke-width:1.2;}
+.region-dot:hover .core, .region-dot.active .core{fill:var(--jade);}
+.region-dot text{font-family:var(--font-mono); font-size:5px; fill:var(--puerh); font-weight:600; opacity:0; transition:opacity .15s;}
+.region-dot:hover text, .region-dot.active text{opacity:1;}
+.map-hint{position:absolute; bottom:14px; left:16px; font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-soft); background:rgba(250,247,242,0.85); padding:5px 10px; border-radius:6px;}
+.region-panel{background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px; min-height:340px;}
+.region-panel .placeholder{color:var(--ink-soft); font-size:0.95rem; padding-top:40px; text-align:center;}
+.region-panel h3{font-family:var(--font-display); font-size:1.4rem; font-weight:600; margin-bottom:4px;}
+.region-panel .country{font-family:var(--font-mono); font-size:0.78rem; color:var(--oolong); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:16px; display:block;}
+.region-stats{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;}
+.rstat{background:var(--jade-pale); border-radius:10px; padding:10px 12px;}
+.rstat .k{font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--jade); font-weight:600;}
+.rstat .v{font-size:0.95rem; font-weight:600; margin-top:2px;}
+.region-panel .notable{font-size:0.9rem; color:var(--ink-soft);}
+.region-panel .notable b{color:var(--ink);}
+
+/* ---------- ENCYCLOPEDIA ---------- */
+.tea-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;}
+.tea-card{background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;}
+.tea-card:hover{transform:translateY(-3px); box-shadow:0 16px 34px -18px rgba(74,52,42,0.3);}
+.tea-swatch{width:38px; height:38px; border-radius:10px; margin-bottom:16px;}
+.tea-card h3{font-family:var(--font-display); font-size:1.2rem; font-weight:600; margin-bottom:6px;}
+.tea-card .oxid{font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; color:var(--ink-soft); letter-spacing:0.05em; margin-bottom:10px; display:block;}
+.tea-card p{font-size:0.9rem; color:var(--ink-soft);}
+.tea-detail{display:none; background:#fff; border:1px solid var(--line); border-radius:18px; padding:32px; margin-top:24px;}
+.tea-detail.open{display:block;}
+.tea-detail h3{font-family:var(--font-display); font-size:1.6rem; margin-bottom:6px;}
+.tea-detail .grid2{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:20px;}
+@media (max-width:700px){.tea-detail .grid2{grid-template-columns:1fr;}}
+.tea-detail h4{font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--oolong); margin-bottom:8px;}
+.tea-detail ul{padding-left:18px; color:var(--ink-soft); font-size:0.92rem;}
+.tea-detail li{margin-bottom:5px;}
+.close-detail{float:right; background:none; border:1px solid var(--line); border-radius:20px; padding:6px 14px; font-size:0.8rem; cursor:pointer; color:var(--ink-soft);}
+
+/* ---------- REVIEWS ---------- */
+.review-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px;}
+.review-card{background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px; position:relative;}
+.review-photo{width:calc(100% + 48px); margin:-24px -24px 18px; aspect-ratio:16/9; overflow:hidden; border-radius:16px 16px 0 0;}
+.review-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+.review-score{position:absolute; top:22px; right:22px; width:52px; height:52px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--jade); box-shadow:0 4px 14px rgba(0,0,0,0.2); z-index:2;}
+.review-card .cat{font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--oolong); display:block; margin-bottom:8px;}
+.review-card h3{font-family:var(--font-display); font-size:1.15rem; font-weight:600; margin-bottom:4px; padding-right:60px;}
+.review-card .vendor{font-size:0.82rem; color:var(--ink-soft); margin-bottom:14px; display:block;}
+.purchase-line{display:block; font-family:var(--font-mono); font-size:0.7rem; color:var(--jade); margin-bottom:10px;}
+.reviewer-line{font-size:0.8rem; color:var(--ink-soft); margin-top:10px;}
+.review-bars{margin:14px 0;}
+.rbar{display:flex; align-items:center; gap:10px; margin-bottom:7px;}
+.rbar .label{font-size:0.76rem; color:var(--ink-soft); width:78px; flex-shrink:0;}
+.rbar .track{flex:1; height:6px; background:var(--jade-pale); border-radius:4px; overflow:hidden;}
+.rbar .fill{height:100%; background:var(--oolong); border-radius:4px;}
+.review-card .verdict{font-size:0.88rem; color:var(--ink-soft); margin-top:14px; border-top:1px solid var(--line); padding-top:14px;}
+.badge-indie{display:inline-flex; align-items:center; gap:5px; font-family:var(--font-mono); font-size:0.68rem; background:var(--puerh); color:#fff; padding:4px 10px; border-radius:20px; margin-bottom:14px;}
+.shop-cta{display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-size:0.85rem; font-weight:600; color:var(--jade); border:1px solid var(--jade); padding:8px 16px; border-radius:20px; transition:all .15s ease;}
+.shop-cta:hover{background:var(--jade); color:#fff;}
+.disclosure{font-size:0.78rem; color:var(--ink-soft); background:var(--jade-pale); border-radius:10px; padding:10px 14px; margin-bottom:24px;}
+
+/* ---------- GEAR ---------- */
+.gear-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-top:36px;}
+.gear-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px;}
+.gear-card h4{font-family:var(--font-display); font-size:1.05rem; margin-bottom:4px;}
+.gear-card .price{font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); margin-bottom:10px; display:block;}
+.gear-card a.shop-cta{width:100%; justify-content:center; box-sizing:border-box;}
+
+/* ---------- MATCHA CHECKER ---------- */
+.matcha-tool{background:#fff; border:1px solid var(--line); border-radius:18px; padding:32px;}
+.mq{margin-bottom:26px; padding-bottom:26px; border-bottom:1px solid var(--line);}
+.mq:last-of-type{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+.mq .qnum{font-family:var(--font-mono); font-size:0.72rem; color:var(--oolong); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px; display:block;}
+.mq h4{font-family:var(--font-display); font-size:1.1rem; font-weight:600; margin-bottom:12px;}
+.mq-options{display:flex; flex-direction:column; gap:8px;}
+.mq-options label{display:flex; align-items:center; gap:10px; padding:11px 14px; border:1px solid var(--line); border-radius:10px; cursor:pointer; font-size:0.92rem; transition:all .15s ease;}
+.mq-options label:hover{background:var(--jade-pale);}
+.mq-options input:checked + span{font-weight:600;}
+.mq-options label:has(input:checked){border-color:var(--jade); background:var(--jade-pale);}
+.matcha-result{margin-top:30px; padding:26px; border-radius:16px; text-align:center;}
+.matcha-result.genuine{background:var(--jade-pale); border:1px solid var(--jade);}
+.matcha-result.caution{background:#FBF0DE; border:1px solid var(--gold);}
+.matcha-result.risky{background:#F6E2DA; border:1px solid var(--oolong);}
+.matcha-result .verdict-label{font-family:var(--font-display); font-size:1.5rem; font-weight:600; margin-bottom:8px;}
+.matcha-result p{color:var(--ink-soft); font-size:0.92rem; max-width:52ch; margin:0 auto;}
+.matcha-facts{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:28px;}
+@media (max-width:700px){.matcha-facts{grid-template-columns:1fr;}}
+.mfact{background:var(--jade-pale); border-radius:12px; padding:16px;}
+.mfact .num{font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--jade); display:block;}
+.mfact .lbl{font-size:0.8rem; color:var(--ink-soft);}
+
+/* ---------- STEEP TIMER ---------- */
+.timer-tool{background:#fff; border:1px solid var(--line); border-radius:18px; padding:32px; text-align:center;}
+.timer-teas{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:32px;}
+.timer-teas button{font-family:var(--font-body); font-size:0.88rem; font-weight:600; padding:10px 18px; border-radius:24px; border:1.5px solid var(--line); background:#fff; cursor:pointer; transition:all .15s ease;}
+.timer-teas button:hover{border-color:var(--jade);}
+.timer-teas button.sel{background:var(--jade); border-color:var(--jade); color:#fff;}
+.timer-dial{width:220px; height:220px; margin:0 auto 24px; position:relative;}
+.timer-dial svg{width:100%; height:100%; transform:rotate(-90deg);}
+.timer-dial .bg{fill:none; stroke:var(--jade-pale); stroke-width:10;}
+.timer-dial .fg{fill:none; stroke:var(--oolong); stroke-width:10; stroke-linecap:round; transition:stroke-dashoffset 1s linear;}
+.timer-display{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+.timer-display .t{font-family:var(--font-display); font-size:2.4rem; font-weight:700;}
+.timer-display .temp{font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-soft); margin-top:4px;}
+.timer-controls{display:flex; gap:12px; justify-content:center;}
+.timer-controls button{font-weight:600; font-size:0.92rem; padding:12px 26px; border-radius:24px; border:none; cursor:pointer;}
+.timer-controls .start{background:var(--ink); color:#fff;}
+.timer-controls .reset{background:var(--jade-pale); color:var(--ink);}
+.timer-done{color:var(--jade); font-family:var(--font-display); font-weight:600; font-size:1.2rem; margin-top:16px; display:none;}
+.timer-done.show{display:block;}
+
+/* ---------- NEWSLETTER / FOOTER ---------- */
+.cta-band{background:var(--puerh); color:var(--white-tea); padding:64px 0; text-align:center;}
+.cta-band h2{color:#fff;}
+.cta-band p{color:#D8C9BC; max-width:50ch; margin:0 auto 28px;}
+.cta-band .btn-primary{background:var(--gold); color:var(--puerh);}
+.cta-band .btn-primary:hover{background:#fff;}
+.newsletter-form{max-width:440px; margin:0 auto;}
+.nl-row{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
+.nl-row input[type=email]{flex:1; min-width:220px; padding:13px 18px; border-radius:30px; border:none; font-family:var(--font-body); font-size:0.95rem;}
+.nl-status{margin-top:12px; font-size:0.85rem; color:var(--gold); min-height:1.2em;}
+
+footer{background:var(--black-tea); color:#B8A99C; padding:50px 0 30px; font-size:0.88rem;}
+.footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:32px; margin-bottom:36px;}
+@media (max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;}}
+footer h4{color:#fff; font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px;}
+footer a{display:block; margin-bottom:8px; color:#B8A99C;}
+footer a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.78rem;}
+.footer-resources{border-top:1px solid rgba(255,255,255,0.1); padding:28px 0; display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+@media (max-width:700px){.footer-resources{grid-template-columns:1fr;}}
+.footer-resources a{font-size:0.85rem;}
+
+/* ---------- ADVERTISE / MEDIA KIT ---------- */
+.ad-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+@media (max-width:700px){.ad-grid{grid-template-columns:1fr;}}
+.ad-card{background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px;}
+.ad-card h3{font-family:var(--font-display); font-size:1.1rem; font-weight:600; margin-bottom:12px;}
+.ad-card ul{padding-left:18px; color:var(--ink-soft); font-size:0.9rem;}
+.ad-card li{margin-bottom:10px;}
+
+/* ---------- FAQ ---------- */
+.faq-list{display:flex; flex-direction:column; gap:14px;}
+.faq-item{background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px 26px;}
+.faq-item h3{font-family:var(--font-display); font-size:1.05rem; font-weight:600; margin-bottom:8px;}
+.faq-item p{color:var(--ink-soft); font-size:0.92rem;}
+.faq-item a{color:var(--jade); font-weight:600; cursor:pointer;}
+
+/* ---------- CAFFEINE CHART ---------- */
+.caf-row{margin-bottom:22px; padding-bottom:20px; border-bottom:1px solid var(--line);}
+.caf-row:last-child{border-bottom:none;}
+.caf-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;}
+.caf-name{font-family:var(--font-display); font-size:1.02rem; font-weight:600;}
+.caf-val{font-family:var(--font-mono); font-size:0.8rem; color:var(--oolong);}
+.caf-track{height:14px; background:var(--jade-pale); border-radius:8px; overflow:hidden; position:relative;}
+.caf-bar{height:100%; background:var(--oolong); border-radius:8px;}
+.caf-bar.coffee{background:var(--puerh);}
+.caf-note{font-size:0.83rem; color:var(--ink-soft); margin-top:8px;}
+
+.page{display:none;}
+.page.active{display:block;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <div class="logo"><span class="leaf">襏</span>Steep<span style="color:var(--oolong)">HQ</span></div>
+    <button class="nav-toggle" onclick="document.querySelector('nav.links').classList.toggle('open')">☰</button>
+    <nav class="links">
+      <button data-pg="home" onclick="go('home')" class="active">Home</button>
+      <button data-pg="map" onclick="go('map')">Region Map</button>
+      <button data-pg="learn" onclick="go('learn')">Learn</button>
+      <button data-pg="reviews" onclick="go('reviews')">Reviews</button>
+      <button data-pg="finder" onclick="go('finder')">Tea Finder</button>
+      <button data-pg="matcha" onclick="go('matcha')">Matcha Check</button>
+      <button data-pg="timer" onclick="go('timer')">Steep Timer</button>
+      <button data-pg="brew" onclick="go('brew')">Brew Guides</button>
+      <button data-pg="about" onclick="go('about')">About</button>
+      <button data-pg="advertise" onclick="go('advertise')">Advertise</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<div class="page active" id="pg-home">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow">The independent tea reference</div>
+        <h1>Every region. Every leaf.<br><em>One honest map.</em></h1>
+        <p class="lede">SteepHQ is a free, ad-honest reference for tea: an interactive map of every growing region on earth, a plain-English encyclopedia of how tea actually becomes tea, and reviews we don't get paid to write.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="go('map')">Explore the world map →</button>
+          <button class="btn btn-outline" onclick="go('learn')">Start learning</button>
+        </div>
+        <div class="liquor-bar">
+          <span style="background:#F3EEE2"></span><span style="background:#D7E4B0"></span><span style="background:#C9D98A"></span>
+          <span style="background:#D9A441"></span><span style="background:#B8763E"></span><span style="background:#6B3A2A"></span>
+        </div>
+        <div class="liquor-labels">
+          <span>White</span><span>Green</span><span>Yellow</span><span>Oolong</span><span>Black</span><span>Pu-erh</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1736950825214-1b5e2bdbb5f8?w=900&q=80&auto=format&fit=crop" alt="Tea plantation in Munnar, Kerala, India" loading="lazy">
+        </div>
+        <div class="cup-card">
+          <h3>Today's region: Darjeeling</h3>
+          <div class="cup-row"><span><span class="dot" style="background:#B8763E"></span>Altitude</span><span class="val">600–2,000m</span></div>
+          <div class="cup-row"><span><span class="dot" style="background:#7A9B76"></span>First flush</span><span class="val">Mar – Apr</span></div>
+          <div class="cup-row"><span><span class="dot" style="background:#C9A15A"></span>Signature note</span><span class="val">Muscatel</span></div>
+          <div class="cup-row"><span><span class="dot" style="background:#4A342A"></span>Processing</span><span class="val">Orthodox, light oxidation</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why SteepHQ</div>
+        <h2>Most tea sites are <em>selling</em> you tea.</h2>
+        <p>Education hubs push certification courses. Review "blogs" are run by the shops shipping the product. We built the thing that was missing: a reference site with nothing to sell you but understanding.</p>
+      </div>
+      <div class="tea-grid">
+        <div class="tea-card">
+          <div class="tea-swatch" style="background:var(--jade)"></div>
+          <h3>Free encyclopedia</h3>
+          <p>Every tea type, processing method, and grading system explained in plain English — no course paywall.</p>
+        </div>
+        <div class="tea-card">
+          <div class="tea-swatch" style="background:var(--oolong)"></div>
+          <h3>Interactive world map</h3>
+          <p>Click any region — Darjeeling, Wuyi, Uji, Nuwara Eliya — for altitude, harvest windows, and what makes it distinct. No one else has built this.</p>
+        </div>
+        <div class="tea-card">
+          <div class="tea-swatch" style="background:var(--puerh)"></div>
+          <h3>Independent reviews</h3>
+          <p>Scored on leaf grade, aroma, liquor clarity, and value — by people who don't own the shop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg">
+    <div class="wrap" style="max-width:760px">
+      <div class="section-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>Common <em>tea questions</em>, answered straight</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <h3>How long should I steep green tea?</h3>
+          <p>1–3 minutes at 70–80°C. Green tea is the most forgiving-to-ruin category — oversteeping past a few minutes at high heat is what causes the bitterness most people associate with "bad" green tea. Use the <a onclick="go('timer')" href="#">steep timer</a> to get it right every time.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is pu-erh tea caffeinated?</h3>
+          <p>Yes — pu-erh comes from the same Camellia sinensis plant as every other tea on this site, so it contains caffeine. Fermentation changes flavor, not caffeine content in any significant way.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What's the difference between oolong and black tea?</h3>
+          <p>Oxidation level. Oolong is partially oxidized (10–80%, the widest range of any category), while black tea is fully oxidized (~100%). See the full breakdown on the <a onclick="go('learn')" href="#">tea encyclopedia</a>.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is ceremonial-grade matcha worth the extra price?</h3>
+          <p>Usually yes for drinking straight, but the bigger issue in 2026 is mislabeling, not just price — a lot of "ceremonial grade" on shelves right now isn't genuine. Run our free <a onclick="go('matcha')" href="#">matcha authenticity checker</a> before you pay a premium.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What's the best tea for a beginner?</h3>
+          <p>A mid-oxidation oolong or a straightforward black tea like Assam is the easiest entry point — more forgiving on brew time and temperature than delicate greens or whites. See our <a onclick="go('reviews')" href="#">independent reviews</a> for specific picks.</p>
+        </div>
+      </div>
+      <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; margin-top:28px;">Still have a question, a correction, or something you need help with? <a href="mailto:steephq3311@gmail.com" style="color:var(--jade); font-weight:600;">Email steephq3311@gmail.com</a> — a real person reads every message.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ MAP ============ -->
+<div class="page" id="pg-map">
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Interactive · 50 regions</div>
+        <h2>The world's tea regions, <em>at a glance</em></h2>
+        <p>Every marker is a real tea-growing region. Click one for altitude, harvest season, and the teas it's known for.</p>
+      </div>
+      <div class="map-layout">
+        <div class="map-stage">
+          <svg viewBox="0 0 1000 600" id="worldmap"></svg>
+          <div class="map-hint">click a marker</div>
+        </div>
+        <div class="region-panel" id="regionPanel">
+          <div class="placeholder">← Select a region on the map<br>to see its profile</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LEARN ============ -->
+<div class="page" id="pg-learn">
+  <section>
+    <div class="wrap">
+      <div class="section-banner">
+        <img src="https://images.unsplash.com/photo-1531969179221-3946e6b5a5e7?w=1400&q=80&auto=format&fit=crop" alt="Traditional tea ceremony, pouring hot water" loading="lazy">
+        <span class="caption">Photo: 五玄土 ORIENTO / Unsplash</span>
+      </div>
+      <div class="section-head">
+        <div class="eyebrow">The encyclopedia</div>
+        <h2>All tea comes from <em>one plant.</em></h2>
+        <p><i>Camellia sinensis.</i> Every tea type below — white, green, yellow, oolong, black, pu-erh — is the same leaf, taken through a different processing path. Click a card to go deep.</p>
+      </div>
+      <div class="tea-grid" id="teaGrid"></div>
+      <div class="tea-detail" id="teaDetail"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ REVIEWS ============ -->
+<div class="page" id="pg-reviews">
+  <section>
+    <div class="wrap">
+      <div class="section-banner">
+        <img src="https://images.unsplash.com/photo-1761483281120-4fc47bfe3e29?w=1400&q=80&auto=format&fit=crop" alt="Tea being poured into a cup" loading="lazy">
+        <span class="caption">Photo: AJOY DAS / Unsplash</span>
+      </div>
+      <div class="section-head">
+        <div class="eyebrow">Independent · unsponsored</div>
+        <h2>Reviews with <em>nothing to sell you.</em></h2>
+        <p>We buy every tea we review at retail price. Scores are on leaf grade, aroma, liquor, and value for money — not how nice the box is.</p>
+      </div>
+      <div class="disclosure">Disclosure: some "Shop this tea" links below are affiliate links — if you buy through them, SteepHQ earns a small commission at no extra cost to you. This never affects a review's score; scores are locked in before any link is added.</div>
+      <div class="review-grid" id="reviewGrid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ TEA FINDER ============ -->
+<div class="page" id="pg-finder">
+  <section>
+    <div class="wrap" style="max-width:820px">
+      <div class="section-head">
+        <div class="eyebrow">Free tool</div>
+        <h2>Which tea <em>should you actually buy?</em></h2>
+        <p>Four questions. No email required, no upsell — just a straight recommendation based on what you actually like.</p>
+      </div>
+      <div class="matcha-tool" id="finderTool"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CAFFEINE ============ -->
+<div class="page" id="pg-caffeine">
+  <section>
+    <div class="wrap" style="max-width:860px">
+      <div class="section-head">
+        <div class="eyebrow">Reference</div>
+        <h2>How much <em>caffeine</em> is in your tea?</h2>
+        <p>Most charts online give one confident number per tea type. That's misleading — caffeine varies enormously with leaf, harvest, water temperature, steep time, and how much leaf you use. These are honest ranges per 8oz cup, not false precision.</p>
+      </div>
+      <div id="caffeineChart"></div>
+      <div class="disclosure" style="margin-top:26px;">Ranges are typical for an 8oz cup at standard brewing parameters. Your actual cup can fall outside them — a heavily-leafed gongfu session or a long steep will push higher, a quick rinse-and-pour lower.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ MATCHA CHECK ============ -->
+<div class="page" id="pg-matcha">
+  <section>
+    <div class="wrap" style="max-width:900px">
+      <div class="section-banner">
+        <img src="https://images.unsplash.com/photo-1755685977172-213081976785?w=1400&q=80&auto=format&fit=crop" alt="Matcha powder, whisk, and chawan bowl" loading="lazy">
+        <span class="caption">Photo: Very Matcha / Unsplash</span>
+      </div>
+      <div class="section-head">
+        <div class="eyebrow">Free tool · updated for the 2026 shortage</div>
+        <h2>Is your matcha <em>actually</em> ceremonial grade?</h2>
+        <p>A genuine tencha shortage has been squeezing Japan since late 2024, and prices are still elevated through 2026. When authentic supply runs short, relabeled sencha powder, aged stock, and non-Japanese matcha sold as "ceremonial" fill the gap. Answer these 5 questions honestly — this isn't a lab test, but it catches the most common red flags.</p>
+        <p style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); margin-top:10px;">Last updated: July 2026</p>
+      </div>
+      <div class="matcha-tool" id="matchaTool"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ STEEP TIMER ============ -->
+<div class="page" id="pg-timer">
+  <section>
+    <div class="wrap" style="max-width:820px">
+      <div class="section-head">
+        <div class="eyebrow">Free tool</div>
+        <h2>Steep <em>timer</em></h2>
+        <p>Pick a tea type for the right water temp and steep time, then start the countdown — a sound plays when it's ready.</p>
+      </div>
+      <div class="timer-tool" id="timerTool"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ BREW ============ -->
+<div class="page" id="pg-brew">
+  <section>
+    <div class="wrap">
+      <div class="section-banner">
+        <img src="https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=1400&q=80&auto=format&fit=crop" alt="Cup and teapot for brewing tea" loading="lazy">
+        <span class="caption">Photo: Sergey N / Unsplash</span>
+      </div>
+      <div class="section-head">
+        <div class="eyebrow">Practical</div>
+        <h2>Brew it <em>right</em>, by tea type</h2>
+        <p>Water temperature and steep time matter more than any other variable. Here's the reference.</p>
+      </div>
+      <div class="tea-grid" id="brewGrid"></div>
+
+      <div class="section-head" style="margin-top:56px;">
+        <div class="eyebrow">Gear that actually matters</div>
+        <h2>The <em>equipment</em> worth owning</h2>
+        <p>We only list gear we'd buy ourselves. Contains affiliate links — see disclosure below.</p>
+      </div>
+      <div class="disclosure">Disclosure: links below are Amazon Associates affiliate links. SteepHQ earns a small commission on qualifying purchases at no extra cost to you.</div>
+      <div class="gear-grid" id="gearGrid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" id="pg-about">
+  <section>
+    <div class="wrap" style="max-width:720px">
+      <div class="section-head">
+        <div class="eyebrow">About</div>
+        <h2>Built by tea drinkers, <em>not tea sellers.</em></h2>
+      </div>
+      <p style="color:var(--ink-soft); margin-bottom:18px;">SteepHQ exists because the internet has plenty of places to buy tea and surprisingly few places to simply understand it. We're not affiliated with any tea estate, importer, or brand — the reviews section is funded by contextual affiliate links on gear (kettles, gaiwans, infusers), never by paid placement of tea itself.</p>
+      <p style="color:var(--ink-soft); margin-bottom:18px;"><b>This is where to reach us</b> — a region we're missing, a correction, a tea you think deserves an honest review, or just a question about anything on the site. A real person reads every email and answers it.</p>
+      <p><a href="mailto:steephq3311@gmail.com" class="btn btn-outline" style="display:inline-flex">steephq3311@gmail.com</a></p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ADVERTISE ============ -->
+<div class="page" id="pg-advertise">
+  <section>
+    <div class="wrap" style="max-width:820px">
+      <div class="section-head">
+        <div class="eyebrow">Media Kit</div>
+        <h2>Reach people <em>actually researching</em> tea.</h2>
+        <p>SteepHQ visitors aren't scrolling — they're actively comparing regions, checking matcha authenticity, or reading reviews before a purchase. That's a buyer-intent audience, not a passive one.</p>
+      </div>
+
+      <div class="ad-grid">
+        <div class="ad-card">
+          <h3>Who's here</h3>
+          <ul>
+            <li>Loose-leaf and specialty tea buyers researching before purchase</li>
+            <li>Matcha buyers specifically checking authenticity amid the 2026 shortage</li>
+            <li>Home brewers using the steep timer and brew guides</li>
+            <li>Readers arriving via region and tea-type search, not social media scroll</li>
+          </ul>
+        </div>
+        <div class="ad-card">
+          <h3>Placement options</h3>
+          <ul>
+            <li><b>Reviewed product placement</b> — full independent review with photos, scored honestly, "Shop this tea" link</li>
+            <li><b>Region page sponsorship</b> — a relevant vendor note on a specific growing-region page (e.g. a Darjeeling importer on the Darjeeling page)</li>
+            <li><b>Newsletter mention</b> — one line in the weekly region/review email</li>
+            <li><b>Footer resource link</b> — listed alongside the tea companies and blogs we already link to</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:44px;">
+        <div class="eyebrow">How pricing works</div>
+        <h2>No <em>fixed</em> rate card yet.</h2>
+        <p style="color:var(--ink-soft)">SteepHQ is a new site — rates will be set once there's real traffic data to back them up, and early partners get founding-partner pricing. If you're a tea company or teaware brand interested in being featured, this inbox goes straight to a real person — reach out and we'll figure out the right fit together.</p>
+      </div>
+      <p><a href="mailto:steephq3311@gmail.com" class="btn btn-primary" style="display:inline-flex">steephq3311@gmail.com</a></p>
+    </div>
+  </section>
+</div>
+
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>New region added <em>every week.</em></h2>
+    <p>Get one email when we publish a new region profile or independent review. No spam, no upsell.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="nl-row">
+        <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address">
+        <button type="submit" class="btn btn-primary">Get the weekly steep</button>
+      </div>
+      <p class="nl-status" id="nlStatus"></p>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:#fff">Steep<span style="color:var(--oolong)">HQ</span></div>
+        <p style="margin-top:12px; max-width:32ch; color:#8A7B6E;">The independent reference for tea regions, processing, and honest reviews.</p>
+      </div>
+      <div><h4>Explore</h4>
+        <a onclick="go('map')" href="#">Region Map</a>
+        <a onclick="go('learn')" href="#">Encyclopedia</a>
+        <a onclick="go('reviews')" href="#">Reviews</a>
+        <a onclick="go('finder')" href="#">Tea Finder</a>
+        <a onclick="go('matcha')" href="#">Matcha Check</a>
+      </div>
+      <div><h4>Reference</h4>
+        <a onclick="go('brew')" href="#">Brew Guides</a>
+        <a onclick="go('caffeine')" href="#">Caffeine Levels</a>
+        <a href="/glossary/">Tea Glossary</a>
+        <a href="/journal/">Journal</a>
+        <a onclick="go('about')" href="#">About</a>
+      </div>
+      <div><h4>Contact</h4>
+        <a href="mailto:steephq3311@gmail.com">steephq3311@gmail.com</a>
+        <span style="display:block; font-size:0.78rem; color:#8A7B6E; margin-top:-4px;">Questions, corrections, or feedback — a real person answers.</span>
+      </div>
+    </div>
+    <div class="footer-resources">
+      <div>
+        <h4>Tea Companies We Follow</h4>
+        <a href="https://www.teavivre.com" target="_blank" rel="noopener">TeaVivre</a>
+        <a href="https://www.yunnansourcing.com" target="_blank" rel="noopener">Yunnan Sourcing</a>
+        <a href="https://verdanttea.com" target="_blank" rel="noopener">Verdant Tea</a>
+        <a href="https://camellia-sinensis.com" target="_blank" rel="noopener">Camellia Sinensis</a>
+        <a href="https://www.harney.com" target="_blank" rel="noopener">Harney & Sons</a>
+      </div>
+      <div>
+        <h4>Tea Blogs &amp; Communities</h4>
+        <a href="https://ratetea.com" target="_blank" rel="noopener">RateTea — community tea reviews</a>
+        <a href="https://yunomi.life/blogs/ocha" target="_blank" rel="noopener">Yunomi — Japanese tea culture</a>
+        <a href="https://obubutea.com/about-us/blog/" target="_blank" rel="noopener">Obubu Tea Farms Blog</a>
+        <a href="https://www.myjapanesegreentea.com" target="_blank" rel="noopener">My Japanese Green Tea</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SteepHQ. Not affiliated with any tea estate or brand.</span>
+      <span><a href="/privacy/" style="color:#8A7B6E">Privacy</a> · <a href="/terms/" style="color:#8A7B6E">Terms</a> · <a href="/cookies/" style="color:#8A7B6E">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------------- NAV ---------------- */
+function go(pg){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('pg-'+pg).classList.add('active');
+  document.querySelectorAll('nav.links button').forEach(b=>b.classList.remove('active'));
+  const navBtn = document.querySelector('nav.links button[data-pg="'+pg+'"]');
+  if(navBtn) navBtn.classList.add('active');
+  document.querySelector('nav.links').classList.remove('open');
+  if(history.replaceState) history.replaceState(null, '', '#'+pg);
+  window.scrollTo({top:0, behavior:'instant'});
+  // GA4 virtual pageview — the SPA doesn't reload on tab switch, so this fires manually
+  if (typeof gtag === 'function') {
+    gtag('event', 'page_view', {
+      page_title: 'SteepHQ — ' + pg,
+      page_path: '/#' + pg
+    });
+  }
+}
+// deep-link support: /#map, /#reviews, /#matcha, /#learn, /#brew, /#about, /#home
+(function(){
+  const validPages = ['home','map','learn','reviews','finder','caffeine','matcha','timer','brew','about','advertise'];
+  const hash = location.hash.replace('#','');
+  if(validPages.includes(hash)) go(hash);
+})();
+
+/* ---------------- REGION DATA (real projected coordinates, Natural Earth projection) ---------------- */
+const MAP_W = 1000, MAP_H = 600;
+const LAND_PATH = "M386.784,543.424L386.988,544.579L387.133,545.582L382.981,545.278L378.877,545.41L375.962,544.667L375.897,544.579L374.372,543.914L378.699,544.002L382.936,544.224L383.718,543.288L384.201,542.476ZM195.301,542.169L192.165,542.487L188.278,541.666L185.776,540.832L185.471,540.691L183.166,540.038L182.931,539.142L187.137,539.522L190.244,540.272L193.053,541.112ZM412.041,538.716L414.878,539.758L416.338,541.204L417.014,542.212L417.631,543.389L415.041,544.106L412.26,544.678L409.005,545.203L405.321,545.638L400.798,545.507L397.867,544.765L397.639,543.837L401.333,543.21L402.554,542.44L403.228,541.435L403.658,540.554L404.417,539.709L405.21,538.716L406.199,538.716L408.873,538.193ZM251.96,527.179L254.995,527.592L257.005,527.13L256.709,528.054L255.431,528.722L252.403,528.514L249.471,527.592L249.071,526.715ZM243.013,527.13L247.147,528.156L245.842,528.054L242.951,527.797L239.43,527.076L240.36,526.51ZM294.294,523.015L296.846,523.383L298.89,523.07L301.211,524.585L299.444,524.377L297.013,524.481L294.381,524.377L291.703,524.535L289.193,524.011L287.256,522.911L288.199,522.438L291.122,522.806ZM356.403,520.383L357.265,521.6L357.433,522.652L357.379,523.65L355.139,524.016L353.104,524.54L350.368,524.49L350.809,523.441L348.569,523.808L346.462,524.174L344.436,523.387L343.697,522.284L345.407,521.23L346.665,520.91L349.14,521.015L349.032,519.634L348.628,518.625L347.452,516.424L348.009,515.128L349.762,514.693L351.399,515.72L352.402,516.745L353.931,517.983L355.214,519.156ZM181.681,552.997L181.681,552.997L181.681,552.997L181.833,553.012L180.044,551.971L185.031,552.538L185.034,552.474L185.064,552.325L185.088,552.138L185.119,551.978L185.139,551.897L185.412,551.9L185.692,551.931L190.593,552.682L190.545,551.931L190.638,551.825L194.965,551.498L197.906,551.931L199.382,552.151L203.848,552.745L210.259,553.191L215.928,553.722L223.971,554.11L227.546,553.657L236.02,553.983L241.849,554.488L244.947,554.014L248.477,553.558L246.636,552.745L239.467,552.676L232.598,552.255L229.248,551.536L223.415,551.128L221.661,550.259L220.499,549.442L219.565,548.685L217.455,547.83L213.227,547.249L210.34,546.489L206.161,545.805L210.953,545.935L214.655,545.589L218.685,546.32L220.871,545.679L222.543,544.852L222.819,544.102L220.648,543.164L217.192,542.531L213.319,541.844L209.162,541.706L205.204,541.384L201.111,541.152L198.491,540.268L194.842,539.518L192.042,538.667L187.37,535.87L188.681,536.114L191.553,536.889L194.444,536.647L197.097,536.307L200.194,537.373L202.972,537.131L204.863,536.601L206.42,535.92L207.571,535.088L210.244,534.841L208.978,533.903L207.103,532.959L206.582,532.061L208.632,531.61L210.834,532.459L213.306,531.961L214.855,531.305L217.672,531.253L220.107,531.005L222.152,530.397L223.705,529.836L225.554,529.278L227.313,529.432L228.919,529.634L231.56,529.278L234.746,529.735L237.474,529.687L239.762,529.331L242.757,529.581L246.037,529.836L248.75,529.735L251.742,529.788L254.8,529.836L257.481,529.735L258.814,528.969L260.898,528.563L263.976,529.124L265.974,528.665L267.34,527.743L269.391,528.563L270.939,529.48L273.039,530.345L274.446,529.581L277.731,530.546L280.729,530.852L283.685,531.557L286.39,531.405L288.563,530.952L291.682,531.053L294.706,531.405L297.844,531.857L297.993,530.751L295.978,529.889L294.237,528.969L291.445,528.766L289.491,527.792L288.257,526.813L285.956,524.841L287.826,525.206L290.65,525.363L293.192,525.206L295.937,525.623L298.625,526.402L300.212,527.33L303.098,527.486L305.471,527.125L307.9,526.608L310.2,526.295L312.734,526.916L315.318,526.711L315.691,524.688L318.168,525.883L320.858,526.349L323.257,526.089L325.631,527.125L328.387,527.228L331.069,527.535L333.876,528.103L334.856,527.125L335.068,526.192L337.764,527.228L340.412,526.969L342.84,527.535L344.764,528.408L347.324,528.151L349.109,527.588L350.807,526.916L353.09,526.554L355.817,526.246L358.241,525.883L359.956,525.314L360.735,524.476L360.635,523.328L359.838,522.22L358.657,521.166L357.389,520.103L356.203,519.04L355.188,518.075L354.54,517.005L354.222,515.926L354.726,514.898L355.027,513.76L354.858,512.674L353.872,511.47L353.115,510.371L353.601,509.107L354.422,508.282L355.372,507.23L356.483,506.338L357.891,505.506L358.237,504.276L359.122,503.493L360.21,502.761L362.276,502.596L363.31,501.693L364.663,501.133L366.362,500.792L367.709,500.059L368.636,499.149L370.272,498.811L371.856,499.551L371.375,500.509L369.417,501.357L368.689,501.975L366.868,501.527L365.142,501.809L363.887,502.485L362.563,503.212L361.821,504.054L361.975,505.169L362.546,506.227L363.964,507.172L362.744,507.837L360.785,508.057L359.988,508.997L359.096,509.877L358.275,511.087L358.4,512.127L359.678,513.271L361.206,514.14L363.264,514.791L365.28,515.655L366.636,516.735L367.551,517.756L368.657,518.828L370.049,519.731L371.124,520.74L372.542,523.219L373.607,524.215L374.257,525.26L375.387,526.295L375.77,527.69L375.176,528.766L374.414,529.634L371.896,529.99L371.458,530.9L370.687,531.757L368.181,532.709L365.742,533.11L363.557,533.655L361.187,534.203L360.227,535.236L357.11,535.333L353.563,535.236L350.549,535.431L347.217,535.431L348.506,536.408L351.809,536.843L354.468,537.518L356.285,538.379L354.646,539.138L351.12,538.901L348.799,539.518L349.431,540.502L350.082,541.431L352.958,542.208L354.068,543.07L357.185,543.922L361.487,544.278L365.388,544.894L368.652,545.589L372.632,546.279L377.542,546.617L382.576,547.206L386.231,547.83L390.223,548.524L392.808,549.483L394.334,550.223L395.947,549.521L398.487,548.928L401.208,548.279L404.674,547.748L407.599,547.166L412.193,547.123L416.906,547.415L420.918,547.911L421.621,546.996L423.886,546.364L428.583,546.32L432.076,545.85L435.402,545.372L439.19,545.068L443.215,544.674L445.953,544.102L444.359,543.296L443.288,542.484L443.02,541.614L439.325,541.706L435.509,542.074L431.759,542.074L430.907,541.2L430.551,539.424L431.248,538.901L433.848,538.334L436.963,537.759L439.131,537.035L441.317,536.307L442.847,535.333L445.448,534.892L448.053,534.548L449.367,534.348L452.424,534.25L455.277,533.903L457.646,533.406L459.965,532.808L462.067,532.208L464.737,531.405L466.394,530.546L468.195,529.788L468.667,528.766L466.434,528.151L467.016,527.072L468.28,526.246L470.351,525.726L472.547,525.102L474.57,524.269L476.095,523.219L477.008,521.96L478.468,521.216L480.971,521.376L482.052,522.274L484.549,522.379L484.576,521.376L485.591,520.319L487.861,520.585L488.438,521.591L490.932,521.746L493.627,521.271L496.243,520.955L498.618,521.111L499.524,522.22L501.818,521.326L503.955,520.846L506.338,520.475L508.689,520.103L510.853,519.464L513.221,519.04L515.072,518.45L516.403,517.487L517.939,518.186L520.156,517.811L521.601,519.091L522.716,520.052L525.152,519.519L526.195,518.45L528.419,517.7L531.183,517.862L531.895,518.879L533.751,517.862L536.067,517.543L538.567,517.436L540.803,517.487L543.12,517.811L545.382,517.969L546.228,518.879L547.463,519.68L549.847,519.202L552.346,519.091L554.736,519.091L557.098,519.04L559.283,518.667L561.584,518.343L563.609,517.594L565.706,517.112L567.929,516.842L569.725,516.089L571.245,514.576L572.68,513.652L574.799,514.088L575.399,515.062L577.071,515.711L579.345,515.496L580.59,516.466L581.973,517.167L584.317,516.521L585.403,515.333L587.464,514.847L589.958,513.924L592.171,513.544L594.858,512.998L596.731,512.4L598.706,511.744L600.591,511.144L602.518,511.47L604.788,510.485L606.448,509.716L608.472,509.768L610.49,509.107L611.253,508.115L613.36,507.34L615.351,506.784L617.704,506.338L619.807,506.117L621.675,506.285L623.643,506.563L625.109,507.34L624.857,508.554L626.412,509.492L627.421,510.262L629.878,510.594L631.004,511.361L632.463,512.127L634.457,512.292L636.425,511.744L638.794,510.594L640.563,511.196L642.532,511.527L644.412,511.853L646.424,512.07L648.574,512.07L648.955,514.955L648.526,515.655L647.66,516.898L645.286,517.594L643.127,518.611L642.889,519.68L645.263,519.625L644.439,520.69L642.867,521.696L641.322,522.802L642.476,523.641L644.734,523.903L647.38,523.432L649.088,522.379L650.314,521.376L651.917,520.53L653.657,519.731L654.697,518.773L656.524,517.436L657.995,517.167L660.468,517.056L662.759,516.735L665.161,516.303L666.798,515.226L667.994,514.196L670.028,513.163L672.526,512.452L674.643,511.91L676.352,510.978L677.851,510.485L679.675,510.044L681.683,510.319L683.794,510.044L686.109,509.716L688.4,509.877L690.427,509.107L692.647,507.23L693.002,508.005L693.24,509.33L694.741,509.877L696.683,510.101L698.976,509.768L701.052,509.987L703.056,510.044L704.591,509.768L706.314,509.934L707.579,510.537L709.782,510.153L712.126,510.153L714.375,509.768L716.375,510.153L718.457,509.216L720.196,508.282L722.225,507.503L726.401,505.395L727.555,505.785L728.697,506.563L729.462,507.56L731.029,509.273L733.118,509.33L735.123,509.33L737.71,508.997L740.341,508.611L742.714,507.837L744.829,507.004L747.357,506.894L749.449,506.285L750.751,506.842L751.185,507.727L752.044,508.611L754.524,508.501L755.45,509.216L757.475,509.934L759.972,510.21L762.404,509.987L764.832,509.107L767.007,508.224L769.153,508.005L770.805,508.392L772.835,508.668L775.258,508.224L777.223,508.224L778.911,508.501L780.681,508.778L783.075,508.282L785.813,507.837L788.137,507.727L790.624,507.727L792.878,507.45L795.053,507.23L796.898,505.838L798.023,504.667L798.71,505.448L797.951,506.726L797.617,507.895L797.665,508.83L799.037,509.33L801.659,509.164L804.573,509.107L806.691,508.94L809.545,508.94L811.65,508.888L814.398,508.997L816.613,509.216L817.274,510.101L815.814,511.144L816.386,511.962L818.041,512.617L819.711,513.328L821.985,513.816L824.424,514.248L826.141,514.683L828.506,514.739L830.887,513.816L831.955,514.576L832.641,515.44L833.804,516.089L836.084,516.359L838.178,516.68L837.991,517.756L839.655,518.399L840.145,519.358L841.988,519.786L844.483,519.731L846.553,519.892L849.131,519.837L851.379,520.052L853.265,520.424L854.646,521.061L856.156,521.591L856.619,522.379L855.028,523.432L852.716,524.373L850.229,525.569L848.274,526.505L845.873,527.588L842.649,528.001L840.228,528.921L836.848,529.48L834.569,530.498L831.887,531.457L829.334,532.26L827.056,533.308L825.231,534.25L823.417,535.38L822.111,536.307L821.787,537.277L820.824,538.189L820.408,539.044L823.5,539.375L822.578,540.409L818.48,540.784L814.701,541.292L810.896,541.384L807.063,542.711L804.857,543.791L802.541,544.632L800.016,545.462L801.122,546.191L800.294,547.083L800.255,547.869L800.989,548.563L802.073,549.207L803.329,549.835L805.941,550.451L804.362,551.387L808.38,551.791L808.31,551.931L808.021,552.468L814.36,552.005L816.662,552.574L818.319,552.997L800.884,556.939L778.548,559.123L500,559.123L221.452,559.123L199.116,556.939ZM337.065,470.595L340.825,472.446L344.439,473.211L343.892,474.747L341.679,474.897L340.089,473.819L339.738,475.058L338.041,476.005L335.338,475.659L333.268,474.742L330.604,474.296L326.949,472.581L323.883,470.929L319.259,467.462L321.495,468.113L325.648,470.182L329.249,471.289L329.974,469.873L330.001,467.751L331.788,466.468L333.642,466.836L335.058,468.275ZM356.716,462.042L359.063,463.45L358.642,464.544L355.626,465.478L354.212,464.386L352.56,465.789L350.924,464.386L353.301,462.513L355.601,463.297ZM673.437,457.676L669.579,457.878L670.045,456.201L670.818,454.896L671.188,454.247L672.477,455.244L674.697,455.64L674.586,456.239ZM875.77,429.103L877.683,430.223L879.321,429.778L881.668,429.158L883.098,429.372L881.195,433.221L879.701,434.332L877.968,436.934L877.577,436.049L874.524,438.298L874.101,438.123L872.589,438.02L872.559,435.262L873.374,433.128L873.394,430.305L874.234,428.818ZM946.905,429.515L946.651,430.854L949.315,429.542L949.196,430.908L948.324,432.273L946.4,433.774L943.159,436.153L940.987,437.452L940.89,439.001L938.902,439.039L935.897,440.254L933.768,442.359L930.071,445.598L927.068,447.027L925.165,447.94L922.901,447.87L922.017,446.821L919.441,446.594L919.84,445.419L922.823,443.044L928.143,439.873L930.185,439.268L932.832,438.042L936.132,436.349L938.758,434.677L941.439,432.262L942.938,431.446L944.45,429.636L947.19,428.136ZM960.083,414.007L960.097,417.444L961.384,415.218L962.084,416.107L961.078,418.576L962.58,419.635L964.197,419.9L966.411,418.653L967.52,419.034L965.184,421.924L963.242,423.824L961.295,423.758L960.004,424.744L959.39,426.141L958.633,426.746L956.558,428.499L953.867,430.717L951.05,432.01L951.151,431.161L950.372,430.695L953.538,428.027L953.793,426.235L951.784,424.936L952.561,423.758L955.117,422.623L957.02,420.115L958.098,418.007L958.249,415.82L958.641,415.245L958.113,413.897L957.575,411.004L957.65,408.691L958.772,408.436L959.28,410.252L960.895,411.098ZM959.046,368.188L957.769,368.974L956.525,368.088L954.993,366.615L953.721,364.883L952.539,362.581L952.463,361.468L953.632,361.518L954.877,362.63L955.78,363.737L956.402,364.656L958.072,366.682ZM994.478,352.433L995.197,353.378L994.297,355.081L992.465,355.529L991.046,355.125L991.148,353.688L992.499,352.566L993.653,352.975ZM999.621,349.875L997.658,350.676L995.723,351.361L995.659,350.146L997.208,349.477L998.131,349.295L1000,348.279L999.621,349.875ZM0,348.279L0,348.279L0.535,348.129L0.566,349.698L0.379,349.875L0.379,349.875L0.379,349.875L0,348.279ZM965.952,349.582L964.936,350.013L964.324,348.582L964.613,347.71ZM964.963,344.584L964.869,347.213L964.205,346.804L963.587,346.981L963.385,346.081L963.83,343.579ZM639.537,340.085L639.763,344.01L640.392,345.534L640.013,347.102L639.46,348.063L638.642,346.147L638.051,347.113L638.424,349.533L638.092,350.914L637.271,351.671L636.897,354.434L635.529,358.244L633.814,362.747L631.586,368.946L630.129,373.494L628.539,377.289L626.244,378.065L623.726,379.451L622.236,378.614L620.183,377.444L619.581,375.715L619.655,372.812L618.904,370.203L618.834,367.85L619.51,365.492L620.821,364.927L620.913,363.837L622.415,361.363L622.812,359.278L622.273,357.729L621.892,355.672L621.855,352.665L622.935,350.836L623.438,348.765L624.825,348.643L626.414,347.975L627.479,347.384L628.702,347.345L630.392,345.484L632.8,343.474L633.723,341.835L633.417,340.439L634.58,340.831L636.234,338.568L636.393,336.604L637.388,335.148L638.285,336.549L638.958,337.934ZM900.078,340.764L900.66,343.325L902.661,342.094L903.351,343.474L904.463,344.75L903.914,346.196L903.993,348.991L904.096,350.621L904.716,351.019L904.892,353.81L904.26,355.507L904.667,357.718L907.269,359.427L908.858,360.982L910.357,362.404L909.793,363.195L910.846,365.248L910.972,368.786L912.266,368.066L912.994,369.483L913.805,368.979L913.296,372.447L914.643,374.458L915.533,375.71L916.838,378.359L916.749,380.992L916.193,382.86L915.315,384.884L915.621,387.667L914.406,390.567L913.371,392.087L911.523,395.009L910.841,396.889L909.366,399.234L906.95,402.216L904.303,403.823L902.235,406.36L900.638,407.977L898.594,410.799L896.834,412.426L895.034,414.869L893.626,417.118L893.26,418.15L891.209,419.282L888.219,419.403L885.149,420.738L883.336,422.001L881.067,423.4L879.619,421.957L878.3,421.383L879.519,419.685L877.794,420.303L874.375,422.662L872.546,421.78L871.307,421.262L869.922,421.03L867.831,420.087L867.063,418.079L867.678,415.599L867.792,413.952L867.061,412.625L864.69,412.232L866.22,410.645L866.576,408.22L864.356,410.479L861.755,411.082L863.887,409.272L865.049,407.384L866.707,405.784L867.44,403.357L864.19,406.149L862.084,407.268L860.031,409.87L858.501,408.525L859.269,406.792L858.517,404.416L857.567,403.191L858.349,402.432L855.649,400.448L853.805,400.354L851.793,398.763L846.884,399.073L843.021,400.243L839.592,401.335L837.118,401.118L833.713,402.798L831.136,403.557L830.029,405.269L828.572,406.598L826.286,406.681L824.52,406.969L822.375,406.376L820.348,406.731L818.469,406.88L816.285,408.624L815.562,408.48L813.902,409.405L812.27,410.44L810.381,410.313L808.609,410.313L806.513,408.226L805.3,407.6L805.979,405.728L807.447,405.28L808.141,404.537L808.426,403.363L809.478,401.085L809.784,399.145L809.365,395.83L809.476,393.961L810.126,392.098L809.644,389.963L809.84,388.998L808.994,387.695L809.327,385.128L808.441,382.538L808.404,381.141L809.249,382.555L809.082,379.517L810.196,380.465L810.696,381.735L811.06,380.055L810.322,377.478L810.306,376.447L809.891,375.466L810.621,373.577L811.352,372.768L812.083,371.134L812.203,369.218L813.816,366.864L813.508,369.356L815.142,367.108L817.592,366.012L819.22,364.617L821.56,363.416L822.86,363.162L823.544,363.566L825.957,362.348L827.697,361.983L828.253,361.269L829.046,360.971L830.551,361.048L833.638,360.091L835.417,358.642L836.451,356.894L838.378,355.236L838.741,353.931L839.119,352.157L841.52,349.383L842.215,352.201L843.515,351.549L842.786,350.008L843.915,348.422L845.02,349.129L845.758,346.649L847.527,345.042L848.392,343.756L849.877,343.198L850.05,342.288L851.218,342.668L851.386,341.852L852.676,341.382L854.083,340.941L855.923,342.437L857.186,344.369L858.915,344.391L860.64,344.7L860.325,342.906L862.041,340.295L863.427,339.44L863.097,338.629L864.564,336.764L866.401,335.617L867.779,336.003L870.21,335.39L870.371,333.725L868.449,332.649L869.995,332.175L871.749,332.986L873.072,334.32L875.318,335.153L876.155,334.822L877.753,335.826L879.504,334.894L880.523,335.175L881.258,334.552L882.32,336.163L881.335,337.906L880.091,339.225L879.111,339.335L879.239,340.637L878.177,342.266L876.931,343.872L876.982,344.788L878.892,346.594L880.852,347.638L882.082,348.765L883.734,350.698L884.514,350.693L885.803,351.527L886.036,352.538L888.46,353.644L890.509,352.527L891.4,350.776L892.234,349.328L892.904,347.538L894.213,344.943L894.09,343.364L894.445,342.42L894.423,340.549L895.168,338.094L895.797,337.431L895.521,336.345L896.433,334.618L897.194,332.826L897.382,331.899L898.581,330.675L899.167,332.269L899.089,334.315L899.74,334.706L899.659,336.08L900.433,337.735L900.364,339.583ZM953.486,330.074L954.116,331.194L952.166,331.172L951.372,329.17L952.939,329.953ZM837.749,329.281L836.564,329.341L833.073,327.059L835.742,326.42L837.122,327.412L838.006,328.404ZM950.203,328.084L949.105,328.162L947.434,327.831L946.912,327.329L947.24,326.034L949.023,326.547L949.857,327.23ZM952.632,327.197L952.134,327.798L950.398,324.976L950.039,323.031L950.987,323.031L951.702,325.637ZM848.197,328.955L845.726,329.672L845.434,329.281L845.796,328.173L847.185,326.188L850.075,324.893L850.465,324.127L852.939,323.394L854.905,323.284L855.818,322.876L856.842,323.284L855.737,324.166L852.694,325.588L850.258,326.525ZM830.477,322.298L831.418,323.168L833.174,322.904L833.758,324.287L830.466,324.943L828.483,325.378L826.983,325.351L828.095,323.477L829.64,323.449ZM844.503,322.298L843.941,324.105L839.656,325.031L835.959,324.629L836.057,323.438L838.331,322.761L840.008,323.736L841.894,323.488ZM948.056,323.086L948.106,323.742L946.053,322.358L944.637,321.19L943.692,320.105L944.137,319.775L945.355,320.557L947.507,322.055ZM941.826,319.868L941.244,320.05L940.09,319.312L939.055,317.973L939.242,317.428L940.801,318.805ZM804.749,318.012L810.113,318.337L810.809,316.993L815.917,318.557L816.798,320.667L820.966,321.262L824.263,323.196L820.967,324.436L817.983,323.124L815.444,323.213L812.556,322.97L809.976,322.386L806.812,321.146L804.775,320.821L803.577,321.229L798.556,319.89L798.156,318.491L795.595,318.249L797.692,315.142L801.088,315.335L803.284,316.607L804.432,316.855ZM878.115,316.178L876.514,318.392L876.413,315.941L876.982,314.773L877.635,313.672L878.215,314.624ZM937.323,318.15L936.508,318.475L935.4,317.224L934.327,315.159L933.9,312.68L934.304,312.367L934.545,313.33L935.344,314.068L936.558,316.134L937.794,317.235ZM926.722,313.782L925.228,314.046L924.721,314.96L923.128,315.754L921.636,316.514L920.141,316.508L917.907,315.566L916.374,314.658L916.673,313.65L919.159,314.123L920.712,313.87L921.235,312.311L921.644,312.229L921.808,313.958L923.421,313.71L924.281,312.598L925.917,311.436L925.717,309.52L927.399,309.459L927.938,309.993L927.787,311.794ZM857.57,307.213L856.479,308.292L854.559,307.697L854.06,306.299L856.908,306.139ZM866.665,306.023L867.596,308.512L865.28,307.169L862.943,306.899L861.347,307.114L859.409,306.998L860.123,305.209L863.608,305.076ZM930.161,310.599L929.232,311.463L928.811,309.547L928.215,308.286L926.987,307.224L925.443,305.836L923.453,304.878L924.257,304.091L925.745,305.005L926.671,305.721L927.825,306.502L928.891,307.868L929.915,308.909ZM877.128,299.709L877.807,304.966L880.646,306.915L883.1,303.463L886.371,301.504L888.871,301.498L891.256,302.632L893.311,303.799L896.309,304.421L901.111,306.662L906.224,308.523L908.087,310.186L909.556,311.821L909.875,313.743L914.407,315.754L914.965,317.477L912.351,317.83L912.798,319.995L915.106,322.133L916.569,325.588L918.185,325.477L917.913,326.921L920.017,327.473L919.098,328.084L921.903,329.457L921.482,330.4L919.6,330.626L919.012,329.782L916.66,329.418L913.889,328.928L911.954,326.85L910.556,325.059L909.387,322.21L905.864,320.783L903.408,321.714L901.593,322.788L901.708,325.191L899.393,326.31L897.888,325.764L894.998,325.626L892.769,322.954L889.983,322.303L889.202,323.229L885.642,323.328L887.067,320.678L888.908,319.775L888.446,316.238L887.268,313.506L881.978,310.753L879.676,310.478L875.588,307.471L874.694,309.052L873.6,309.338L873.012,308.149L873.055,306.734L870.962,305.137L874.02,303.964L876.022,304.025L875.811,303.166L871.692,303.161L870.618,301.223L868.118,300.623L866.954,299.01L870.746,298.223L872.189,297.166L876.695,298.498ZM852.087,291.341L849.86,294.573L847.747,295.195L845.042,294.562L840.356,294.721L837.898,295.189L837.5,297.65L839.983,300.546L841.518,299.07L846.77,297.964L846.535,299.461L845.315,298.988L844.067,300.898L841.567,302.159L844.124,306.326L843.582,307.444L845.949,311.199L845.823,313.336L844.276,314.289L843.235,313.149L844.717,310.483L841.899,311.744L841.243,310.841L841.66,309.586L839.709,307.681L840.017,304.509L838.109,305.495L838.224,309.288L838.119,313.947L836.315,314.415L835.163,313.462L836.102,310.467L835.786,307.328L834.604,307.306L833.8,305.076L835.014,302.946L835.462,300.364L836.897,295.459L837.479,294.121L839.856,291.705L842.063,292.663L845.61,293.114L848.837,292.976L851.59,290.615ZM861.795,292.277L861.664,295.123L860.215,294.804L859.791,296.78L860.936,298.498L860.143,298.889L859.022,296.83L858.176,292.674L858.706,290.075L859.613,288.892L859.849,290.664L861.514,290.95ZM797.042,314.999L793.926,315.065L791.685,312.345L788.187,309.69L787.046,307.719L784.991,305.071L783.642,302.632L781.546,298.079L779.081,295.365L778.248,292.569L777.177,290.031L774.612,287.983L773.083,285.197L770.918,283.38L767.864,279.79L767.556,278.138L769.36,278.27L773.733,278.898L776.339,282.075L778.582,284.283L780.166,285.638L782.901,289.134L785.765,289.183L788.155,291.413L789.806,294.138L791.946,295.624L790.816,298.278L792.417,299.406L793.428,299.489L793.877,301.757L794.827,303.573L796.886,303.86L798.204,305.919L797.37,309.966ZM831.36,290.02L834.556,293.026L831.23,293.411L830.297,295.63L830.409,298.575L827.683,300.799L827.552,304.041L826.32,309.013L825.946,307.857L822.698,309.321L821.654,307.334L819.657,307.147L818.282,306.106L814.909,307.273L813.932,305.704L812.086,305.88L809.779,305.506L809.431,301.14L808.046,300.237L806.711,297.457L806.327,294.611L806.628,291.595L808.266,289.437L810.348,290.549L812.505,289.943L813.016,287.19L814.205,286.574L817.555,285.869L819.486,283.298L820.793,281.239L821.853,280.022L824.154,278.243L826.195,275.979L827.454,273.434L828.585,273.423L830.132,275.07L830.346,276.486L832.246,277.395L834.632,278.369L834.493,279.647L832.621,279.807L833.197,281.398L831.169,282.505L829.673,285.44L831.817,288.523ZM854.154,268.586L854.614,270.746L854.914,272.575L854.167,275.55L852.91,272.234L851.714,273.886L852.767,276.282L852.058,277.808L848.643,275.919L847.702,273.561L848.441,272.019L846.548,270.476L845.772,271.826L844.44,271.699L842.498,273.517L841.968,272.564L842.864,269.821L844.556,268.906L845.976,267.677L847.089,269.154L849.153,268.261L849.48,266.806L851.449,266.724L851.05,264.205L853.466,265.748L853.848,267.385ZM727.946,275.803L725.53,276.547L724.091,273.958L723.373,269.281L724.338,263.995L726.385,265.803L727.818,268.096L729.349,271.49L729.08,274.878ZM329.486,263.064L327.131,263.422L326.642,263.13L327.503,262.231L327.51,260.947L329.143,260.522L329.721,260.638ZM846.881,262.513L845.982,263.588L845.301,265.643L844.511,266.608L842.58,264.354L843.07,263.483L843.684,262.573L843.775,260.55L845.295,260.357L845.082,262.551L846.81,259.408ZM831.843,265.649L828.38,268.741L829.565,266.459L831.403,264.453L832.87,262.198L834.003,258.962L834.776,261.62L833.109,263.411ZM840.439,257.258L842.224,258.267L844.004,258.261L844.107,259.624L842.958,261.008L841.288,261.989L841.029,260.473L841.049,258.813ZM850.437,256.375L851.648,260.015L849.397,259.149L849.57,260.247L850.47,262.254L849.216,262.987L848.864,260.693L848,260.522L847.347,258.554L849.017,258.813L848.833,257.578L846.83,255.09L849.512,255.162ZM838.975,253.424L838.579,256.237L837.186,254.61L835.445,252.127L837.849,252.248ZM835.656,235.689L837.528,236.618L838.221,235.772L838.631,236.601L838.415,237.956L839.767,240.293L839.486,243.006L838.018,244.089L837.989,246.717L838.986,249.318L840.51,249.677L841.689,249.29L845.422,251.101L845.39,252.872L846.406,253.655L846.306,255.156L843.933,253.556L842.674,251.846L842.119,253.043L840.083,251.09L837.609,251.57L836.129,250.852L836.085,249.505L836.84,248.672L835.901,247.921L835.707,249.097L834.067,247.22L833.447,245.801L832.856,242.675L834.145,243.752L833.597,238.641L833.972,235.684ZM318.446,236.59L317.659,237.414L315.577,237.392L313.941,237.508L313.92,236.109L314.366,235.634L316.626,235.65L318.012,235.938ZM287.005,237.762L286.106,238.309L284.609,237.784L283.16,236.596L283.586,235.849L284.768,235.623L285.392,235.733L287.221,236.026L288.596,236.811L288.956,237.701ZM299.708,231.221L302.043,231.735L302.445,231.176L304.599,231.193L306.143,232.034L306.878,231.951L307.247,233.107L308.766,233.046L308.571,234.019L309.793,234.135L311.021,235.335L309.859,236.662L308.616,235.955L307.337,236.093L306.437,235.938L305.877,236.529L304.799,236.734L304.454,235.938L303.488,236.408L302.149,238.647L301.495,238.127L301.453,237.187L299.668,236.635L298.338,236.861L296.679,236.623L295.318,237.232L293.944,236.214L294.301,235.164L296.799,235.617L298.863,235.877L299.938,235.153L298.831,233.737L298.994,232.487L297.314,231.978L298.036,231.077ZM805.174,235.12L803.041,236.69L800.605,235.678L800.055,232.863L801.16,231.386L804.016,230.468L805.609,230.546L806.45,231.796L805.489,233.234ZM70.125,233.792L69.585,234.34L69.01,233.875L69.312,232.963L69.151,231.768L69.38,231.409L69.992,230.872L69.967,230.23L70.204,229.926L70.397,229.987L71.318,230.54L71.733,230.822L72.07,231.259L72.492,232.404L72.377,232.587L71.133,233.284ZM69.93,228.692L68.935,228.93L68.651,228.238L68.405,227.973L68.43,227.768L68.772,227.491L69.67,227.801L70.262,228.299ZM68.52,226.954L68.336,227.303L66.885,227.209L67.202,226.81ZM66.183,226.478L65.983,226.666L65.806,226.622L64.877,226.506L64.735,225.77L64.663,225.637L65.522,225.183L65.691,225.393ZM62.136,224.319L61.717,224.64L60.967,224.048L61.175,223.81L61.693,223.489L62.307,223.555ZM281.43,221.755L282.341,222.952L284.963,222.586L285.822,223.35L287.864,225.377L289.379,226.855L290.296,226.81L291.845,227.475L291.527,228.399L293.544,228.532L295.461,229.871L295.04,230.634L293.152,231.049L291.275,231.209L289.408,230.955L285.415,231.27L287.493,229.45L286.483,228.598L284.736,228.382L283.91,227.436L283.511,225.576L281.938,225.703L279.499,224.823L278.777,224.137L275.271,223.633L274.407,222.996L275.559,222.176L272.888,222.01L270.661,223.71L269.517,223.755L269.001,224.552L267.581,224.912L266.461,224.602L268.06,223.588L268.835,222.409L270.193,221.683L271.695,221.041L273.817,220.731L274.534,220.371L276.866,220.603L279.021,220.642ZM287.787,218.504L287.093,218.665L286.693,216.781L285.819,215.833L286.742,213.755L287.546,213.883L288.069,216.604ZM832.387,221.672L831.806,224.358L829.752,221.595L828.882,219.169L829.721,215.95L831.296,213.473L832.789,214.448L832.798,216.426ZM288.501,209.265L285.445,209.792L285.471,208.578L286.787,208.317L288.569,208.417ZM290.738,209.232L289.878,211.56L289.447,211.145L289.774,209.432L288.784,208.134L288.839,207.763ZM857.416,184.475L858.188,185.599L857.45,187.576L855.961,186.529L854.878,187.288L854.89,189.205L852.809,188.275L852.248,186.718L852.98,184.768L854.636,185.145L855.192,183.772ZM591.275,179.5L589.631,180.888L589.893,181.502L589.997,181.768L587.411,183.096L586.072,182.67L585.336,181.358L586.581,181.237L586.76,181.22L587.063,180.429L588.97,180.473ZM562.557,179.389L564.083,180.49L566.123,180.302L568.111,180.534L568.088,181.104L569.495,180.711L569.238,181.679L565.447,181.956L565.436,181.414L562.162,180.778ZM540.561,171.149L539.747,173.714L540.184,174.725L539.716,176.398L537.644,175.172L536.295,174.819L532.571,173.162L532.86,171.485L535.933,171.783L538.589,171.43ZM523.76,161.467L525.382,163.767L525.164,168.068L523.977,167.859L522.951,168.944L521.941,168.085L521.723,164.163L521.073,162.306L522.5,162.471ZM870.026,174.697L870.203,177.305L871.372,178.941L870.975,181.242L868.232,182.781L863.658,182.98L861.349,186.718L859.082,185.461L858.004,183.013L853.677,183.733L851.129,185.278L848.043,185.339L851.646,187.748L851.855,193.313L850.601,194.687L848.863,193.418L848.493,190.463L846.461,189.51L844.565,187.266L846.713,186.258L847.326,184.204L849.344,182.51L850.393,180.28L855.252,179.301L858.351,179.97L858.634,174.167L861.065,175.724L863.464,172.462L864.373,171.198L864.126,167.215L861.897,163.564L861.951,161.511L864.386,160.918L868.078,165.416L869.287,168.052L868.443,171.331ZM524.553,158.414L523.787,160.913L522.597,160.255L521.935,158.075L522.413,156.877L524.02,155.642ZM865.996,151.889L868.173,152.575L869.195,151.214L871.824,154.828L868.525,155.713L868.011,158.924L862.802,156.713L863.261,160.249L860.431,160.299L858.396,157.085L858.337,154.599L860.96,154.419L859.215,149.969L858.529,147.471L863.432,150.811ZM340.07,144.277L341.783,144.704L344.132,144.618L342.548,145.927L341.57,146.133L338.731,144.78L338.398,143.71L339.617,142.722ZM346.936,136.157L345.716,136.216L342.794,135.222L340.94,133.733L341.87,133.471L344.878,134.261L347.027,135.58ZM193.087,138.043L191.592,138.483L188.32,137.04L188.208,135.922L186.638,134.816L186.718,133.919L184.517,133.349L184.595,131.64L185.248,130.913L187.405,131.598L188.634,132.071L190.746,132.406L190.943,133.493L191.307,134.987L193.035,136.291ZM362.283,131.173L359.927,133.924L361.811,132.864L363.294,133.535L362.142,134.634L364.12,135.499L365.452,134.73L367.677,135.703L366.348,138.021L368.213,137.48L368.138,139.159L368.453,141.133L366.761,143.937L365.605,144.056L364.088,143.456L365.237,140.847L364.641,140.444L361.086,143.208L359.614,143.095L361.739,141.601L359.525,140.826L356.798,141.014L351.976,140.917L351.834,139.976L353.677,138.858L352.819,138L355.414,136.093L359.306,131.077L361.307,129.295L363.718,128.216L364.814,128.354L364.113,129.2ZM181.244,120.741L183.719,120.496L180.636,124.007L181.117,126.506L180.149,126.5L179.616,125.079L179.664,123.65L179.093,122.686L179.573,121.326L180.384,120.344ZM852.294,130.987L858.5,136.564L854.155,135.521L855.552,140.099L860.01,143.359L861.291,145.591L858.219,143.667L858.053,146.138L855.987,143.456L854.366,140.358L851.92,136.933L850.949,134.549L848.267,130.345L844.731,127.27L841.951,123.021L843.156,121.603L841.158,120.172L841.901,119.74L844.031,121.78L847.017,124.763L849.115,127.825ZM483.508,126.258L479.118,128.1L475.691,127.63L477.811,124.38L476.702,121.232L480.078,118.819L481.944,117.386L483.948,117.261L486.449,119.157L485.097,121.273L485.428,123.482ZM530.156,115.926L528.894,118.403L526.29,116.676L525.882,115.404L529.301,114.398ZM140.164,111.346L136.841,112.499L136.298,111.72L137.149,110.302L140.199,109.23L141.842,108.772L143.223,108.976L143.412,109.909ZM493.012,106.775L490.45,110.026L492.846,109.613L495.409,109.628L494.771,112.089L492.605,114.815L495.052,115.011L497.334,118.944L498.97,119.438L500.447,122.953L501.137,124.175L504.077,124.768L503.796,126.759L502.557,127.672L503.542,129.285L501.346,130.929L498.071,130.897L493.886,131.763L492.745,131.146L491.103,132.614L488.835,132.257L487.08,133.461L485.784,132.832L489.457,129.534L491.66,128.861L487.839,128.338L487.177,127.096L489.747,126.131L488.457,124.453L488.957,122.424L492.546,122.707L492.92,120.913L491.313,118.975L488.424,118.434L487.878,117.603L488.78,116.236L488.015,115.393L486.698,116.836L486.641,113.898L485.501,112.351L486.459,109.225L488.347,106.785L490.201,107.023ZM118.512,102.969L116.642,103.431L115.672,102.878L115.078,102.07L117.844,101.564L119.397,101.835ZM320.527,96.349L318.898,97.884L318.012,97.636L317.844,96.764L318.05,96.561L319.354,95.687L320.25,95.751ZM315.387,94.735L311.922,96.344L310.358,96.28L310.271,95.489L312.65,94.145L315.722,94.175ZM116.245,91.632L117.021,92.184L118.738,91.886L119.73,92.649L121.545,93.036L121.026,93.349L118.668,93.963L117.63,93.335L117.337,92.81L115.179,92.977L114.922,92.722ZM312.655,86.265L312.363,87.514L313.742,87.075L314.61,87.823L316.5,88.805L318.567,89.698L318.052,91.065L319.806,90.841L320.916,91.798L318.461,92.707L315.338,92.013L314.769,90.715L311.742,92.247L307.743,93.747L307.892,92.052L304.701,92.33L307.435,90.905L308.969,88.645L311.196,86.03ZM468.298,84.002L467.615,85.833L469.925,87.775L466.842,89.96L460.205,91.934L458.21,92.458L455.321,92.032L449.211,91.119L451.582,89.849L446.956,88.447L450.958,87.895L450.984,87.055L446.462,86.395L448.241,84.547L451.619,84.131L454.764,86.049L458.299,84.509L460.953,85.309L464.693,83.801ZM335.241,82.048L332.728,82.19L332.908,80.819L334.653,79.256L336.831,78.87L338.112,79.638L337.52,80.834L337.071,81.222ZM626.64,161.231L628.36,163.531L629.598,163.685L630.546,164.558L628.465,164.817L628.441,167.342L628.193,168.481L627.363,169.242L627.693,170.856L628.91,173.262L631.501,173.941L633.589,175.575L637.419,176.139L641.379,175.277L641.502,174.509L640.61,172.208L640.374,168.801L638.149,167.699L638.402,165.471L636.649,165.284L636.705,162.548L639.295,163.344L641.363,162.306L639.103,160.359L637.993,158.507L636.084,159.334L636.284,161.708L635.073,159.608L634.781,158.82L635.144,157.473L634.431,156.347L631.246,155.243L629.523,152.352L627.949,151.535L627.657,150.491L630.187,150.795L629.8,148.448L631.838,147.927L634.153,148.404L633.92,145.283L633.025,143.311L630.548,143.462L628.247,142.685L625.651,144.088L623.449,144.758L622.685,146.653L620.346,147.178L618.467,150.491L621.344,153.546L621.495,155.718L624.981,159.526ZM898.257,88.195L898.258,88.21L896.872,89.47L893.749,89.256L897.501,90.788L901.534,93.168L903.447,93.948L905.049,95.149L905.332,95.924L900.416,95.287L896.465,97.488L894.808,97.83L893.481,99.895L892.009,101.704L892.523,103.054L887.179,101.003L883.492,103.331L881.368,102.226L880.387,103.502L876.915,103.094L878.029,105.049L877.944,107.947L879.141,109.164L882.418,109.837L886.063,114.248L883.963,114.361L885.158,116.914L887.283,118.237L884.413,119.802L886.47,123.33L883.463,124.086L885.213,127.244L883.913,130.159L881.383,128.005L876.839,123.466L869.99,116.624L867.584,112.402L868.004,110.593L866.895,109.184L869.926,108.512L870.639,104.741L871.726,101.684L873.547,99.331L871.226,95.203L868.737,95.45L869.787,97.86L867.132,101.089L861.783,97.473L856.873,98.471L855.721,103.421L859.278,105.246L854.792,106.025L851.467,106.334L849.746,104.177L845.764,103.723L844.173,105.191L836.649,104.676L829.771,105.56L826.863,111.428L823.072,118.621L827.117,119.006L829.657,120.934L832.481,121.624L832.921,120.079L835.701,120.282L841.613,123.681L843.547,126.321L843.782,129.444L846.065,133.189L848.17,138.241L847.215,142.841L847.663,145.05L846.36,148.779L844.965,152.488L844.327,154.391L841.895,156.281L840.304,156.325L837.897,154.757L835.647,157.118L835.78,158.195L834.704,157.998L834.128,159.099L833.887,160.2L835.077,162.526L834.077,163.24L833.877,163.817L833.343,164.773L831.857,165.306L831.116,166.18L831.652,167.589L831.509,167.947L832.779,168.476L834.87,169.903L838.761,173.747L840.279,175.863L841.823,179.627L841.527,181.425L839.366,182.05L837.761,183.406L835.48,183.689L834.518,181.906L834.077,179.455L831.575,176.056L833.304,175.509L830.371,172.715L828.842,172.092L828.776,172.71L828.123,172.98L827.776,172.362L826.975,172.064L826.056,171.546L826.185,170.112L826.636,169.732L826.15,169.137L826.065,167.38L825.666,166.846L823.989,166.494L822.389,165.625L819.167,166.566L817.899,168.09L815.453,168.977L816.216,167.468L815.142,166.202L816.263,164.02L814.153,162.317L812.399,163.465L810.428,165.724L809.694,167.821L807.21,167.98L806.484,169.495L808.732,171.7L811.078,172.235L811.729,173.698L814.172,174.647L816.2,172.324L819.03,173.593L820.752,173.676L821.86,175.387L818.483,176.299L817.918,178.062L815.958,179.699L815.431,181.989L818.918,183.783L821.078,187.006L823.71,190.003L826.357,192.52L827.091,194.954L825.69,195.846L826.869,197.593L828.77,198.613L829.153,201.28L829.217,203.876L827.79,204.17L826.792,207.718L825.716,212.015L824.147,215.922L821.092,218.942L817.896,221.7L814.886,222.077L813.511,223.527L812.34,222.464L811.125,224.092L807.614,225.731L804.8,226.229L804.509,229.682L803.016,229.876L801.853,227.502L802.267,226.24L798.371,225.188L797.177,225.725L794.018,228.52L792.266,231.608L792.038,233.875L794.699,237.32L797.935,241.586L800.742,243.603L802.794,246.226L804.829,252.259L805.09,257.991L802.968,260.136L799.961,262.237L797.905,264.949L794.649,267.98L793.474,265.897L794.082,263.687L791.849,261.84L789.46,261.36L788.18,259.668L786.437,256.298L783.782,254.803L781.397,254.864L781.538,252.304L779.081,252.32L779.231,255.906L778.164,260.666L777.496,263.543L777.868,265.903L779.7,266.002L781.048,268.972L781.731,271.793L783.403,273.655L785.121,274.035L786.665,275.72L787.327,276.029L789.078,277.989L790.344,280.17L790.588,282.362L790.343,283.843L790.649,284.961L790.9,286.882L791.912,287.779L793.064,290.659L793.027,291.754L791.035,291.974L788.342,289.563L784.963,286.981L784.599,285.324L782.907,283.149L782.429,280.457L781.346,278.683L781.541,276.31L780.856,274.933L779.678,273.682L779.113,272.074L777.507,270.234L776.045,268.691L775.713,270.603L775.064,268.796L775.228,266.762L775.821,263.643L775.352,261.223L776,258.73L774.875,256.8L774.752,253.247L773.439,251.559L772.097,247.656L771.094,243.536L769.532,240.829L767.919,242.47L765.059,244.796L763.462,244.503L761.649,243.741L762.094,239.697L761.099,236.635L758.389,232.869L758.552,231.691L756.869,231.27L754.506,228.609L753.453,226.899L753.026,225.233L752.242,223.66L750.774,221.755L748.225,221.628L748.697,222.974L748.135,224.795L746.86,224.131L746.551,224.729L745.721,224.369L744.606,224.076L744.41,225.271L742.533,225.233L739.242,225.908L739.77,228.371L738.581,230.302L734.911,232.504L732.314,236.347L730.482,238.409L727.976,240.542L728.134,242.045L726.842,242.851L724.467,244.023L723.184,244.194L722.593,246.679L723.572,250.924L723.957,253.628L723.022,256.723L723.41,262.259L721.97,262.419L720.857,264.899L721.767,265.974L719.269,266.895L718.45,269.11L717.367,270.046L714.555,267.005L712.997,262.446L711.704,259.16L710.62,257.622L708.9,254.489L707.88,250.411L707.223,248.374L704.281,243.895L702.495,237.569L701.209,233.389L700.753,229.428L699.839,226.368L696.076,228.321L694.086,227.934L690.015,223.97L691.18,222.786L690.204,221.501L686.624,218.726L684.514,217.895L683.38,215.54L680.925,213.051L675.984,213.667L671.564,213.728L667.784,214.188L662.524,213.195L659.467,212.442L656.335,212.02L654.679,208.001L653.305,207.419L651.288,208.007L648.743,209.592L645.297,208.506L642.252,205.988L639.536,205.057L637.349,201.946L634.816,197.576L633.44,198.109L631.59,197.022L630.75,198.303L629.132,198.142L629.867,199.589L629.713,200.338L630.866,202.805L632.249,205.634L633.67,206.382L634.258,207.53L636.268,208.905L636.573,210.258L636.427,211.35L636.888,212.453L637.77,213.367L638.246,214.442L638.733,215.246L638.305,212.863L638.855,211.145L639.56,210.79L640.497,211.821L640.754,213.733L640.359,215.662L641.01,216.914L641.475,216.753L641.676,217.651L643.759,217.136L646.032,217.219L647.696,217.318L649.323,215.102L651.116,213.001L652.603,210.984L653.25,209.869L653.628,210.152L653.538,211.505L653.247,212.104L653.924,214.686L655.41,216.925L657.07,218.111L659.128,218.543L660.812,219.136L662.257,221.013L663.118,222.099L664.151,222.514L664.222,223.245L663.432,225.194L663.092,226.113L662.041,227.159L661.232,229.395L659.965,229.223L659.464,230.003L659.183,231.663L659.72,233.848L659.497,234.246L658.222,234.235L656.596,235.457L656.461,237.049L655.89,237.74L654.163,237.712L653.141,238.536L653.254,239.857L651.986,240.763L650.435,240.454L648.658,241.553L647.392,241.736L645.446,242.614L645.005,244.067L645.019,245.177L642.334,246.552L637.979,248.076L635.614,250.378L634.4,250.554L633.558,250.367L631.994,251.719L630.249,252.342L627.919,252.513L627.226,252.701L626.655,253.562L625.933,253.799L625.55,254.626L624.16,254.555L623.286,254.996L621.349,254.831L620.54,252.927L620.537,251.145L620.029,250.184L619.367,247.772L618.496,246.43L619.048,246.27L618.678,244.779L618.984,244.15L618.785,242.73L618.345,241.332L617.449,240.354L617.152,239.05L615.656,237.878L614.013,235.142L613.057,232.476L611.002,230.23L609.735,229.694L607.702,226.578L607.228,224.303L607.209,222.365L605.373,218.737L603.996,217.457L602.469,216.781L601.422,214.902L601.513,214.165L600.625,212.464L599.774,211.738L598.524,209.298L596.65,206.659L595.092,204.408L593.738,204.425L594.019,202.622L594.041,201.48L594.26,200.171L594.131,199.695L593.486,201.014L593.107,203.488L592.513,205.195L591.924,205.767L590.935,204.707L589.603,203.249L587.305,198.552L587.048,198.846L588.439,202.306L590.36,205.6L592.797,210.701L593.927,212.48L594.944,214.332L597.651,217.956L597.149,218.526L597.383,220.653L600.77,223.588L601.3,224.258L602.4,227.469L601.832,228.061L602.436,231.425L603.678,235.33L604.779,236.131L606.362,237.342L608.175,241.117L609.1,244.116L610.701,245.707L614.647,248.788L616.28,250.642L617.882,252.524L618.806,253.644L620.215,254.626L620.922,255.636L620.889,256.987L619.332,257.771L620.565,258.659L621.504,259.26L622.1,260.605L623.41,261.972L624.8,261.983L627.406,261.151L630.431,260.765L632.855,259.75L634.235,259.535L635.205,258.94L636.789,258.829L637.682,258.763L638.947,258.278L640.411,257.953L641.684,256.839L642.74,256.827L642.844,257.726L642.682,259.624L642.768,261.333L642.224,262.513L641.578,266.035L640.353,269.666L638.74,273.826L636.448,278.595L634.119,282.235L630.87,286.673L628.081,289.31L623.899,292.536L621.283,295.013L618.202,298.949L617.548,300.667L616.906,301.437L614.924,302.737L614.226,304.091L613.172,304.333L612.746,306.624L611.831,307.934L611.257,310.098L610.109,311.172L608.749,315.181L608.876,317.026L610.649,318.216L610.711,319.058L609.898,321.025L610.035,322.017L609.813,323.571L610.735,325.61L611.795,328.823L612.789,329.534L613.192,330.995L612.963,334.238L613.191,337.1L613.078,342.194L613.493,343.795L612.547,346.125L611.35,348.389L609.475,350.411L606.871,351.654L603.663,353.24L600.354,356.745L599.256,357.342L597.197,359.665L596.012,360.417L595.651,362.747L596.812,365.226L597.228,367.141L597.205,368.121L597.7,367.961L597.41,371.167L596.863,372.685L597.465,373.25L596.966,374.613L595.742,375.776L593.413,376.879L590.009,378.653L588.728,379.866L588.868,381.241L589.547,381.463L589.188,383.187L588.329,385.571L587.812,388.294L586.997,389.774L585.023,391.427L584.462,391.904L583.189,393.567L582.313,395.248L580.602,397.598L577.31,400.974L575.271,402.942L573.15,404.432L570.265,405.701L568.902,405.872L568.49,406.781L566.909,406.293L565.544,406.919L562.709,406.288L561.075,406.687L559.986,406.515L557.17,407.805L554.865,408.325L553.159,409.56L551.944,409.637L550.894,408.475L550,408.414L548.933,406.952L548.784,407.406L548.477,406.526L548.596,404.609L547.843,402.415L548.728,401.817L548.785,399.306L547.172,396.24L545.948,393.462L545.939,393.457L544.18,389.198L542.256,386.725L541.286,384.329L540.786,381.141L540.194,378.769L539.429,373.726L539.467,369.81L539.168,368.027L538.133,366.682L536.771,363.975L535.406,360.058L534.851,358.006L532.659,354.816L532.531,352.312L532.305,350.256L532.729,347.389L533.734,344.402L533.905,343L534.848,340.063L535.529,338.723L537.154,336.593L538.078,335.142L538.401,332.727L538.272,330.879L537.45,329.716L536.726,327.743L536.06,325.786L536.217,325.114L537.086,323.819L536.265,320.678L535.706,318.497L534.316,316.436L534.582,315.803L534.194,314.795L533.459,312.35L531.167,308.903L528.294,305.622L526.437,302.935L524.731,299.577L524.823,298.498L525.441,297.457L526.119,295.09L526.685,292.679L526.158,292.184L527.125,288.534L527.524,285.963L526.426,283.815L525.14,283.265L524.569,281.806L523.85,281.338L523.877,280.44L520.958,281.613L519.896,281.437L518.816,282.169L516.571,282.097L515.06,280.06L514.135,277.709L512.139,275.561L510.028,275.605L507.552,275.599L505.239,275.979L502.976,276.673L498.57,278.579L497.012,279.697L494.484,280.638L491.978,279.713L490.704,279.752L488.743,279.113L486.944,279.151L483.617,279.719L481.663,280.655L478.879,281.85L478.333,281.767L477.595,281.795L474.708,280.242L472.17,277.764L469.784,275.985L467.907,273.886L467.151,273.644L465.14,272.333L463.7,270.592L463.215,269.402L462.894,266.994L461.683,265.07L460.608,263.792L459.898,263.373L459.21,262.722L458.906,261.283L458.502,260.566L457.704,260.032L456.223,258.67L455.05,258.454L454.43,257.539L454.448,257.043L453.614,256.353L453.445,255.653L453.026,253.153L453.413,251.708L452.308,249.169L450.949,248.009L452.184,247.391L453.573,245.1L454.269,243.42L454.068,241.664L454.883,240.056L455.294,236.977L455.074,233.754L454.777,232.128L455.099,230.496L454.426,228.941L453.019,227.53L453.178,226.152L453.352,224.635L454.428,223.743L455.379,222.038L455.235,220.93L456.253,218.62L457.844,216.537L458.775,216.011L459.561,214.104L459.674,212.358L460.717,210.335L462.565,209.138L464.395,205.794L465.838,204.491L468.372,204.125L470.564,201.89L471.937,201.014L474.256,198.28L473.68,194.205L474.774,191.389L475.174,189.66L476.947,187.449L479.645,185.953L481.644,184.602L483.484,181.215L484.349,179.212L486.296,179.223L487.863,180.612L490.378,180.385L493.112,181.109L494.263,181.143L496.812,179.356L499.663,178.792L501.323,177.443L503.859,176.448L508.313,175.868L512.652,175.603L513.985,176.084L516.439,174.802L519.245,174.774L520.332,175.531L522.124,175.338L524.939,174.018L526.793,174.41L526.762,176.061L528.953,174.863L529.165,175.487L527.903,177.084L527.934,178.598L528.873,179.411L528.623,182.238L526.928,183.882L527.487,185.665L528.857,185.721L529.576,187.277L530.609,187.787L533.775,188.917L534.889,188.635L537.137,189.178L540.732,190.641L542.106,193.556L544.545,194.188L548.384,195.563L551.325,197.188L552.599,196.34L553.808,194.832L553.049,192.326L553.8,190.729L555.636,189.194L557.454,188.751L561.097,189.422L562.102,190.885L563.104,190.896L563.987,191.456L566.67,191.838L567.398,192.924L570.951,192.869L573.598,193.734L576.324,194.704L577.608,195.214L579.595,194.172L580.621,193.235L582.962,192.963L584.906,193.379L585.765,195.003L586.303,193.933L588.513,194.71L590.625,194.893L591.874,194.067L592.548,192.991L592.348,192.803L592.918,191.273L593.221,188.801L593.524,187.975L593.597,187.942L594.278,185.272L595.356,182.969L595.391,182.853L594.874,180.352L595.373,179.008L594.24,177.526L595.097,176.299L593.528,176.581L591.239,175.829L589.633,177.708L585.677,178.073L583.369,176.321L580.518,176.211L580.041,177.565L578.257,177.957L575.558,176.216L572.694,176.271L570.851,173.03L568.78,171.22L569.823,168.691L568.033,167.132L570.619,164.025L574.595,163.899L575.426,161.434L580.387,161.862L583.242,159.762L586.13,158.847L590.368,158.776L595.164,161.055L599.042,162.312L601.974,161.812L604.237,162.103L607.029,160.408L607.206,159.028L606.216,156.822L604.554,155.631L603.079,155.259L601.988,154.271L598.322,151.552L595.239,150.338L592.767,148.453L594.528,147.938L596.205,145.261L594.591,143.996L598.08,142.695L597.891,142L595.732,142.512L593.772,142.771L592.265,143.802L589.941,143.969L587.956,145.159L588.392,147.151L589.74,147.921L592.295,147.731L591.964,148.871L589.274,149.431L586.089,151.29L584.592,150.632L584.946,149.126L582.051,148.187L582.424,147.574L584.685,146.506L583.858,145.775L579.834,144.969L579.502,143.775L577.231,144.169L576.524,145.927L574.864,148.296L575.018,149.121L573.87,149.816L573.068,149.512L572.797,153.393L571.621,154.73L570.936,157.036L571.951,158.88L572.386,160.129L574.749,161.171L574.358,161.966L571.31,162.147L570.31,163.146L568.315,164.899L567.364,163.388L567.329,162.718L565.748,162.625L564.372,162.317L561.32,163.163L563.265,164.987L561.993,165.515L560.555,165.515L559.048,163.844L558.621,164.558L559.354,166.5L560.777,168.024L559.849,168.74L561.421,170.239L562.784,171.182L562.967,173.024L560.478,172.158L561.378,173.825L559.742,174.167L560.945,177.045L559.204,177.084L556.946,175.664L555.784,173.058L555.171,170.89L554.052,169.39L552.582,167.534L552.349,166.61L551.884,166.384L551.788,165.669L550.275,164.575L549.945,163.031L550.004,160.82L550.284,159.811L549.822,159.301L549.258,159.05L548.462,157.998L547.308,157.353L544.819,156.161L543.26,154.997L540.864,154.037L538.583,151.666L539.08,151.426L537.838,150.077L537.727,148.991L536.066,148.486L535.371,149.871L534.563,148.795L534.555,147.683L534.643,147.634L535.19,147.341L533.156,146.875L531.161,148.014L531.378,149.604L531.113,150.518L532.026,152.156L534.503,153.78L535.932,156.445L538.929,159.05L540.937,159.033L541.609,159.745L540.924,160.392L543.304,161.56L545.261,162.542L547.585,164.234L547.896,164.844L547.485,166.004L545.951,164.487L543.663,163.954L542.703,166.054L544.644,167.259L544.434,168.961L543.357,169.153L542.118,171.943L541.038,172.197L540.996,171.198L541.439,169.451L541.965,168.757L540.851,166.874L539.968,165.235L538.873,164.828L538.035,163.426L536.338,162.839L535.157,161.533L533.234,161.324L531.155,159.86L528.714,157.758L526.894,155.893L525.976,152.706L524.696,152.336L522.588,151.274L521.432,151.709L520.005,153.202L518.956,153.437L516.69,155.259L511.631,154.386L507.931,155.434L507.658,157.375L507.818,159.258L505.4,161.412L502.096,162.098L501.866,163.19L500.275,164.987L499.274,167.633L500.286,169.495L498.782,170.945L498.213,173.063L496.23,173.714L494.353,176.227L491.02,176.271L488.512,176.211L486.847,177.366L485.822,178.598L484.535,178.327L483.579,177.227L482.869,175.349L480.432,174.841L479.352,175.686L477.983,175.227L476.621,175.586L477.09,173.035L476.903,171.033L475.746,170.73L475.156,169.495L475.43,167.369L476.507,166.186L476.735,164.872L477.337,162.921L477.324,161.549L476.842,160.386L476.768,159.291L476.974,156.992L475.973,155.587L479.663,153.262L482.767,153.846L486.193,153.824L488.902,154.375L491.018,154.206L495.143,154.31L496.477,152.379L496.994,145.987L494.422,142.636L492.594,141.025L488.805,139.798L488.601,137.49L491.828,136.799L495.982,137.614L495.227,134.036L497.556,135.393L503.292,132.933L504.017,130.361L506.152,129.73L508.098,129.11L509.34,128.253L511.376,123.671L514.642,122.377L516.65,122.466L517.095,121.812L519.099,121.644L519.578,122.324L521.14,120.803L520.544,119.646L520.354,117.904L519.31,116.205L519.106,113.09L519.46,112.274L520.096,111.361L522.152,111.177L522.936,110.343L524.769,109.49L524.785,111.044L524.147,112.027L524.475,112.879L525.785,113.337L525.273,114.485L524.547,114.155L522.956,116.35L523.686,117.842L523.782,119.027L526.243,119.745L526.279,120.84L528.691,120.261L529.984,119.417L532.768,120.631L533.981,121.618L535.549,120.71L539.181,119.287L542.103,118.247L544.536,118.767L544.789,119.516L547.104,119.552L547.507,118.2L550.69,117.209L549.895,114.64L549.717,112.351L550.645,110.45L552.728,109.419L554.884,111.679L556.765,111.617L556.901,109.302L556.925,107.526L556.122,107.907L554.502,106.841L554.07,105.12L556.879,104.293L559.726,103.859L562.305,104.348L564.68,104.262L567.029,102.617L564.384,101.214L560.259,101.449L556.376,102.532L552.716,103.16L551.167,101.544L548.82,100.569L548.955,97.676L547.508,95.036L548.361,93.345L550.14,91.529L554.753,88.418L556.128,87.818L555.706,86.612L552.426,85.271L548.769,86.073L546.917,88.065L547.501,89.815L544.264,92.13L540.218,94.627L539.012,98.744L540.859,100.818L543.228,102.462L541.465,105.818L539.119,106.516L538.699,111.571L537.616,114.418L534.719,114.124L533.556,116.541L530.815,116.681L529.857,113.8L527.659,110.358L525.611,106.111L523.938,104.277L519.545,107.739L516.467,108.441L513.181,106.912L512.253,103.703L511.318,96.893L513.339,95.016L519.162,92.58L523.391,89.61L527.133,85.631L531.872,80.195L535.249,78.104L540.672,74.647L545.144,73.448L548.642,73.591L551.457,71.341L555.299,71.46L558.954,70.919L565.957,72.908L563.399,73.637L566.102,75.357L568.071,74.401L571.949,76.065L577.953,76.718L586.903,79.855L588.93,81.184L589.591,83.052L587.574,84.538L584.189,85.29L573.911,83.143L572.39,83.5L576.429,85.573L577.68,89.815L580.749,90.69L582.666,91.436L582.625,90.043L580.931,88.766L582.139,87.726L587.942,89.509L589.631,88.81L587.596,86.718L591.953,83.945L594.013,84.107L596.347,85.093L597.04,83.152L594.733,81.478L595.289,79.808L593.186,78.081L599.471,78.974L601.198,80.536L598.575,80.881L599.072,82.438L601.081,83.405L604.252,82.795L604.2,81.004L608.269,79.671L614.899,77.289L616.56,77.425L615.084,79.11L617.858,79.398L619.035,78.447L623.032,78.372L625.745,77.223L628.883,78.894L630.54,77.06L627.623,75.46L628.341,74.554L634.975,75.385L638.317,76.247L647.551,79.412L648.295,77.959L645.419,76.494L645.077,75.911L642.381,75.641L642.462,74.341L640.3,72.213L639.816,71.345L642.439,68.905L642.527,66.481L643.782,65.961L649.613,66.661L650.863,68.14L650.07,70.316L651.833,71.18L653.512,73.079L654.978,76.835L658.212,78.532L658.225,80.394L655.918,84.384L658.623,84.801L658.995,83.782L661.043,83.062L660.924,81.668L662.116,80.337L660.043,78.753L660.092,76.924L657.635,76.695L656.324,75.167L656.551,72.42L652.633,70.216L655.356,68.407L653.799,66.508L654.796,66.45L656.725,67.927L657.371,70.517L659.884,71.011L657.832,69.069L660.696,68.013L664.915,67.873L669.675,69.401L666.469,67.174L664.503,64.355L667.721,63.827L672.701,63.942L676.888,63.601L674.292,62.238L675.426,60.542L677.687,60.472L680.642,59.203L685.663,58.863L685.779,58.167L690.815,57.932L692.914,58.502L696.252,57.16L699.932,57.203L699.521,56.123L700.435,55.065L704.112,54.058L708.239,54.852L706.147,55.463L710.968,55.841L712.67,57.075L713.908,56.469L719.718,56.499L725.392,57.727L727.914,58.674L728.688,59.999L727.179,60.759L723.174,62.194L722.327,62.965L725.175,63.331L728.766,63.991L730.158,63.495L732.703,65.179L732.996,64.497L735.888,64.084L742.845,64.515L744.481,65.746L753.449,66.14L751.627,64.129L756.414,64.586L759.663,64.573L764.363,65.966L766.99,67.665L766.845,68.783L771.499,70.901L775.852,72.001L775.11,69.169L779.657,70.38L782.485,69.655L787.368,70.485L788.126,69.728L791.934,70.106L787.821,67.616L789.317,66.463L809.893,68.194L813.45,69.787L821.233,71.85L829.125,71.336L833.822,71.786L836.874,72.908L838.919,74.907L842.425,75.688L844.626,75.125L848.306,75.055L852.955,75.595L856.617,75.288L863.254,77.743L864.848,76.859L861.006,75.097L860.459,73.878L868.161,74.647L872.363,74.48L880.125,75.79L884.635,76.994L898.257,88.195ZM115.365,76.994L115.366,76.994L115.365,76.994L117.985,79.11L120.292,81.891L118.041,83.639L118.691,84.341L120.588,82.295L126.001,82.714L127.26,85.357L123.686,86.593L119.746,86.887L116.554,89.683L115.007,90.276L113.015,90.194L112.442,89.193L110.445,88.36L111.378,87.118L109.669,86.655L106.742,87.022L106.716,86.025L108.435,84.974L105.007,85.645L104.422,86.983L101.744,88.195L101.743,88.195L115.365,76.994ZM295.882,76.597L293.898,77.565L291.589,76.728L289.642,77.032L287.592,75.79L290.068,74.939L292.385,73.753L294.088,74.531L295.015,75.023L295.3,75.543ZM876.794,70.935L878.038,71.877L875.913,72.015L874.419,71.157L875.588,70.029L876.794,70.935ZM124.412,70.029L124.413,70.029L124.413,70.029L123.206,70.935L124.412,70.029ZM124.413,70.029L124.829,69.92L126.588,69.924L128.592,70.695L127.926,71.066L124.922,71.712L121.961,71.877ZM307.455,75.525L305.65,78.349L309.872,76.182L311.321,77.959L309.42,80.02L310.383,81.91L313.841,79.888L316.834,77.49L318.784,74.47L321.664,74.679L324.564,75.083L326.629,76.447L325.978,77.818L323.539,79.299L324.225,80.791L323.188,82.157L317.829,84.126L314.546,84.562L312.772,83.71L311.304,85.132L307.815,87.528L306.463,88.776L302.787,90.719L299.492,90.909L297.022,92.13L295.801,94.012L292.976,94.376L288.857,96.74L284.51,100.044L282.308,102.376L280.275,105.833L283.415,106.334L282.98,109.144L282.898,111.433L286.485,110.834L290.212,112.145L292.004,113.301L293.017,114.738L295.6,115.574L297.53,116.862L301.387,117.038L303.847,117.339L302.316,119.995L301.755,123.099L302.093,126.574L304.567,129.539L306.839,128.523L309.389,125.321L310.081,120.428L309.059,118.808L313.479,117.375L317.056,115.228L319.249,113.111L319.916,111.085L319.425,108.522L317.592,106.263L321.738,103.14L321.97,100.459L323.378,95.879L325.281,95.203L328.777,95.998L330.976,96.28L333.2,95.514L334.853,96.502L336.897,98.202L337.101,99.341L341.074,99.566L339.978,102.045L339.217,105.807L341.156,106.273L342.156,108.039L346.161,106.374L349.632,103.084L351.683,101.709L352.476,104.358L354.119,108.176L355.457,111.797L353.863,113.702L356.452,115.419L358.034,117.168L361.585,117.956L362.829,118.938L363.01,121.545L364.764,121.953L365.405,123.12L364.611,126.611L362.52,127.783L360.471,128.877L356.13,129.99L352.323,132.571L348.013,133.082L342.946,132.417L339.261,132.396L336.652,132.614L333.885,134.874L330.299,136.275L325.417,140.471L321.64,143.408L323.928,142.884L329.202,138.708L335.213,136.066L339.015,135.751L340.747,137.303L337.789,139.433L337.611,142.863L337.774,145.272L340.623,146.869L344.911,146.404L348.351,142.814L347.928,145.132L349.269,146.29L345.619,148.388L339.531,150.295L336.677,151.595L333.244,153.917L331.368,153.677L331.978,150.953L337.083,148.301L333.004,148.404L330.084,148.795L330.235,149.849L327.11,151.405L324.19,152.516L321.243,153.469L319.207,155.576L318.74,156.112L318.254,157.823L318.654,159.537L319.698,159.619L319.737,158.436L320.318,159.154L319.875,160.08L317.997,160.606L316.78,160.54L314.729,161.11L313.564,161.269L312.018,161.428L309.623,162.367L313.575,161.758L314.178,162.372L310.305,163.344L308.656,163.35L308.835,162.954L307.814,163.855L308.539,164.003L307.374,166.335L304.832,168.839L304.858,168.002L304.33,167.832L303.688,167.022L303.77,168.773L304.241,169.357L304.008,170.581L302.855,171.849L300.733,174.454L300.529,174.322L301.888,172.103L300.864,170.856L301.248,168.156L300.387,169.561L300.415,171.629L298.891,171.143L300.355,172.169L299.702,175.271L300.395,175.498L300.399,176.625L300.002,179.892L297.771,182.321L294.804,183.29L292.631,185.206L291.254,185.416L289.633,186.618L289.013,187.721L285.615,189.843L283.762,191.4L282.078,193.346L281.169,195.669L281.18,197.948L281.51,200.748L282.265,203.066L282.006,204.486L282.599,208.284L282.123,210.49L281.786,211.765L280.771,213.766L279.887,214.176L278.608,213.783L278.42,212.347L277.512,211.594L276.575,208.777L275.779,206.271L275.614,204.99L276.592,202.811L276.202,201.009L274.66,198.269L273.72,197.765L270.681,199.256L270.241,199.09L269.26,197.56L267.753,196.75L264.621,197.166L262.312,196.8L260.209,197.027L258.962,197.488L259.278,198.408L258.934,199.739L259.365,200.388L258.757,200.815L257.862,200.332L256.716,200.953L254.775,200.853L253.156,199.118L250.715,199.528L248.93,198.768L247.199,199.001L244.75,199.767L241.731,202.195L238.722,203.61L236.887,205.173L235.943,206.648L235.421,208.905L235.223,210.479L235.499,211.594L235.508,211.599L235.497,211.605L233.863,214.465L232.913,216.825L231.886,221.207L231.328,222.808L231.486,224.591L232.062,226.185L232.194,228.72L233.631,231.154L233.991,233.018L234.835,234.628L237.647,235.496L238.59,236.861L241.148,235.949L243.306,235.617L245.46,235.031L247.28,234.473L249.219,233.14L250.161,231.232L250.79,228.487L251.413,227.53L253.409,226.672L256.44,225.914L258.858,226.03L260.574,225.753L261.122,226.445L260.797,228.022L259.035,229.965L258.096,231.956L258.524,232.526L257.913,233.936L256.887,236.485L256.29,235.645L255.705,235.7L255.652,236.181L256.177,236.198L256.012,237.082L255.383,238.497L255.559,239L255.125,240.172L255.266,240.481L254.749,242.133L254.098,242.995L253.586,243.1L252.905,244.232L253.738,244.823L254.033,244.337L254.807,244.752L255.083,244.879L255.758,244.304L256.553,244.26L256.783,244.525L257.231,244.365L258.489,244.658L259.78,244.569L260.72,244.21L261.08,243.846L261.951,244.017L262.587,244.238L263.326,244.161L263.907,243.879L265.128,244.332L265.56,244.404L266.345,245.011L267.069,245.74L268.028,246.243L268.668,247.137L268.396,247.452L268.184,248.181L268.358,249.373L267.611,250.488L267.188,251.796L266.969,253.236L267.046,254.075L266.992,255.542L266.533,255.862L266.158,257.258L266.281,258.118L265.653,258.951L265.708,259.828L266.101,260.362L266.679,262.132L267.677,263.444L268.897,264.833L269.833,266.002L269.731,266.691L270.842,266.839L271.119,266.575L271.849,267.374L273.234,267.143L274.482,266.316L276.215,265.66L277.231,264.69L278.762,264.877L278.642,265.197L280.197,265.313L281.414,265.875L282.266,266.85L283.276,267.754L284.713,267.853L286.946,265.583L288.115,265.236L288.207,264.161L288.892,261.404L290.591,259.894L292.356,259.833L292.623,259.155L294.799,259.425L297.102,257.782L298.249,257.054L299.707,255.482L300.677,255.68L301.351,256.541L300.733,257.638L300.601,258.405L298.936,258.785L299.756,260.263L299.621,261.967L298.271,263.858L299.189,266.443L300.41,266.233L301.162,263.88L300.361,262.733L300.37,260.269L303.936,258.94L303.654,257.407L304.699,256.381L305.553,258.67L307.512,258.719L309.211,260.539L309.259,261.614L311.764,261.647L314.774,261.311L316.295,262.766L318.419,263.169L320.034,262.154L320.119,261.333L323.593,261.14L326.948,261.09L324.521,262.055L325.399,263.593L327.624,263.836L329.665,265.44L330.005,268.046L331.46,267.975L332.529,268.741L334.328,269.936L335.978,272.057L336.003,273.732L337.061,273.809L338.518,275.401L339.588,276.53L342.935,277.185L343.254,276.596L345.534,276.359L348.523,277.235L349.474,277.593L351.518,278.364L354.433,281.112L354.874,282.444L355.837,282.29L356.506,284.091L358.011,289.778L359.515,290.312L359.573,292.558L357.461,295.239L358.331,296.219L363.301,296.725L363.412,299.99L365.54,297.854L369.076,299.021L373.761,301.008L375.139,302.913L374.699,304.713L377.959,303.711L383.438,305.434L387.636,305.308L391.822,308L395.459,311.645L397.636,312.581L400.034,312.713L401.07,313.738L402.091,317.88L402.594,319.852L401.607,325.235L400.232,327.357L396.431,331.888L394.779,335.572L392.818,338.402L392.128,338.463L391.446,340.864L391.929,346.975L391.42,352.002L391.241,354.158L390.438,355.446L390.217,359.814L387.701,364.08L387.477,367.457L385.359,368.874L384.87,370.84L381.888,370.829L377.681,372.086L375.885,373.543L372.909,374.502L369.94,377.106L367.96,380.354L367.817,382.799L368.462,384.606L368.334,387.917L367.906,389.519L366.225,391.322L363.971,397.088L361.968,399.683L360.363,401.218L359.596,404.332L358.124,406.199L357.288,408.259L354.594,410.075L352.533,409.422L351.151,409.77L348.474,408.37L346.688,408.475L344.767,406.664L344.875,408.37L348.722,411.17L348.756,413.427L350.648,414.847L350.802,416.444L349.059,420.622L345.528,422.37L340.439,423.048L337.51,422.723L338.474,424.661L338.468,427.092L339.304,428.73L338.007,429.872L335.472,430.322L332.715,429.136L331.909,429.987L333.039,433.205L335.012,434.179L336.174,433.161L337.332,434.841L335.223,435.841L333.671,437.845L334.129,441.087L333.979,442.805L331.594,442.815L330.057,444.454L330.004,446.853L333.147,449.192L335.718,449.834L335.677,452.691L333.271,454.478L332.805,458.177L330.95,459.423L330.426,460.891L332.286,464.143L334.511,465.947L333.435,465.789L331.268,465.768L330.36,466.531L328.572,467.651L329.219,470.542L328.224,470.615L325.143,469.612L321.582,467.451L317.906,465.673L316.419,463.699L316.452,461.867L314.473,459.78L312.29,454.403L312.338,451.353L314.182,448.89L310.074,447.962L311.585,445.137L310.834,439.802L313.993,440.934L313.437,434.255L311.483,433.396L311.808,437.43L310.069,436.977L309.579,432.356L308.867,426.345L309.49,424.122L307.963,420.948L306.864,417.273L307.945,417.168L308.358,411.895L309.071,406.664L309.219,401.784L307.666,396.878L307.975,394.177L306.932,390.129L307.85,386.131L307.348,379.794L307.248,372.995L307.16,365.68L306.332,360.329L305.254,355.728L302.278,353.848L301.902,352.511L296.075,349.234L290.754,345.666L288.427,343.651L287.038,340.957L287.42,340.019L284.71,335.743L281.53,329.733L278.506,323.246L277.278,321.763L276.285,319.367L274.01,317.241L271.955,315.924L272.809,314.47L271.349,311.37L272.154,309.09L274.34,307.036L275.791,304.603L275.161,303.183L274.113,304.697L272.41,303.271L272.964,302.351L272.46,299.401L273.439,298.911L273.957,296.885L275.02,294.787L274.823,293.461L276.375,292.767L278.308,291.468L277.943,290.461L278.988,290.218L278.887,288.589L279.563,287.411L280.963,287.19L282.185,285.148L283.295,283.441L282.283,282.665L282.86,280.776L282.327,277.802L282.954,276.949L282.616,274.195L281.56,272.459L280.664,271.523L280.154,269.765L280.885,268.895L280.191,268.674L279.724,267.6L278.383,266.691L277.141,266.9L276.513,268.03L275.338,268.851L274.717,268.961L274.409,269.639L275.652,271.407L274.875,271.826L274.449,272.305L273.128,272.47L272.738,270.526L272.347,271.082L271.428,270.889L270.931,269.578L269.792,269.363L269.086,268.983L267.885,268.989L267.766,269.694L267.47,269.203L265.986,268.482L265.461,267.798L265.817,267.231L265.749,266.514L265.02,265.732L263.962,265.092L263.032,264.673L262.903,263.72L262.207,263.141L262.325,264.089L261.719,264.866L261.134,263.962L260.259,263.643L259.922,262.981L260.012,261.994L260.449,260.963L259.698,260.506L260.39,259.877L259.504,258.852L258.302,257.539L257.78,256.436L256.692,255.415L255.417,253.942L255.775,253.435L256.192,253.926L256.424,253.7L256.036,252.679L255.22,252.392L254.836,253.164L253.224,253.115L252.25,252.8L251.158,252.155L249.632,251.95L248.908,251.25L247.541,250.681L245.802,250.62L244.595,249.975L243.244,248.628L240.497,245.116L239.182,244.056L237.027,243.205L235.437,243.443L233.055,244.674L231.615,244.995L229.761,244.133L227.759,243.514L225.355,242.017L223.338,241.559L220.411,240.039L218.309,238.481L217.739,237.607L216.222,237.414L213.549,236.38L212.626,234.887L209.951,233.035L208.916,230.972L208.537,229.378L209.516,229.063L209.395,228.128L210.182,227.281L210.398,226.152L209.752,224.679L209.753,223.378L209.146,221.728L207.401,218.476L205.191,215.917L204.316,213.877L202.284,212.541L201.971,211.738L202.861,209.714L201.654,208.955L200.443,207.358L200.347,205.073L198.963,204.807L197.836,203.083L197,201.486L197.161,200.465L196.406,197.992L196.17,195.486L196.589,194.227L195.04,192.924L194.1,193.069L192.843,192.165L192.013,193.495L191.983,195.07L191.521,197.532L192.054,198.879L193.422,201.136L193.658,201.907L194.003,202.14L194.059,203.266L194.548,203.221L194.536,205.334L195.15,206.166L195.429,207.33L196.715,208.994L196.879,212.043L197.358,213.478L197.762,215.013L197.524,216.737L198.818,216.847L199.598,218.332L200.274,219.795L200.092,220.382L198.688,221.584L198.208,221.567L197.893,219.579L196.502,217.712L194.886,216.127L193.678,215.296L194.322,212.902L194.334,211.128L193.288,210.113L191.783,208.65L191.315,209.071L190.846,208.217L189.378,207.424L188.274,205.523L188.534,205.279L189.607,205.462L190.936,204.236L191.431,202.761L189.998,200.421L188.672,199.517L188.275,197.471L187.917,195.32L187.473,192.703L187.317,189.76L187.42,188.086L186.321,186.203L185.21,185.809L185.242,184.874L183.808,184.707L183.158,183.827L180.809,183.5L180.328,182.975L180.648,181.181L179.299,177.896L178.872,173.361L179.269,172.605L178.544,171.529L177.65,168.801L178.422,166.147L177.814,164.371L179.576,161.686L180.75,158.907L181.087,156.429L183.547,153.388L187.057,147.558L188.831,143.273L189.502,140.546L189.591,139.073L190.228,138.456L193.241,139.53L192.966,142.534L194.023,141.693L195.025,139.084L195.609,136.489L195.273,136.484L192.259,133.381L191.29,132.023L187.623,130.722L187.958,127.952L189.504,126.042L187.24,124.716L188.446,122.22L187.032,119.98L188.055,118.398L187.537,117.241L186.117,116.267L187.34,113.61L186.091,111.156L186.958,108.309L184.862,108.115L181.216,108.039L179.154,107.175L176.843,104.076L175.095,103.512L171.947,102.451L168.545,102.703L165.193,101.344L163.574,100.084L160.476,100.708L159.147,102.768L157.703,102.959L154.497,103.577L151.581,104.58L148.465,105.216L149.682,103.462L153.327,100.554L156.577,99.645L156.622,98.908L152.218,100.549L148.864,102.522L143.645,104.635L144.051,106.086L139.968,108.237L136.354,109.495L133.204,110.42L131.462,111.756L126.427,113.322L124.458,114.753L120.571,116.055L119.135,115.822L116.186,116.676L112.876,117.718L110.016,118.741L105.155,119.62L105.226,119.105L109.076,117.671L112.216,116.728L116.202,115.053L119.442,114.712L121.696,113.46L126.548,111.648L127.607,111.039L130.275,109.975L132.705,107.693L135.478,105.924L131.981,106.831L131.697,106.314L129.451,107.404L129.323,105.883L127.711,106.957L128.211,105.469L124.782,106.663L123.359,106.663L124.821,104.883L126.268,103.789L125.788,102.733L122.248,103.301L121.647,101.91L120.774,101.199L122.417,99.531L121.918,98.277L124.51,96.591L128.014,94.962L130.349,93.472L132.386,93.261L133.457,93.723L136.697,92.326L138.062,92.575L140.684,91.68L141.617,90.364L140.91,89.849L143.699,88.742L142.307,88.776L139.301,89.397L137.955,90.033L136.871,89.397L133.392,89.722L130.876,89.033L131.19,87.881L130.219,86.227L134.615,85.041L141.025,83.658L142.817,83.658L140.975,85.069L145.713,84.964L145.839,83.214L144.344,82.138L144.369,80.739L143.642,79.549L141.703,78.668L144.582,77.219L148.48,77.13L152.623,75.869L154.676,74.535L158.357,73.235L160.78,72.922L166.168,71.717L167.89,71.9L172.779,70.458L175.298,71.025L175.434,72.245L176.953,71.721L180.319,71.882L179.503,72.507L182.215,72.973L184.658,72.701L188.177,73.559L191.967,73.818L193.224,74.174L196.503,73.73L198.87,74.549L200.787,74.934L204.091,75.595L206.158,76.919L208.134,77.177L211.115,76.023L214.508,75.167L217.349,75.502L221.661,74.299L225.769,73.614L226.171,74.749L228.339,74.109L229.999,72.825L231.187,73.116L232.543,75.571L237.023,73.711L235.467,75.79L238.47,75.343L239.976,74.54L242.41,74.698L244.663,75.851L248.804,76.863L251.368,77.331L253.606,77.153L255.374,78.56L251.251,79.94L254.683,80.54L260.77,80.209L262.972,79.723L264.021,81.398L267.421,79.983L266.111,78.8L268.21,77.851L270.912,77.724L272.837,77.448L274.076,78.109L275.139,79.619L277.701,79.398L280.632,80.654L284.292,80.209L287.395,80.276L288.323,78.546L290.561,78.062L293.261,79.002L291.503,81.644L294.342,79.417L296.022,79.492L298.83,76.704L297.684,75.009L295.973,73.901L298.248,70.897L302.111,68.942L304.546,69.373L305.831,70.563L306.632,73.623L303.864,74.967ZM265.487,65.746L263.363,66.989L268.648,66.185L270.368,67.525L273.848,66.167L275,67.039L274.544,69.664L276.488,68.556L277.274,65.827L279.399,65.442L281.091,65.863L282.522,66.935L281.763,69.537L280.937,71.442L283.445,72.788L286.313,74.077L285.206,75.283L281.555,75.506L282.153,76.564L280.701,77.579L277.142,77.144L274.021,76.396L271.422,76.564L266.692,77.504L259.965,77.987L256.927,78.179L256.802,76.873L254.498,76.121L252.358,76.429L251.54,74.253L253.191,73.966L256.845,73.499L259.727,73.619L262.867,73.143L259.316,72.507L254.632,72.724L251.691,72.668L251.446,71.671L257.239,70.586L253.981,70.627L250.96,69.915L254.498,67.905L256.888,66.845L263.843,65.237ZM285.985,64.956L282.763,66.702L281.072,64.853L282.081,64.484L284.907,64.377ZM343.157,65.796L342.912,66.526L340.762,66.45L338.581,66.392L336.108,66.751L335.613,66.589L334.219,65.188L334.908,64.24L335.996,64.066L340.497,64.346ZM322.258,65.648L322.785,67.305L326.087,65.165L331.977,64.089L333.772,66.818L332.39,68.565L336.963,67.787L339.551,66.728L343.347,68.076L345.49,69.355L345.112,70.531L349.315,69.92L350.59,71.639L355.112,72.714L356.408,73.813L357.184,76.382L352.647,77.668L356.852,79.483L359.998,80.096L361.994,82.671L365.34,82.857L363.835,84.835L358.604,88.142L356.4,86.92L354.137,84.193L351.151,84.547L350.142,86.169L351.725,87.828L354.163,89.145L354.752,89.907L355.028,92.756L353.403,94.844L350.887,94.057L346.246,91.739L348.35,94.234L349.968,95.993L349.919,97.012L344.265,95.845L340.16,94.155L338.068,92.747L339.222,91.93L336.583,90.447L334.005,89.057L333.644,89.887L326.988,90.345L325.603,89.358L328.132,87.253L332.302,87.205L337.014,86.838L336.781,85.823L338.233,84.413L342.41,81.668L342.425,80.432L342.075,79.473L339.478,78.128L335.637,77.186L337.383,76.485L336.061,74.777L334.279,74.619L333.134,73.688L331.538,74.498L327.496,74.851L320.146,74.239L316.168,73.434L313.011,73.023L311.877,72.07L314.875,70.833L311.913,70.823L313.084,68.099L316.299,65.724L319.154,64.649L324.909,63.947ZM295.348,63.845L297.348,64.395L301.252,64.062L301.198,64.827L298.326,66.091L300.59,67.232L298.462,69.642L294.287,70.686L292.437,70.458L291.755,69.432L288.178,67.368L288.882,66.517L292.834,66.845L291.918,65.116ZM794.712,65.505L791.622,65.523L787.096,65.228L786.584,65.09L787.374,64.049L789.662,63.809L793.688,64.813ZM307.899,66.67L304.26,68.665L301.962,68.565L302.38,66.226L303.389,64.911L305.296,63.796L307.857,63.084L312.03,63.172L315.452,63.809L310.721,66.154ZM248.37,70.344L241.653,71.689L241.621,70.503L238.129,69.082L239.652,68.208L243.377,66.006L246.834,64.275L246.424,62.674L253.686,62.265L256.06,62.806L261.107,62.951L262.38,63.707L263.561,64.813L260.384,65.478L253.645,67.341L249.382,69.214ZM803.459,60.624L802.385,61.646L798.874,61.414L793.902,60.398L793.365,59.566L797.58,59.951ZM311.325,60.894L309.46,61.896L306.674,61.703L304.756,61.025L306.752,59.869L310.182,59.182L311.224,60.081ZM790.612,59.397L791.314,61.305L783.798,61.235L781.138,61.843L775.248,60.168L774.297,58.416L776.36,57.94L781.755,58.052ZM305.181,56.478L305.7,57.637L304.679,58.936L302.203,60.842L298.666,61.104L296.842,60.694L298.136,59.199L294.686,59.397L296.273,57.437L298.344,57.514L302.087,56.66L304.741,56.804ZM284.742,57.778L284.691,58.678L286.855,58.253L288.842,58.364L288.081,59.609L285.784,60.829L278.608,61.226L272.492,62.348L269.349,62.41L269.874,61.563L275.117,60.424L265.736,60.729L263.364,60.268L268.553,57.782L271.133,57.08L275.888,57.928L278.004,59.432L281.324,59.626L280.746,57.203L283.445,56.292L285.204,56.579ZM620.961,72.181L619.819,72.42L612.81,72.066L611.779,70.865L607.714,70.143L606.855,68.688L608.752,68.117L608.096,66.661L611.234,64.413L609.222,64.089L613.086,61.804L612.007,60.633L615.856,59.281L621.614,57.65L627.972,57.182L630.822,56.25L634.476,55.929L636.446,56.914L635.577,57.697L629.227,58.953L623.753,60.172L618.683,62.63L616.811,65.188L614.688,67.738L616.035,69.965ZM313.525,55.534L315.041,56.334L318.937,56.33L319.989,57.152L318.786,58.099L320.633,58.674L321.45,59.276L324.063,59.389L326.834,59.605L330.411,59.052L334.64,58.833L337.76,59.013L339.258,59.977L339.006,61.038L337.292,61.725L333.908,62.282L331.53,61.966L325.444,62.366L321.249,62.414L318.204,62.093L313.449,61.261L313.835,59.847L314.579,58.583L313.465,57.479L309.615,57.173L307.977,56.397L309.598,55.379ZM272.576,54.187L270.304,56.085L267.887,56.952L265.912,57.075L261.105,58.15L257.515,58.54L255.383,57.992L260.755,56.115L266.534,54.511L269.5,54.548ZM316.072,54.494L315.122,54.565L311.584,54.407L311.673,53.723L315.571,53.761L316.549,54.212ZM284.474,54.058L280.097,54.765L278.024,53.971L280.42,53.196L283.527,52.95L285.879,53.328ZM548.271,53.678L544.121,54.677L540.552,54.108L541.771,53.48L540.446,52.705L544.361,52.22L545.331,53.127ZM287.786,51.871L284.921,52.338L281.706,52.334L282.114,51.993L284.886,51.278L285.801,51.387ZM313.341,53.184L309.999,53.686L308.935,53.118L308.954,52.216L309.76,51.226L312.167,51.322L313.142,51.479L314.674,52.31ZM305.723,52.534L305.519,53.546L302.596,53.275L300.162,52.489L295.923,52.403L298.52,51.689L296.786,51.117L297.607,50.211L301.038,50.533L305.362,51.395ZM704.059,52.578L693.994,53.513L694.442,50.37L695.751,50.108L697.346,50.259L703.633,51.604ZM534.837,49.281L541.511,51.025L536.839,51.964L536.073,53.744L534.44,54.203L533.827,56.254L531.458,56.351L527.015,54.835L528.678,53.963L525.664,53.262L521.648,51.234L519.951,49.394L525.041,48.567L526.199,49.375L528.917,49.343L529.508,48.556L532.286,48.478ZM548.128,47.666L552.08,48.463L549.604,49.705L544.118,49.982L538.388,49.595L537.909,48.956L535.171,48.913L532.888,47.865L538.592,47.236L541.462,47.777L543.203,47.103ZM596.535,47.35L594.166,47.647L592.558,47.819L592.493,48.192L590.476,48.571L588.141,48.03L588.848,47.323L584.614,47.255L588.079,46.85L590.921,46.82L591.643,47.426L592.423,46.887L593.987,46.523L597.062,47.008ZM692.74,51.206L688.818,51.5L682.796,50.817L678.739,49.918L675.645,48.265L672.603,47.815L675.885,46.287L679.372,45.793L684.283,46.903L691.052,49.101ZM333.805,49.379L335.433,50.128L332.181,50.829L327.052,52.627L323.463,52.799L319.715,52.489L318.517,51.516L319.355,50.653L321.472,50.029L317.951,50.045L316.613,49.273L316.487,48.231L318.877,47.228L320.926,46.549L323.027,46.392L322.767,45.889L327.241,45.779L328.37,46.955L331.053,47.437L333.727,47.865ZM375.454,41.922L380.158,42.08L383.836,42.333L386.689,42.883L386.146,43.428L380.884,44.338L376.04,44.766L373.954,45.249L378.02,45.239L372.543,46.564L368.982,47.194L364.296,49.054L360.066,49.438L358.485,49.91L352.484,50.164L354.902,50.458L353.251,50.877L353.967,52.054L351.521,52.877L348.011,53.563L346.385,54.523L343.113,55.257L342.986,55.82L346.426,55.723L346.048,56.33L339.706,57.838L335.007,57.143L328.889,57.531L326.158,57.228L322.51,57.097L323.211,55.895L327.301,55.337L327.772,53.563L329.106,53.394L333.48,54.448L332.07,52.885L329.309,52.423L331.671,51.495L335.574,50.929L336.831,50.108L334.946,49.198L335.243,48.019L340.329,48.119L341.605,48.366L345.316,47.536L341.309,47.277L334.563,47.422L332.002,46.662L331.381,45.771L329.91,45.136L330.345,44.406L333.567,44.006L335.8,43.939L339.814,43.6L343.422,42.835L345.568,42.939L346.89,43.516L349.55,42.414L352.34,42.093L355.859,41.875L361.505,41.795L362.236,42.006L367.852,41.672L371.644,41.799ZM451.061,41.117L461.868,42.684L458.244,43.47L451.176,43.562L441.172,43.766L441.948,44.138L448.582,43.907L453.903,44.636L457.701,43.989L459.021,44.748L456.624,46.008L461.592,45.198L470.795,44.37L476.282,44.781L477.186,45.705L469.271,47.277L468.107,47.796L461.969,48.188L466.34,48.296L463.788,49.982L461.938,51.512L461.495,54.203L463.57,55.816L460.471,55.917L457.073,56.706L460.5,58.039L460.608,60.203L458.418,60.442L460.675,62.665L456.134,62.85L458.315,63.916L457.496,64.84L454.544,65.246L451.679,65.255L453.939,67.048L453.768,68.235L449.873,67.133L448.676,67.846L451.352,68.516L453.8,70.157L454.241,72.337L450.402,72.862L448.964,71.813L446.657,70.257L447.031,72.093L444.32,73.526L449.866,73.642L452.756,73.79L446.659,76.182L440.443,78.363L433.956,79.322L431.582,79.332L429.107,80.408L425.417,83.372L420.25,85.352L418.705,85.468L415.605,86.164L412.272,86.829L409.916,88.592L409.356,90.607L407.729,92.502L403.453,94.819L403.765,97.101L402.113,99.526L400.199,102.411L396.913,102.592L394.179,100.179L389.605,100.164L387.869,98.55L387.217,95.692L384.471,92.081L383.959,90.203L384.524,87.634L382.399,85.007L383.929,82.928L382.832,81.939L386.168,78.673L389.772,77.64L391.034,76.485L392.255,74.341L389.47,75.311L388.162,75.72L386.106,76.112L383.839,75.213L384.423,73.356L385.822,71.91L387.789,71.868L391.806,72.59L388.852,70.869L387.344,69.947L385.117,70.325L383.651,69.655L387.004,67.165L386.167,66.176L385.335,64.351L384.137,61.589L382.051,60.585L382.595,59.514L377.994,58.026L373.865,57.842L368.484,57.945L363.522,58.133L361.688,57.33L359.235,55.757L364.892,54.977L368.924,54.848L360.946,54.207L357.21,53.213L358.139,52.277L366.261,51.125L374.081,49.993L375.395,49.151L370.85,48.323L373.181,47.422L380.863,45.871L383.758,45.638L383.735,44.672L388.565,44.113L394.496,43.783L400.172,43.766L401.73,44.42L407.412,43.271L411.299,44.049L413.793,44.213L417.244,44.904L413.516,43.766L414.33,42.883L421.228,41.689L427.544,41.779L430.283,41.062L436.767,40.877Z";
+const GRATICULE_PATH = "M157.7,543.3 L137.3,531.1 L119.0,517.8 L101.8,503.8 L85.6,489.2 L70.4,474.1 L56.6,458.6 L44.1,442.7 L33.2,426.5 L23.6,410.2 L15.5,393.9 L8.8,377.5 L3.4,361.1 L-0.8,344.8 L-3.7,328.5 L-5.5,312.2 L-6.1,296.0 L-5.5,279.7 L-3.7,263.4 L-0.8,247.1 L3.4,230.8 L8.8,214.4 L15.5,198.1 L23.6,181.7 L33.2,165.4 L44.1,149.2 L56.6,133.3 L70.4,117.8 L85.6,102.7 L101.8,88.1 L119.0,74.1 L137.3,60.8 L157.7,48.6 M214.8,543.3 L197.7,531.1 L182.5,517.8 L168.2,503.8 L154.6,489.2 L142.0,474.1 L130.5,458.6 L120.1,442.7 L111.0,426.5 L103.0,410.2 L96.3,393.9 L90.7,377.5 L86.2,361.1 L82.7,344.8 L80.2,328.5 L78.8,312.2 L78.3,296.0 L78.8,279.7 L80.2,263.4 L82.7,247.1 L86.2,230.8 L90.7,214.4 L96.3,198.1 L103.0,181.7 L111.0,165.4 L120.1,149.2 L130.5,133.3 L142.0,117.8 L154.6,102.7 L168.2,88.1 L182.5,74.1 L197.7,60.8 L214.8,48.6 M271.8,543.3 L258.2,531.1 L246.0,517.8 L234.5,503.8 L223.7,489.2 L213.6,474.1 L204.4,458.6 L196.1,442.7 L188.8,426.5 L182.4,410.2 L177.0,393.9 L172.5,377.5 L168.9,361.1 L166.1,344.8 L164.2,328.5 L163.0,312.2 L162.6,296.0 L163.0,279.7 L164.2,263.4 L166.1,247.1 L168.9,230.8 L172.5,214.4 L177.0,198.1 L182.4,181.7 L188.8,165.4 L196.1,149.2 L204.4,133.3 L213.6,117.8 L223.7,102.7 L234.5,88.1 L246.0,74.1 L258.2,60.8 L271.8,48.6 M328.9,543.3 L318.6,531.1 L309.5,517.8 L300.9,503.8 L292.8,489.2 L285.2,474.1 L278.3,458.6 L272.1,442.7 L266.6,426.5 L261.8,410.2 L257.8,393.9 L254.4,377.5 L251.7,361.1 L249.6,344.8 L248.1,328.5 L247.3,312.2 L247.0,296.0 L247.3,279.7 L248.1,263.4 L249.6,247.1 L251.7,230.8 L254.4,214.4 L257.8,198.1 L261.8,181.7 L266.6,165.4 L272.1,149.2 L278.3,133.3 L285.2,117.8 L292.8,102.7 L300.9,88.1 L309.5,74.1 L318.6,60.8 L328.9,48.6 M385.9,543.3 L379.1,531.1 L373.0,517.8 L367.3,503.8 L361.9,489.2 L356.8,474.1 L352.2,458.6 L348.0,442.7 L344.4,426.5 L341.2,410.2 L338.5,393.9 L336.3,377.5 L334.5,361.1 L333.1,344.8 L332.1,328.5 L331.5,312.2 L331.3,296.0 L331.5,279.7 L332.1,263.4 L333.1,247.1 L334.5,230.8 L336.3,214.4 L338.5,198.1 L341.2,181.7 L344.4,165.4 L348.0,149.2 L352.2,133.3 L356.8,117.8 L361.9,102.7 L367.3,88.1 L373.0,74.1 L379.1,60.8 L385.9,48.6 M443.0,543.3 L439.5,531.1 L436.5,517.8 L433.6,503.8 L430.9,489.2 L428.4,474.1 L426.1,458.6 L424.0,442.7 L422.2,426.5 L420.6,410.2 L419.3,393.9 L418.1,377.5 L417.2,361.1 L416.5,344.8 L416.0,328.5 L415.8,312.2 L415.7,296.0 L415.8,279.7 L416.0,263.4 L416.5,247.1 L417.2,230.8 L418.1,214.4 L419.3,198.1 L420.6,181.7 L422.2,165.4 L424.0,149.2 L426.1,133.3 L428.4,117.8 L430.9,102.7 L433.6,88.1 L436.5,74.1 L439.5,60.8 L443.0,48.6 M500.0,543.3 L500.0,531.1 L500.0,517.8 L500.0,503.8 L500.0,489.2 L500.0,474.1 L500.0,458.6 L500.0,442.7 L500.0,426.5 L500.0,410.2 L500.0,393.9 L500.0,377.5 L500.0,361.1 L500.0,344.8 L500.0,328.5 L500.0,312.2 L500.0,296.0 L500.0,279.7 L500.0,263.4 L500.0,247.1 L500.0,230.8 L500.0,214.4 L500.0,198.1 L500.0,181.7 L500.0,165.4 L500.0,149.2 L500.0,133.3 L500.0,117.8 L500.0,102.7 L500.0,88.1 L500.0,74.1 L500.0,60.8 L500.0,48.6 M557.0,543.3 L560.5,531.1 L563.5,517.8 L566.4,503.8 L569.1,489.2 L571.6,474.1 L573.9,458.6 L576.0,442.7 L577.8,426.5 L579.4,410.2 L580.7,393.9 L581.9,377.5 L582.8,361.1 L583.5,344.8 L584.0,328.5 L584.2,312.2 L584.3,296.0 L584.2,279.7 L584.0,263.4 L583.5,247.1 L582.8,230.8 L581.9,214.4 L580.7,198.1 L579.4,181.7 L577.8,165.4 L576.0,149.2 L573.9,133.3 L571.6,117.8 L569.1,102.7 L566.4,88.1 L563.5,74.1 L560.5,60.8 L557.0,48.6 M614.1,543.3 L620.9,531.1 L627.0,517.8 L632.7,503.8 L638.1,489.2 L643.2,474.1 L647.8,458.6 L652.0,442.7 L655.6,426.5 L658.8,410.2 L661.5,393.9 L663.7,377.5 L665.5,361.1 L666.9,344.8 L667.9,328.5 L668.5,312.2 L668.7,296.0 L668.5,279.7 L667.9,263.4 L666.9,247.1 L665.5,230.8 L663.7,214.4 L661.5,198.1 L658.8,181.7 L655.6,165.4 L652.0,149.2 L647.8,133.3 L643.2,117.8 L638.1,102.7 L632.7,88.1 L627.0,74.1 L620.9,60.8 L614.1,48.6 M671.1,543.3 L681.4,531.1 L690.5,517.8 L699.1,503.8 L707.2,489.2 L714.8,474.1 L721.7,458.6 L727.9,442.7 L733.4,426.5 L738.2,410.2 L742.2,393.9 L745.6,377.5 L748.3,361.1 L750.4,344.8 L751.9,328.5 L752.7,312.2 L753.0,296.0 L752.7,279.7 L751.9,263.4 L750.4,247.1 L748.3,230.8 L745.6,214.4 L742.2,198.1 L738.2,181.7 L733.4,165.4 L727.9,149.2 L721.7,133.3 L714.8,117.8 L707.2,102.7 L699.1,88.1 L690.5,74.1 L681.4,60.8 L671.1,48.6 M728.2,543.3 L741.8,531.1 L754.0,517.8 L765.5,503.8 L776.3,489.2 L786.4,474.1 L795.6,458.6 L803.9,442.7 L811.2,426.5 L817.6,410.2 L823.0,393.9 L827.5,377.5 L831.1,361.1 L833.9,344.8 L835.8,328.5 L837.0,312.2 L837.4,296.0 L837.0,279.7 L835.8,263.4 L833.9,247.1 L831.1,230.8 L827.5,214.4 L823.0,198.1 L817.6,181.7 L811.2,165.4 L803.9,149.2 L795.6,133.3 L786.4,117.8 L776.3,102.7 L765.5,88.1 L754.0,74.1 L741.8,60.8 L728.2,48.6 M785.2,543.3 L802.3,531.1 L817.5,517.8 L831.8,503.8 L845.4,489.2 L858.0,474.1 L869.5,458.6 L879.9,442.7 L889.0,426.5 L897.0,410.2 L903.7,393.9 L909.3,377.5 L913.8,361.1 L917.3,344.8 L919.8,328.5 L921.2,312.2 L921.7,296.0 L921.2,279.7 L919.8,263.4 L917.3,247.1 L913.8,230.8 L909.3,214.4 L903.7,198.1 L897.0,181.7 L889.0,165.4 L879.9,149.2 L869.5,133.3 L858.0,117.8 L845.4,102.7 L831.8,88.1 L817.5,74.1 L802.3,60.8 L785.2,48.6 M842.3,543.3 L862.7,531.1 L881.0,517.8 L898.2,503.8 L914.4,489.2 L929.6,474.1 L943.4,458.6 L955.9,442.7 L966.8,426.5 L976.4,410.2 L984.5,393.9 L991.2,377.5 L996.6,361.1 L1000.8,344.8 L1003.7,328.5 L1005.5,312.2 L1006.1,296.0 L1005.5,279.7 L1003.7,263.4 L1000.8,247.1 L996.6,230.8 L991.2,214.4 L984.5,198.1 L976.4,181.7 L966.8,165.4 L955.9,149.2 L943.4,133.3 L929.6,117.8 L914.4,102.7 L898.2,88.1 L881.0,74.1 L862.7,60.8 L842.3,48.6 M85.6,489.2 L97.1,489.2 L108.6,489.2 L120.1,489.2 L131.6,489.2 L143.1,489.2 L154.6,489.2 L166.2,489.2 L177.7,489.2 L189.2,489.2 L200.7,489.2 L212.2,489.2 L223.7,489.2 L235.2,489.2 L246.7,489.2 L258.2,489.2 L269.8,489.2 L281.3,489.2 L292.8,489.2 L304.3,489.2 L315.8,489.2 L327.3,489.2 L338.8,489.2 L350.3,489.2 L361.9,489.2 L373.4,489.2 L384.9,489.2 L396.4,489.2 L407.9,489.2 L419.4,489.2 L430.9,489.2 L442.4,489.2 L454.0,489.2 L465.5,489.2 L477.0,489.2 L488.5,489.2 L500.0,489.2 L511.5,489.2 L523.0,489.2 L534.5,489.2 L546.0,489.2 L557.6,489.2 L569.1,489.2 L580.6,489.2 L592.1,489.2 L603.6,489.2 L615.1,489.2 L626.6,489.2 L638.1,489.2 L649.7,489.2 L661.2,489.2 L672.7,489.2 L684.2,489.2 L695.7,489.2 L707.2,489.2 L718.7,489.2 L730.2,489.2 L741.8,489.2 L753.3,489.2 L764.8,489.2 L776.3,489.2 L787.8,489.2 L799.3,489.2 L810.8,489.2 L822.3,489.2 L833.8,489.2 L845.4,489.2 L856.9,489.2 L868.4,489.2 L879.9,489.2 L891.4,489.2 L902.9,489.2 L914.4,489.2 M15.5,393.9 L29.0,393.9 L42.5,393.9 L55.9,393.9 L69.4,393.9 L82.8,393.9 L96.3,393.9 L109.7,393.9 L123.2,393.9 L136.7,393.9 L150.1,393.9 L163.6,393.9 L177.0,393.9 L190.5,393.9 L203.9,393.9 L217.4,393.9 L230.9,393.9 L244.3,393.9 L257.8,393.9 L271.2,393.9 L284.7,393.9 L298.1,393.9 L311.6,393.9 L325.1,393.9 L338.5,393.9 L352.0,393.9 L365.4,393.9 L378.9,393.9 L392.3,393.9 L405.8,393.9 L419.3,393.9 L432.7,393.9 L446.2,393.9 L459.6,393.9 L473.1,393.9 L486.5,393.9 L500.0,393.9 L513.5,393.9 L526.9,393.9 L540.4,393.9 L553.8,393.9 L567.3,393.9 L580.7,393.9 L594.2,393.9 L607.7,393.9 L621.1,393.9 L634.6,393.9 L648.0,393.9 L661.5,393.9 L674.9,393.9 L688.4,393.9 L701.9,393.9 L715.3,393.9 L728.8,393.9 L742.2,393.9 L755.7,393.9 L769.1,393.9 L782.6,393.9 L796.1,393.9 L809.5,393.9 L823.0,393.9 L836.4,393.9 L849.9,393.9 L863.3,393.9 L876.8,393.9 L890.3,393.9 L903.7,393.9 L917.2,393.9 L930.6,393.9 L944.1,393.9 L957.5,393.9 L971.0,393.9 L984.5,393.9 M-6.1,296.0 L8.0,296.0 L22.0,296.0 L36.1,296.0 L50.1,296.0 L64.2,296.0 L78.3,296.0 L92.3,296.0 L106.4,296.0 L120.4,296.0 L134.5,296.0 L148.6,296.0 L162.6,296.0 L176.7,296.0 L190.7,296.0 L204.8,296.0 L218.8,296.0 L232.9,296.0 L247.0,296.0 L261.0,296.0 L275.1,296.0 L289.1,296.0 L303.2,296.0 L317.2,296.0 L331.3,296.0 L345.4,296.0 L359.4,296.0 L373.5,296.0 L387.5,296.0 L401.6,296.0 L415.7,296.0 L429.7,296.0 L443.8,296.0 L457.8,296.0 L471.9,296.0 L485.9,296.0 L500.0,296.0 L514.1,296.0 L528.1,296.0 L542.2,296.0 L556.2,296.0 L570.3,296.0 L584.3,296.0 L598.4,296.0 L612.5,296.0 L626.5,296.0 L640.6,296.0 L654.6,296.0 L668.7,296.0 L682.8,296.0 L696.8,296.0 L710.9,296.0 L724.9,296.0 L739.0,296.0 L753.0,296.0 L767.1,296.0 L781.2,296.0 L795.2,296.0 L809.3,296.0 L823.3,296.0 L837.4,296.0 L851.4,296.0 L865.5,296.0 L879.6,296.0 L893.6,296.0 L907.7,296.0 L921.7,296.0 L935.8,296.0 L949.9,296.0 L963.9,296.0 L978.0,296.0 L992.0,296.0 L1006.1,296.0 M15.5,198.1 L29.0,198.1 L42.5,198.1 L55.9,198.1 L69.4,198.1 L82.8,198.1 L96.3,198.1 L109.7,198.1 L123.2,198.1 L136.7,198.1 L150.1,198.1 L163.6,198.1 L177.0,198.1 L190.5,198.1 L203.9,198.1 L217.4,198.1 L230.9,198.1 L244.3,198.1 L257.8,198.1 L271.2,198.1 L284.7,198.1 L298.1,198.1 L311.6,198.1 L325.1,198.1 L338.5,198.1 L352.0,198.1 L365.4,198.1 L378.9,198.1 L392.3,198.1 L405.8,198.1 L419.3,198.1 L432.7,198.1 L446.2,198.1 L459.6,198.1 L473.1,198.1 L486.5,198.1 L500.0,198.1 L513.5,198.1 L526.9,198.1 L540.4,198.1 L553.8,198.1 L567.3,198.1 L580.7,198.1 L594.2,198.1 L607.7,198.1 L621.1,198.1 L634.6,198.1 L648.0,198.1 L661.5,198.1 L674.9,198.1 L688.4,198.1 L701.9,198.1 L715.3,198.1 L728.8,198.1 L742.2,198.1 L755.7,198.1 L769.1,198.1 L782.6,198.1 L796.1,198.1 L809.5,198.1 L823.0,198.1 L836.4,198.1 L849.9,198.1 L863.3,198.1 L876.8,198.1 L890.3,198.1 L903.7,198.1 L917.2,198.1 L930.6,198.1 L944.1,198.1 L957.5,198.1 L971.0,198.1 L984.5,198.1 M85.6,102.7 L97.1,102.7 L108.6,102.7 L120.1,102.7 L131.6,102.7 L143.1,102.7 L154.6,102.7 L166.2,102.7 L177.7,102.7 L189.2,102.7 L200.7,102.7 L212.2,102.7 L223.7,102.7 L235.2,102.7 L246.7,102.7 L258.2,102.7 L269.8,102.7 L281.3,102.7 L292.8,102.7 L304.3,102.7 L315.8,102.7 L327.3,102.7 L338.8,102.7 L350.3,102.7 L361.9,102.7 L373.4,102.7 L384.9,102.7 L396.4,102.7 L407.9,102.7 L419.4,102.7 L430.9,102.7 L442.4,102.7 L454.0,102.7 L465.5,102.7 L477.0,102.7 L488.5,102.7 L500.0,102.7 L511.5,102.7 L523.0,102.7 L534.5,102.7 L546.0,102.7 L557.6,102.7 L569.1,102.7 L580.6,102.7 L592.1,102.7 L603.6,102.7 L615.1,102.7 L626.6,102.7 L638.1,102.7 L649.7,102.7 L661.2,102.7 L672.7,102.7 L684.2,102.7 L695.7,102.7 L707.2,102.7 L718.7,102.7 L730.2,102.7 L741.8,102.7 L753.3,102.7 L764.8,102.7 L776.3,102.7 L787.8,102.7 L799.3,102.7 L810.8,102.7 L822.3,102.7 L833.8,102.7 L845.4,102.7 L856.9,102.7 L868.4,102.7 L879.9,102.7 L891.4,102.7 L902.9,102.7 L914.4,102.7";
+const REGIONS = [
+  {
+    "n": "Darjeeling",
+    "c": "India",
+    "x": 739.6,
+    "y": 207.8,
+    "alt": "600–2,000m",
+    "harvest": "Mar–Nov (4 flushes)",
+    "note": "Muscatel-noted black tea, orthodox processed, called the 'Champagne of teas.'"
+  },
+  {
+    "n": "Assam",
+    "c": "India",
+    "x": 755.1,
+    "y": 208.9,
+    "alt": "45–200m",
+    "harvest": "Mar–Nov",
+    "note": "Malty, full-bodied black tea from the Brahmaputra valley; largest tea-growing region on earth."
+  },
+  {
+    "n": "Nilgiri",
+    "c": "India",
+    "x": 714.3,
+    "y": 258.9,
+    "alt": "1,000–2,500m",
+    "harvest": "Year-round",
+    "note": "Brisk, fragrant black tea from South India's 'Blue Mountains.'"
+  },
+  {
+    "n": "Uva",
+    "c": "Sri Lanka",
+    "x": 727.5,
+    "y": 273.5,
+    "alt": "1,000–1,700m",
+    "harvest": "Jul–Sep (quality season)",
+    "note": "Ceylon black tea known for a distinctive winey, menthol-like edge."
+  },
+  {
+    "n": "Nuwara Eliya",
+    "c": "Sri Lanka",
+    "x": 726.6,
+    "y": 273.3,
+    "alt": "1,800–2,200m",
+    "harvest": "Jan–Mar",
+    "note": "Sri Lanka's highest-grown tea; light, delicate, called 'Champagne of Ceylon.'"
+  },
+  {
+    "n": "Wuyi Mountains",
+    "c": "China (Fujian)",
+    "x": 819.5,
+    "y": 205.6,
+    "alt": "200–700m",
+    "harvest": "Apr–May",
+    "note": "Rock oolongs (yancha) grown in mineral-rich cliffs; home of Da Hong Pao."
+  },
+  {
+    "n": "Anxi",
+    "c": "China (Fujian)",
+    "x": 821.8,
+    "y": 214.2,
+    "alt": "300–1,000m",
+    "harvest": "Spring & Autumn",
+    "note": "Birthplace of Tie Guan Yin, a floral, lightly oxidized oolong."
+  },
+  {
+    "n": "West Lake (Hangzhou)",
+    "c": "China (Zhejiang)",
+    "x": 823.1,
+    "y": 197.3,
+    "alt": "30–300m",
+    "harvest": "Late Mar–Apr",
+    "note": "Home of Longjing (Dragon Well), China's most famous pan-fired green tea."
+  },
+  {
+    "n": "Yunnan",
+    "c": "China",
+    "x": 776.1,
+    "y": 219.7,
+    "alt": "1,200–2,200m",
+    "harvest": "Spring & Autumn",
+    "note": "Ancient tea-tree region; birthplace of pu-erh and large-leaf black tea (dianhong)."
+  },
+  {
+    "n": "Huangshan",
+    "c": "China (Anhui)",
+    "x": 817.9,
+    "y": 197.6,
+    "alt": "300–1,200m",
+    "harvest": "Apr",
+    "note": "Home of Huangshan Maofeng green tea and Keemun black tea's smoky-sweet profile."
+  },
+  {
+    "n": "Uji",
+    "c": "Japan",
+    "x": 859.5,
+    "y": 182,
+    "alt": "150–300m",
+    "harvest": "May (first flush)",
+    "note": "Japan's most prestigious tea district; shade-grown matcha and gyokuro."
+  },
+  {
+    "n": "Shizuoka",
+    "c": "Japan",
+    "x": 866.3,
+    "y": 181.8,
+    "alt": "Sea level–1,000m",
+    "harvest": "May",
+    "note": "Japan's largest producing region; sencha heartland."
+  },
+  {
+    "n": "Kagoshima",
+    "c": "Japan",
+    "x": 849.7,
+    "y": 192.8,
+    "alt": "Sea level–500m",
+    "harvest": "Apr (earliest in Japan)",
+    "note": "Volcanic soil, warm climate — Japan's earliest and fastest-growing sencha region."
+  },
+  {
+    "n": "Alishan",
+    "c": "Taiwan",
+    "x": 830.8,
+    "y": 219.4,
+    "alt": "1,000–1,600m",
+    "harvest": "Spring & Winter",
+    "note": "High-mountain (gaoshan) oolong prized for a creamy, floral cup."
+  },
+  {
+    "n": "Boseong",
+    "c": "South Korea",
+    "x": 836.9,
+    "y": 182.4,
+    "alt": "50–400m",
+    "harvest": "Apr–May",
+    "note": "Korea's largest green tea region, terraced hillsides along the coast."
+  },
+  {
+    "n": "Mount Kenya region",
+    "c": "Kenya",
+    "x": 604.9,
+    "y": 297.3,
+    "alt": "1,500–2,700m",
+    "harvest": "Year-round",
+    "note": "Africa's largest producer; bright, brisk CTC black teas built for blending."
+  },
+  {
+    "n": "Rize",
+    "c": "Turkey",
+    "x": 604.6,
+    "y": 162.1,
+    "alt": "Sea level–500m",
+    "harvest": "May–Oct",
+    "note": "Black Sea coast; nearly all Turkish tea (world's 5th-largest producer) grows here."
+  },
+  {
+    "n": "Guria",
+    "c": "Georgia",
+    "x": 608,
+    "y": 159.2,
+    "alt": "Sea level–300m",
+    "harvest": "May–Sep",
+    "note": "Historic Soviet-era tea region seeing a modern artisanal revival."
+  },
+  {
+    "n": "Mộc Châu",
+    "c": "Vietnam",
+    "x": 788.3,
+    "y": 228.1,
+    "alt": "900–1,050m",
+    "harvest": "Mar–Nov",
+    "note": "Cool highland plateau producing green and increasingly specialty oolong tea."
+  },
+  {
+    "n": "Cameron Highlands",
+    "c": "Malaysia",
+    "x": 784.8,
+    "y": 281.4,
+    "alt": "1,300–1,800m",
+    "harvest": "Year-round",
+    "note": "Cool-climate anomaly in the tropics; British colonial-era black tea gardens."
+  },
+  {
+    "n": "Fuding",
+    "c": "China (Fujian)",
+    "x": 826,
+    "y": 206.8,
+    "alt": "600–1,200m",
+    "harvest": "Spring (Mar–Apr)",
+    "note": "White tea's true home — where Bai Hao Yin Zhen and Bai Mu Dan are grown, not just processed."
+  },
+  {
+    "n": "Liu Bao (Wuzhou)",
+    "c": "China (Guangxi)",
+    "x": 804.8,
+    "y": 219.4,
+    "alt": "200–600m",
+    "harvest": "Year-round",
+    "note": "Dark tea aged in humid cellars; Liu Bao's earthy, betel-nut character predates pu-erh's fame in export markets."
+  },
+  {
+    "n": "Mengding Mountain",
+    "c": "China (Sichuan)",
+    "x": 777.2,
+    "y": 197.9,
+    "alt": "800–1,450m",
+    "harvest": "Apr",
+    "note": "Legendary origin of Mengding Ganlu, one of China's oldest recorded green teas, grown on mist-covered peaks."
+  },
+  {
+    "n": "Duyun",
+    "c": "China (Guizhou)",
+    "x": 792.4,
+    "y": 210.3,
+    "alt": "800–1,700m",
+    "harvest": "Mar–Apr",
+    "note": "High-altitude green tea region behind Duyun Maojian, prized for its fine downy tips."
+  },
+  {
+    "n": "Enshi",
+    "c": "China (Hubei)",
+    "x": 794.4,
+    "y": 197.1,
+    "alt": "400–1,800m",
+    "harvest": "Apr–May",
+    "note": "Rare steamed green tea region (Enshi Yulu) — one of the few places still using ancient steam-fixing."
+  },
+  {
+    "n": "Anhua",
+    "c": "China (Hunan)",
+    "x": 800.7,
+    "y": 203.3,
+    "alt": "200–800m",
+    "harvest": "Spring & Autumn",
+    "note": "Dark tea region famous for Fu brick tea and its distinctive 'golden flower' fungus fermentation."
+  },
+  {
+    "n": "Lushan",
+    "c": "China (Jiangxi)",
+    "x": 812.6,
+    "y": 199.5,
+    "alt": "600–1,200m",
+    "harvest": "Apr",
+    "note": "Misty mountain green tea region producing Lushan Yunwu, grown above the cloud line."
+  },
+  {
+    "n": "Fenghuang (Phoenix)",
+    "c": "China (Guangdong)",
+    "x": 819.4,
+    "y": 218.8,
+    "alt": "600–1,100m",
+    "harvest": "Spring & Autumn",
+    "note": "Home of Phoenix Dancong oolong — ancient single-bush trees prized for naturally fruit- and floral-mimicking aromas."
+  },
+  {
+    "n": "Sun Moon Lake",
+    "c": "Taiwan",
+    "x": 830.8,
+    "y": 218.2,
+    "alt": "600–800m",
+    "harvest": "Apr–Oct",
+    "note": "Taiwan's black tea region, built around Assam and Ruby #18 cultivars with a distinct minty-cinnamon note."
+  },
+  {
+    "n": "Ilam",
+    "c": "Nepal",
+    "x": 738.8,
+    "y": 208.2,
+    "alt": "1,000–2,000m",
+    "harvest": "Mar–Nov",
+    "note": "Himalayan foothill region bordering Darjeeling, producing increasingly acclaimed orthodox black and oolong teas."
+  },
+  {
+    "n": "West Java (Puncak)",
+    "c": "Indonesia",
+    "x": 800.2,
+    "y": 317.8,
+    "alt": "800–1,500m",
+    "harvest": "Year-round",
+    "note": "Colonial-era Dutch tea estates on volcanic soil, mostly producing black tea for export blends."
+  },
+  {
+    "n": "North Sumatra",
+    "c": "Indonesia",
+    "x": 777.3,
+    "y": 284.3,
+    "alt": "900–1,400m",
+    "harvest": "Year-round",
+    "note": "Volcanic highland tea gardens near Lake Toba, largely CTC black tea for domestic and regional markets."
+  },
+  {
+    "n": "Doi Mae Salong",
+    "c": "Thailand",
+    "x": 775.1,
+    "y": 230.3,
+    "alt": "1,200–1,600m",
+    "harvest": "Year-round",
+    "note": "Founded by Yunnanese émigrés; produces oolong in the Taiwanese high-mountain style at Thai-Myanmar border altitude."
+  },
+  {
+    "n": "Phongsaly",
+    "c": "Laos",
+    "x": 780.7,
+    "y": 225.3,
+    "alt": "1,000–1,800m",
+    "harvest": "Spring & Autumn",
+    "note": "Home to some of the world's oldest wild tea trees, some estimated over 1,000 years old."
+  },
+  {
+    "n": "Shan State",
+    "c": "Myanmar",
+    "x": 768,
+    "y": 226.5,
+    "alt": "1,000–1,800m",
+    "harvest": "Year-round",
+    "note": "Ancient tea-growing region where leaf is as often fermented into laphet (pickled tea salad) as it is brewed."
+  },
+  {
+    "n": "Nyungwe",
+    "c": "Rwanda",
+    "x": 582.1,
+    "y": 304,
+    "alt": "1,800–2,500m",
+    "harvest": "Year-round",
+    "note": "High-altitude rainforest-edge estates producing bright, brisk CTC black tea for the global blending market."
+  },
+  {
+    "n": "Mulanje",
+    "c": "Malawi",
+    "x": 598.6,
+    "y": 348.1,
+    "alt": "600–1,600m",
+    "harvest": "Year-round",
+    "note": "Africa's oldest commercial tea region (planted 1878), still mostly CTC black tea at the base of Mount Mulanje."
+  },
+  {
+    "n": "Njombe",
+    "c": "Tanzania",
+    "x": 597.4,
+    "y": 326.3,
+    "alt": "1,500–2,100m",
+    "harvest": "Year-round",
+    "note": "Southern highlands region increasingly producing orthodox and purple-leaf specialty teas alongside bulk CTC."
+  },
+  {
+    "n": "Kigezi",
+    "c": "Uganda",
+    "x": 583.6,
+    "y": 299.6,
+    "alt": "1,500–2,200m",
+    "harvest": "Year-round",
+    "note": "Terraced hillside gardens near the Rwanda border, mostly CTC black tea for export blending."
+  },
+  {
+    "n": "Chipinge",
+    "c": "Zimbabwe",
+    "x": 590,
+    "y": 361.7,
+    "alt": "1,000–1,700m",
+    "harvest": "Year-round",
+    "note": "Eastern Highlands tea estates, historically one of southern Africa's largest black tea producers."
+  },
+  {
+    "n": "Misiones",
+    "c": "Argentina",
+    "x": 351.9,
+    "y": 385,
+    "alt": "200–400m",
+    "harvest": "Oct–Apr",
+    "note": "South America's main black tea region, mechanically harvested for the international tea-bag blending market."
+  },
+  {
+    "n": "Registro (Vale do Ribeira)",
+    "c": "Brazil",
+    "x": 369.3,
+    "y": 375.8,
+    "alt": "20–100m",
+    "harvest": "Year-round",
+    "note": "Brazil's historic tea district, settled by Japanese immigrants who brought sencha cultivation with them."
+  },
+  {
+    "n": "Lankaran",
+    "c": "Azerbaijan",
+    "x": 627.4,
+    "y": 169.5,
+    "alt": "Sea level–300m",
+    "harvest": "May–Oct",
+    "note": "Caucasus tea region on the Caspian coast, Azerbaijan's answer to neighboring Georgia's tea gardens."
+  },
+  {
+    "n": "Lahijan (Gilan)",
+    "c": "Iran",
+    "x": 631.2,
+    "y": 174.5,
+    "alt": "Sea level–300m",
+    "harvest": "May–Sep",
+    "note": "Iran's tea heartland since the 1900s, when tea was first smuggled out of India by Prince Kashef os-Saltaneh."
+  },
+  {
+    "n": "São Miguel (Azores)",
+    "c": "Portugal",
+    "x": 433.2,
+    "y": 172.6,
+    "alt": "50–200m",
+    "harvest": "Apr–Sep",
+    "note": "Europe's only tea plantations — Gorreana and Porto Formoso — growing on volcanic Atlantic soil since the 1880s."
+  },
+  {
+    "n": "Tregothnan",
+    "c": "England",
+    "x": 487.7,
+    "y": 132.5,
+    "alt": "20–80m",
+    "harvest": "May–Oct",
+    "note": "The first tea ever commercially grown in England, on a Cornish estate using cultivars bred for cooler climates."
+  },
+  {
+    "n": "Big Island",
+    "c": "Hawaii, USA",
+    "x": 70.7,
+    "y": 232.1,
+    "alt": "600–1,200m",
+    "harvest": "Year-round",
+    "note": "Volcanic soil and consistent rainfall make Hawaii the only significant tea-growing region in the continental/insular US."
+  },
+  {
+    "n": "Charleston",
+    "c": "South Carolina, USA",
+    "x": 285.7,
+    "y": 189.5,
+    "alt": "Sea level–20m",
+    "harvest": "May–Oct",
+    "note": "Home of the largest tea garden in North America, descended from 19th-century experimental plantings."
+  },
+  {
+    "n": "Temi",
+    "c": "Sikkim, India",
+    "x": 739.8,
+    "y": 206.8,
+    "alt": "1,200–1,800m",
+    "harvest": "Mar–Nov",
+    "note": "India's only tea garden in Sikkim, a single organic estate producing delicate high-altitude orthodox black tea."
+  },
+  {
+    "n": "Kangra",
+    "c": "Himachal Pradesh, India",
+    "x": 703.9,
+    "y": 191.2,
+    "alt": "900–1,400m",
+    "harvest": "Apr–Nov",
+    "note": "Himalayan foothill region with its own muscatel-adjacent character and GI-protected status, often overshadowed by Darjeeling."
+  }
+];
+const COLORS = {white:"#F3EEE2",green:"#D7E4B0",yellow:"#E8D98A",oolong:"#D9A441",black:"#B8763E",puerh:"#6B3A2A"};
+
+function buildMap(){
+  const svg = document.getElementById("worldmap");
+  svg.setAttribute("viewBox", "0 0 " + MAP_W + " " + MAP_H);
+  const graticule = `<path class="graticule" d="${GRATICULE_PATH}"/>`;
+  const land = `<path class="land" d="${LAND_PATH}"/>`;
+  const dots = REGIONS.map((r,i)=> `<g class="region-dot" data-i="${i}" onclick="selectRegion(${i})" transform="translate(${r.x},${r.y})">
+      <circle class="pulse" r="7"/>
+      <circle class="core" r="3.2"/>
+      <text x="6" y="-5">${r.n}</text>
+    </g>`).join("");
+  svg.innerHTML = graticule + land + dots;
+}
+function selectRegion(i){
+  document.querySelectorAll('.region-dot').forEach(d=>d.classList.remove('active'));
+  document.querySelector('.region-dot[data-i="'+i+'"]').classList.add('active');
+  const r = REGIONS[i];
+  document.getElementById("regionPanel").innerHTML = `
+    <span class="country">${r.c}</span>
+    <h3>${r.n}</h3>
+    <div class="region-stats">
+      <div class="rstat"><div class="k">Altitude</div><div class="v">${r.alt}</div></div>
+      <div class="rstat"><div class="k">Harvest</div><div class="v">${r.harvest}</div></div>
+    </div>
+    <p class="notable"><b>Known for:</b> ${r.note}</p>`;
+}
+/* ---------------- ENCYCLOPEDIA DATA ---------------- */
+const TEAS = [
+  {n:"White Tea", color:COLORS.white, oxid:"0–10% oxidation", desc:"The least processed tea: just withered and dried. Delicate, hay-like, subtly sweet.",
+   process:["Pluck bud + young leaves","Wither 48–72 hrs (no rolling)","Low-heat dry"],
+   known:["Bai Hao Yin Zhen (Silver Needle)","Bai Mu Dan (White Peony)"],
+   brew:"75–80°C · 3–5 min · 1 tsp per 8oz"},
+  {n:"Green Tea", color:COLORS.green, oxid:"0–2% oxidation", desc:"Heat-fixed immediately after plucking to stop oxidation entirely, preserving a vegetal, grassy profile.",
+   process:["Pluck","Fix (pan-fire or steam) to halt oxidation","Shape/roll","Dry"],
+   known:["Longjing (Dragon Well)","Sencha","Gunpowder"],
+   brew:"70–80°C · 1–3 min · lower temp = less bitterness"},
+  {n:"Yellow Tea", color:COLORS.yellow, oxid:"~10% oxidation", desc:"Rare and labor-intensive: an extra 'sealed yellowing' step mellows the grassy edge of green tea.",
+   process:["Pluck","Fix","Sealed yellowing (damp-heap, hours to days)","Dry"],
+   known:["Jun Shan Yin Zhen"],
+   brew:"75–85°C · 2–3 min"},
+  {n:"Oolong Tea", color:COLORS.oolong, oxid:"10–80% oxidation", desc:"The widest range of any category — partially oxidized, bruised at the edges then fixed, spanning floral-light to dark-roasted.",
+   process:["Pluck","Wither & bruise (repeated tossing)","Partial oxidation","Fix","Roll/roast"],
+   known:["Tie Guan Yin","Da Hong Pao","Dong Ding","Alishan high mountain"],
+   brew:"90–96°C · multiple short steeps (gongfu style)"},
+  {n:"Black Tea", color:COLORS.black, oxid:"~100% oxidation", desc:"Fully oxidized until the leaf turns dark and the flavor turns malty, brisk, or fruity depending on origin.",
+   process:["Pluck","Wither","Roll (orthodox) or CTC (crush-tear-curl)","Full oxidation","Dry/fire"],
+   known:["Darjeeling","Assam","Keemun","Ceylon"],
+   brew:"95–100°C · 3–5 min"},
+  {n:"Pu-erh (Dark Tea)", color:COLORS.puerh, oxid:"Microbial fermentation", desc:"Aged and fermented by microbes rather than simply oxidized — flavor deepens and changes for years, even decades.",
+   process:["Pluck (large-leaf Yunnan varietal)","Fix","Sun-dry (maocha)","Compress into cakes","Age (raw) or 'wet-pile' ferment (ripe)"],
+   known:["Sheng (raw) pu-erh","Shou (ripe) pu-erh"],
+   brew:"95–100°C · rinse first steep, then short steeps"}
+];
+function buildTeaGrid(){
+  document.getElementById('teaGrid').innerHTML = TEAS.map((t,i)=>`
+    <div class="tea-card" onclick="openTea(${i})">
+      <div class="tea-swatch" style="background:${t.color}"></div>
+      <h3>${t.n}</h3>
+      <span class="oxid">${t.oxid}</span>
+      <p>${t.desc}</p>
+    </div>`).join('');
+}
+function openTea(i){
+  const t = TEAS[i];
+  const el = document.getElementById('teaDetail');
+  el.innerHTML = `
+    <button class="close-detail" onclick="document.getElementById('teaDetail').classList.remove('open')">Close ✕</button>
+    <span class="oxid" style="display:block; margin-bottom:6px;">${t.oxid}</span>
+    <h3>${t.n}</h3>
+    <p style="color:var(--ink-soft); max-width:60ch;">${t.desc}</p>
+    <div class="grid2">
+      <div>
+        <h4>How it's processed</h4>
+        <ul>${t.process.map(p=>`<li>${p}</li>`).join('')}</ul>
+      </div>
+      <div>
+        <h4>Teas to know</h4>
+        <ul>${t.known.map(k=>`<li>${k}</li>`).join('')}</ul>
+        <h4 style="margin-top:16px;">How to brew it</h4>
+        <p style="font-family:var(--font-mono); font-size:0.85rem; color:var(--ink);">${t.brew}</p>
+      </div>
+    </div>`;
+  el.classList.add('open');
+  el.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+/* ---------------- REVIEWS DATA ---------------- */
+// TODO: replace placeholder hrefs with real affiliate tracking links once each program is approved.
+// TODO: replace reviewer name/bio with your real byline — placeholder used here for structure only.
+// Amazon Associates tag placeholder: steephq-20 (swap for your real Associates tag)
+const REVIEWS = [
+  {cat:"Black Tea", n:"Makaibari Darjeeling First Flush", vendor:"Makaibari Estate, direct", score:8.8,
+   bars:[["Leaf grade",92],["Aroma",88],["Liquor clarity",85],["Value",78]],
+   verdict:"Genuine muscatel character and an honest FTGFOP1 grade — a rare direct-from-estate option that skips import markup.",
+   shopUrl:"#", shopLabel:"Shop this tea (Harney & Sons affiliate)",
+   photo:"https://images.unsplash.com/photo-1761483281120-4fc47bfe3e29?w=500&q=80&auto=format&fit=crop",
+   reviewer:"M. Smith", purchased:"Purchased Jun 2026 · steeped 5 times before scoring"},
+  {cat:"Oolong", n:"Tie Guan Yin, Spring Pick", vendor:"Anxi cooperative import", score:9.1,
+   bars:[["Leaf grade",94],["Aroma",95],["Liquor clarity",90],["Value",82]],
+   verdict:"Textbook orchid florality with a clean, lingering finish. Re-steeps 5+ times without collapsing.",
+   shopUrl:"#", shopLabel:"Shop this tea (TeaVivre affiliate)",
+   photo:"https://images.unsplash.com/photo-1627894005474-9889064bc4ca?w=500&q=80&auto=format&fit=crop",
+   reviewer:"M. Smith", purchased:"Purchased May 2026 · gongfu-brewed, 6 steeps"},
+  {cat:"Pu-erh", n:"2019 Menghai Ripe Cake (Shou)", vendor:"Yunnan Sourcing", score:8.4,
+   bars:[["Leaf grade",85],["Aroma",80],["Liquor clarity",88],["Value",90]],
+   verdict:"Earthy without the 'fishy' off-notes common in cheap ripe pu-erh. Excellent value for daily drinking.",
+   shopUrl:"#", shopLabel:"Shop this tea (Yunnan Sourcing affiliate)",
+   photo:"https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=500&q=80&auto=format&fit=crop",
+   reviewer:"M. Smith", purchased:"Purchased Apr 2026 · rinsed once, 4 steeps scored"},
+  {cat:"Green Tea", n:"Longjing (Dragon Well), Pre-Qingming", vendor:"West Lake origin, direct import", score:8.6,
+   bars:[["Leaf grade",90],["Aroma",86],["Liquor clarity",92],["Value",70]],
+   verdict:"Nutty-sweet, unmistakably West Lake — but pre-Qingming pricing is steep. Try the post-Qingming batch for value.",
+   shopUrl:"#", shopLabel:"Shop this tea (TeaVivre affiliate)",
+   photo:"https://images.unsplash.com/photo-1760074057746-388f7e66c61e?w=500&q=80&auto=format&fit=crop",
+   reviewer:"M. Smith", purchased:"Purchased Mar 2026 · 3 steeps at 75°C"},
+  {cat:"Black Tea", n:"Harney & Sons CTC", vendor:"Harney & Sons", score:8.5,
+   bars:[["Leaf grade",82],["Aroma",84],["Liquor clarity",80],["Value",85]],
+   verdict:"Genuinely bold — this is the tea for people who think tea can't replace their morning coffee. Strong, brisk, and holds up fine with milk. Our go-to when we want something with real punch first thing in the morning.",
+   shopUrl:"#", shopLabel:"Shop this tea (Harney & Sons affiliate)",
+   photo:"https://images.unsplash.com/photo-1736950825214-1b5e2bdbb5f8?w=500&q=80&auto=format&fit=crop",
+   reviewer:"M. Smith", purchased:"Purchased Jul 2026 · brewed strong, 4 min steep"}
+];
+function buildReviews(){
+  document.getElementById('reviewGrid').innerHTML = REVIEWS.map(r=>`
+    <div class="review-card">
+      <div class="review-photo"><img src="${r.photo}" alt="${r.n}, photographed for this review" loading="lazy"></div>
+      <div class="review-score">${r.score}</div>
+      <span class="badge-indie">◆ bought at retail — no sponsorship</span>
+      <span class="cat">${r.cat}</span>
+      <h3>${r.n}</h3>
+      <span class="vendor">${r.vendor}</span>
+      <span class="purchase-line">${r.purchased}</span>
+      <div class="review-bars">
+        ${r.bars.map(b=>`<div class="rbar"><span class="label">${b[0]}</span><div class="track"><div class="fill" style="width:${b[1]}%"></div></div></div>`).join('')}
+      </div>
+      <p class="verdict">${r.verdict}</p>
+      <div class="reviewer-line">Reviewed by <b>${r.reviewer}</b></div>
+      <a class="shop-cta" href="${r.shopUrl}" target="_blank" rel="sponsored noopener">${r.shopLabel} →</a>
+    </div>`).join('');
+
+  // Review schema (JSON-LD) for star-rating rich snippets in search results
+  const reviewSchema = REVIEWS.map(r => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": { "@type": "Product", "name": r.n, "brand": r.vendor },
+    "reviewRating": { "@type": "Rating", "ratingValue": r.score, "bestRating": "10" },
+    "author": { "@type": "Person", "name": r.reviewer },
+    "reviewBody": r.verdict
+  }));
+  const schemaTag = document.createElement('script');
+  schemaTag.type = 'application/ld+json';
+  schemaTag.textContent = JSON.stringify(reviewSchema);
+  schemaTag.id = 'review-schema';
+  const existing = document.getElementById('review-schema');
+  if (existing) existing.remove();
+  document.head.appendChild(schemaTag);
+}
+
+/* ---------------- BREW GUIDES ---------------- */
+function buildBrewGrid(){
+  document.getElementById('brewGrid').innerHTML = TEAS.map(t=>`
+    <div class="tea-card" style="cursor:default;">
+      <div class="tea-swatch" style="background:${t.color}"></div>
+      <h3>${t.n}</h3>
+      <p style="font-family:var(--font-mono); font-size:0.85rem; color:var(--ink); margin-top:6px;">${t.brew}</p>
+    </div>`).join('');
+}
+
+/* ---------------- GEAR / TEAWARE (Amazon affiliate) ---------------- */
+// Swap ?tag=steephq-20 for your real Amazon Associates tracking ID once approved.
+const GEAR = [
+  {n:"Variable-temp electric kettle", price:"$40–70", why:"Precise temp control is the #1 upgrade for green/white tea.", url:"#"},
+  {n:"Gaiwan (porcelain, 100–120ml)", price:"$15–25", why:"The standard vessel for gongfu-style oolong and pu-erh brewing.", url:"#"},
+  {n:"Fairness pitcher (cha hai)", price:"$12–20", why:"Evens out strength across multiple short steeps.", url:"#"},
+  {n:"Ceramic infuser mug", price:"$18–25", why:"Best everyday option for single-cup black/green tea.", url:"#"}
+];
+function buildGear(){
+  document.getElementById('gearGrid').innerHTML = GEAR.map(g=>`
+    <div class="gear-card">
+      <h4>${g.n}</h4>
+      <span class="price">${g.price}</span>
+      <p style="font-size:0.86rem; color:var(--ink-soft); margin-bottom:10px;">${g.why}</p>
+      <a class="shop-cta" href="${g.url}" target="_blank" rel="sponsored noopener">View on Amazon →</a>
+    </div>`).join('');
+}
+
+/* ---------------- MATCHA AUTHENTICITY CHECKER ---------------- */
+const MATCHA_Q = [
+  {q:"What's the price for a 30g tin?", opts:[
+    {t:"Under $25", v:0},
+    {t:"$25–$50", v:1},
+    {t:"$50–$80", v:2},
+    {t:"Over $80", v:2}
+  ]},
+  {q:"Does the label name a specific growing region or farm?", opts:[
+    {t:"Yes — Uji, Nishio, Yame, or Kagoshima, named farm", v:2},
+    {t:"Just says \"Japan\" or \"imported from Japan\"", v:0},
+    {t:"No region stated at all", v:-1}
+  ]},
+  {q:"What color is the powder?", opts:[
+    {t:"Vivid, almost neon jade green", v:2},
+    {t:"Dull olive or yellow-green", v:0},
+    {t:"Not sure / haven't opened it yet", v:1}
+  ]},
+  {q:"Is there a harvest date or \"best by\" tied to a specific year?", opts:[
+    {t:"Yes, current-year first flush stated", v:2},
+    {t:"Generic best-by date, no harvest year", v:0},
+    {t:"No date information at all", v:-1}
+  ]},
+  {q:"Texture when you rub a pinch between your fingers?", opts:[
+    {t:"Silky, almost powder-fine", v:2},
+    {t:"Slightly gritty or sandy", v:0},
+    {t:"Haven't received it yet", v:1}
+  ]}
+];
+let matchaAnswers = new Array(MATCHA_Q.length).fill(null);
+function buildMatchaTool(){
+  const el = document.getElementById('matchaTool');
+  el.innerHTML = MATCHA_Q.map((q,i)=>`
+    <div class="mq">
+      <span class="qnum">Question ${i+1} of ${MATCHA_Q.length}</span>
+      <h4>${q.q}</h4>
+      <div class="mq-options">
+        ${q.opts.map((o,j)=>`<label><input type="radio" name="mq${i}" onchange="setMatchaAnswer(${i},${o.v})"><span>${o.t}</span></label>`).join('')}
+      </div>
+    </div>`).join('') + '<div id="matchaResult"></div>';
+}
+function setMatchaAnswer(i, v){
+  matchaAnswers[i] = v;
+  renderMatchaResult();
+}
+function renderMatchaResult(){
+  const answered = matchaAnswers.filter(a=>a!==null);
+  const target = document.getElementById('matchaResult');
+  if(answered.length < MATCHA_Q.length){
+    target.innerHTML = `<p style="text-align:center; color:var(--ink-soft); font-size:0.85rem; margin-top:20px;">${answered.length} of ${MATCHA_Q.length} answered — verdict appears once all are complete.</p>`;
+    return;
+  }
+  const score = matchaAnswers.reduce((a,b)=>a+b,0);
+  let cls, label, msg;
+  if(score >= 7){
+    cls='genuine'; label='Likely genuine ceremonial grade';
+    msg="Your answers line up with authentic Uji/Nishio/Yame/Kagoshima tencha at current 2026 pricing. Still worth buying from a source that names the farm.";
+  } else if(score >= 3){
+    cls='caution'; label='Caution — some red flags';
+    msg="A few answers match patterns seen in relabeled or culinary-grade matcha sold as ceremonial. Ask the seller directly for the growing region and harvest year before reordering.";
+  } else {
+    cls='risky'; label='High risk of mislabeling';
+    msg="This profile matches what's commonly reported as culinary-grade or non-Japanese matcha sold under a ceremonial label during the current shortage. Consider a source with named-farm traceability instead.";
+  }
+  target.innerHTML = `
+    <div class="matcha-result ${cls}">
+      <div class="verdict-label">${label}</div>
+      <p>${msg}</p>
+    </div>
+    <div class="matcha-facts">
+      <div class="mfact"><span class="num">30–60%</span><span class="lbl">above pre-2025 wholesale prices industry-wide in 2026</span></div>
+      <div class="mfact"><span class="num">~5 yrs</span><span class="lbl">for newly planted tea fields to reach full production</span></div>
+      <div class="mfact"><span class="num">+27%</span><span class="lbl">YoY growth in global matcha search interest</span></div>
+    </div>`;
+}
+
+buildMap();
+buildTeaGrid();
+buildReviews();
+buildBrewGrid();
+buildGear();
+buildMatchaTool();
+
+/* ---------------- NEWSLETTER (Netlify Forms, AJAX) ---------------- */
+function handleNewsletterSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+  const status = document.getElementById('nlStatus');
+  const data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  }).then(() => {
+    status.textContent = "You're in — check your inbox to confirm.";
+    form.reset();
+  }).catch(() => {
+    status.textContent = "Something went wrong — try again in a moment.";
+  });
+  return false;
+}
+
+/* ---------------- STEEP TIMER ---------------- */
+const TIMER_TEAS = [
+  {n:"White", secs:240, temp:"75–80°C"},
+  {n:"Green", secs:120, temp:"70–80°C"},
+  {n:"Yellow", secs:150, temp:"75–85°C"},
+  {n:"Oolong", secs:60, temp:"90–96°C"},
+  {n:"Black", secs:240, temp:"95–100°C"},
+  {n:"Pu-erh", secs:20, temp:"95–100°C"}
+];
+let timerState = { idx: 0, remaining: TIMER_TEAS[0].secs, running: false, handle: null };
+function buildTimerTool(){
+  const el = document.getElementById('timerTool');
+  const R = 100, C = 2*Math.PI*R;
+  el.innerHTML = `
+    <div class="timer-teas">
+      ${TIMER_TEAS.map((t,i)=>`<button class="${i===0?'sel':''}" data-i="${i}" onclick="selectTimerTea(${i})">${t.n}</button>`).join('')}
+    </div>
+    <div class="timer-dial">
+      <svg viewBox="0 0 220 220">
+        <circle class="bg" cx="110" cy="110" r="${R}"/>
+        <circle class="fg" id="timerRing" cx="110" cy="110" r="${R}" stroke-dasharray="${C}" stroke-dashoffset="0"/>
+      </svg>
+      <div class="timer-display">
+        <div class="t" id="timerText">4:00</div>
+        <div class="temp" id="timerTemp">70–80°C</div>
+      </div>
+    </div>
+    <div class="timer-controls">
+      <button class="start" id="timerStartBtn" onclick="toggleTimer()">Start</button>
+      <button class="reset" onclick="resetTimer()">Reset</button>
+    </div>
+    <div class="timer-done" id="timerDone">Ready — pour it out ☕</div>`;
+  updateTimerDisplay();
+}
+function selectTimerTea(i){
+  if(timerState.running) return;
+  timerState.idx = i;
+  timerState.remaining = TIMER_TEAS[i].secs;
+  document.querySelectorAll('.timer-teas button').forEach((b,j)=>b.classList.toggle('sel', j===i));
+  document.getElementById('timerDone').classList.remove('show');
+  updateTimerDisplay();
+}
+function updateTimerDisplay(){
+  const t = TIMER_TEAS[timerState.idx];
+  const R = 100, C = 2*Math.PI*R;
+  const mins = Math.floor(timerState.remaining/60);
+  const secs = timerState.remaining%60;
+  document.getElementById('timerText').textContent = mins+':'+String(secs).padStart(2,'0');
+  document.getElementById('timerTemp').textContent = t.temp;
+  const frac = timerState.remaining / t.secs;
+  document.getElementById('timerRing').style.strokeDashoffset = C * (1-frac);
+}
+function toggleTimer(){
+  if(timerState.running){
+    clearInterval(timerState.handle);
+    timerState.running = false;
+    document.getElementById('timerStartBtn').textContent = 'Start';
+  } else {
+    timerState.running = true;
+    document.getElementById('timerStartBtn').textContent = 'Pause';
+    document.getElementById('timerDone').classList.remove('show');
+    timerState.handle = setInterval(()=>{
+      timerState.remaining--;
+      if(timerState.remaining <= 0){
+        clearInterval(timerState.handle);
+        timerState.running = false;
+        timerState.remaining = 0;
+        document.getElementById('timerStartBtn').textContent = 'Start';
+        document.getElementById('timerDone').classList.add('show');
+        try{
+          const ctx = new (window.AudioContext||window.webkitAudioContext)();
+          const o = ctx.createOscillator(); const g = ctx.createGain();
+          o.connect(g); g.connect(ctx.destination);
+          o.frequency.value = 880; g.gain.value = 0.15;
+          o.start(); setTimeout(()=>o.stop(), 400);
+        }catch(e){}
+      }
+      updateTimerDisplay();
+    }, 1000);
+  }
+}
+function resetTimer(){
+  clearInterval(timerState.handle);
+  timerState.running = false;
+  timerState.remaining = TIMER_TEAS[timerState.idx].secs;
+  document.getElementById('timerStartBtn').textContent = 'Start';
+  document.getElementById('timerDone').classList.remove('show');
+  updateTimerDisplay();
+}
+
+buildTimerTool();
+
+/* ---------------- TEA FINDER QUIZ ---------------- */
+// Scores each tea category against the user's stated preferences, then recommends the top match.
+const FINDER_Q = [
+  {q:"What kind of flavor are you drawn to?", opts:[
+    {t:"Light, floral, delicate", s:{white:3, green:2, oolong:2, yellow:2, black:0, puerh:0}},
+    {t:"Grassy, fresh, vegetal", s:{green:3, white:1, yellow:2, oolong:0, black:0, puerh:0}},
+    {t:"Bold, malty, robust", s:{black:3, puerh:2, oolong:1, green:0, white:0, yellow:0}},
+    {t:"Earthy, deep, unusual", s:{puerh:3, oolong:1, black:1, green:0, white:0, yellow:1}}
+  ]},
+  {q:"How do you feel about caffeine?", opts:[
+    {t:"Want a real lift", s:{black:2, puerh:2, oolong:1, green:0, white:0, yellow:0}},
+    {t:"Moderate is fine", s:{oolong:2, green:2, black:1, white:1, yellow:1, puerh:1}},
+    {t:"Prefer it gentle", s:{white:2, green:1, yellow:2, oolong:0, black:0, puerh:0}}
+  ]},
+  {q:"How much fuss are you willing to put in?", opts:[
+    {t:"Mug, hot water, done", s:{black:3, green:1, puerh:1, white:1, oolong:0, yellow:0}},
+    {t:"Happy to watch temp and timing", s:{green:2, white:2, oolong:2, yellow:2, black:1, puerh:1}},
+    {t:"I want the full ritual", s:{oolong:3, puerh:3, yellow:1, green:1, white:1, black:0}}
+  ]},
+  {q:"Do you add milk or sugar?", opts:[
+    {t:"Usually, yes", s:{black:3, puerh:1, oolong:0, green:0, white:0, yellow:0}},
+    {t:"No, I drink it straight", s:{oolong:2, green:2, white:2, puerh:2, yellow:2, black:1}}
+  ]}
+];
+const FINDER_RESULTS = {
+  white: {n:"White Tea", why:"Delicate and subtly sweet, with the least processing of any category — a good fit for lighter palates and gentler caffeine.", start:"Start with Bai Mu Dan (White Peony) — more forgiving and better value than Silver Needle.", page:"learn"},
+  green: {n:"Green Tea", why:"Fresh and vegetal, heat-fixed to preserve its grassy character. Rewards attention to water temperature.", start:"Start with a Chinese Longjing for nutty-sweet, or a Japanese sencha for a more marine, brisk cup.", page:"learn"},
+  yellow: {n:"Yellow Tea", why:"Rare and mellow — green tea's grassy edge softened by an extra sealed-yellowing step. Hard to find but distinctive.", start:"Jun Shan Yin Zhen is the classic, though genuine yellow tea is scarce and priced accordingly.", page:"learn"},
+  oolong: {n:"Oolong Tea", why:"The widest range in tea, from light and floral to dark and roasted — and the category that rewards multiple short steeps the most.", start:"Start with a Tie Guan Yin for florality, or an Alishan high-mountain for a creamy cup.", page:"reviews"},
+  black: {n:"Black Tea", why:"Fully oxidized, bold, and the most forgiving to brew. Handles milk and sugar better than any other category.", start:"Start with an Assam for malty strength, or a Darjeeling second flush for something more complex.", page:"reviews"},
+  puerh: {n:"Pu-erh", why:"Fermented and aged rather than simply oxidized — earthy, deep, and unlike anything else. A genuine rabbit hole.", start:"Start with a ripe (shou) pu-erh, which is smoother and ready to drink now; save raw (sheng) for later.", page:"reviews"}
+};
+let finderAnswers = new Array(FINDER_Q.length).fill(null);
+function buildFinderTool(){
+  const el = document.getElementById('finderTool');
+  el.innerHTML = FINDER_Q.map((q,i)=>`
+    <div class="mq">
+      <span class="qnum">Question ${i+1} of ${FINDER_Q.length}</span>
+      <h4>${q.q}</h4>
+      <div class="mq-options">
+        ${q.opts.map((o,j)=>`<label><input type="radio" name="fq${i}" onchange="setFinderAnswer(${i},${j})"><span>${o.t}</span></label>`).join('')}
+      </div>
+    </div>`).join('') + '<div id="finderResult"></div>';
+}
+function setFinderAnswer(i, j){
+  finderAnswers[i] = FINDER_Q[i].opts[j].s;
+  renderFinderResult();
+}
+function renderFinderResult(){
+  const target = document.getElementById('finderResult');
+  const answered = finderAnswers.filter(a=>a!==null);
+  if(answered.length < FINDER_Q.length){
+    target.innerHTML = `<p style="text-align:center; color:var(--ink-soft); font-size:0.85rem; margin-top:20px;">${answered.length} of ${FINDER_Q.length} answered — your match appears once all are complete.</p>`;
+    return;
+  }
+  const totals = {white:0, green:0, yellow:0, oolong:0, black:0, puerh:0};
+  answered.forEach(s => Object.keys(s).forEach(k => totals[k] += s[k]));
+  const ranked = Object.keys(totals).sort((a,b)=>totals[b]-totals[a]);
+  const top = FINDER_RESULTS[ranked[0]];
+  const second = FINDER_RESULTS[ranked[1]];
+  target.innerHTML = `
+    <div class="matcha-result genuine">
+      <div class="verdict-label">Your match: ${top.n}</div>
+      <p>${top.why}</p>
+      <p style="margin-top:12px;"><b>Where to start:</b> ${top.start}</p>
+    </div>
+    <p style="text-align:center; color:var(--ink-soft); font-size:0.88rem; margin-top:18px;">Runner-up: <b>${second.n}</b> — worth trying next.</p>
+    <div style="text-align:center; margin-top:18px;">
+      <button class="btn btn-primary" onclick="go('${top.page}')">See ${top.n} ${top.page === 'reviews' ? 'reviews' : 'guide'} →</button>
+      <button class="btn btn-outline" onclick="resetFinder()" style="margin-left:8px;">Start over</button>
+    </div>`;
+}
+function resetFinder(){
+  finderAnswers = new Array(FINDER_Q.length).fill(null);
+  buildFinderTool();
+}
+
+/* ---------------- CAFFEINE COMPARISON ---------------- */
+const CAFFEINE = [
+  {n:"Matcha", low:60, high:130, note:"You consume the whole leaf, so it lands higher than steeped greens."},
+  {n:"Black tea", low:40, high:70, note:"Generally highest of the steeped-and-strained categories."},
+  {n:"Pu-erh", low:30, high:70, note:"Fermentation does not meaningfully remove caffeine, despite frequent claims."},
+  {n:"Oolong tea", low:30, high:60, note:"Wide range reflecting the category's wide oxidation span."},
+  {n:"White tea", low:25, high:55, note:"Often called low-caffeine, but bud-heavy whites can be surprisingly high."},
+  {n:"Green tea", low:25, high:50, note:"Lower brewing temperature extracts less caffeine."},
+  {n:"Hojicha", low:7, high:20, note:"Roasting drives off much of the caffeine — the usual evening choice."},
+  {n:"Herbal (tisane)", low:0, high:0, note:"Not tea at all — no Camellia sinensis, so no caffeine."},
+  {n:"Drip coffee", low:95, high:165, note:"Included for scale — well above any steeped tea."}
+];
+function buildCaffeineChart(){
+  const el = document.getElementById('caffeineChart');
+  const MAX = 170;
+  el.innerHTML = CAFFEINE.map(c => {
+    const leftPct = (c.low / MAX) * 100;
+    const widthPct = Math.max(((c.high - c.low) / MAX) * 100, 1.5);
+    const isCoffee = c.n === 'Drip coffee';
+    return `
+    <div class="caf-row">
+      <div class="caf-head">
+        <span class="caf-name">${c.n}</span>
+        <span class="caf-val">${c.low === 0 && c.high === 0 ? '0 mg' : `${c.low}–${c.high} mg`}</span>
+      </div>
+      <div class="caf-track">
+        <div class="caf-bar${isCoffee ? ' coffee' : ''}" style="margin-left:${leftPct}%; width:${widthPct}%;"></div>
+      </div>
+      <p class="caf-note">${c.note}</p>
+    </div>`;
+  }).join('');
+}
+
+buildFinderTool();
+buildCaffeineChart();
+</script>
+</body>
+</html>
